@@ -11,7 +11,10 @@ import {
 	QuienEsSolware,
 	PropuestaValor,
 	AnalisisMacro,
+	MicroentornoMonartechAvila,
 	VentajasOportunidades,
+	VentajasOportunidadesDos,
+	MicroentornoInboundInfoLab,
 	ObjetivosComerciales,
 	ObjetivosDigitales,
 	BuyerPersonas,
@@ -39,8 +42,20 @@ const slides = [
 		component: AnalisisMacro,
 	},
 	{
+		id: 'microentorno-monartech-avila',
+		component: MicroentornoMonartechAvila,
+	},
+	{
 		id: 'ventajas-oportunidades',
 		component: VentajasOportunidades,
+	},
+	{
+		id: 'ventajas-oportunidades-dos',
+		component: VentajasOportunidadesDos,
+	},
+	{
+		id: 'microentorno-inbound-infolab',
+		component: MicroentornoInboundInfoLab,
 	},
 	{
 		id: 'objetivos-comerciales',
@@ -129,6 +144,13 @@ export default function SlidesPage() {
 				<FadeTransition slideIndex={slideActual} direction={direction} className="w-full h-full">
 					{(() => {
 						const SlideComponent = slides[slideActual].component
+						const isBuyerPersonas = slides[slideActual].id === 'buyer-personas'
+
+						if (isBuyerPersonas) {
+							const pilaresIndex = slides.findIndex((s) => s.id === 'pilares-contenido')
+							return <SlideComponent onRequestNext={() => cambiarSlide(pilaresIndex)} />
+						}
+
 						return <SlideComponent />
 					})()}
 				</FadeTransition>
