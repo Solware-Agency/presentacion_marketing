@@ -37,22 +37,22 @@ function ChipSEO({ texto, delay }: ChipSEOProps) {
 
 export function ObservacionesSeo() {
 	return (
-		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-screen h-screen flex flex-col items-center justify-start p-8 overflow-hidden">
+		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-screen h-screen flex flex-col items-center justify-center p-6 overflow-hidden">
 			<motion.h1
 				initial={{ opacity: 0, y: -20 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.5 }}
-				className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 md:mb-12 text-center"
+				className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8 text-center"
 			>
 				Observaciones SEO
 			</motion.h1>
 
-			<div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+			<div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ duration: 0.5, delay: 0.2 }}
-					className="flex flex-col gap-3 md:gap-4"
+					className="flex flex-col gap-2.5 md:gap-3"
 				>
 					{OBSERVACIONES_SEO.map((observacion, index) => (
 						<ChipSEO key={index} texto={observacion} delay={0.3 + index * 0.1} />
@@ -63,7 +63,7 @@ export function ObservacionesSeo() {
 					initial={{ opacity: 0, scale: 0.95 }}
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{ duration: 0.5, delay: 0.5 }}
-					className="hidden lg:flex justify-center items-start"
+					className="hidden lg:flex justify-center items-center"
 				>
 					<div className="relative w-full h-auto">
 						<Image
