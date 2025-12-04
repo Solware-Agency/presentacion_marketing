@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -16,13 +17,13 @@ const nextConfig = {
         tls: false,
       }
     }
-    
+
     // Ignorar warnings de módulos opcionales
     config.ignoreWarnings = [
       /Module not found: Can't resolve 'bufferutil'/,
       /Module not found: Can't resolve 'utf-8-validate'/,
     ]
-    
+
     return config
   },
 };
