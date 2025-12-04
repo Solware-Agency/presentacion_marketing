@@ -21,7 +21,7 @@ import {
 	PlataformasBuyerPersona,
 	ObservacionesSeo,
 	PilaresContenido,
-	PlataformasDigitales,
+	SeccionPlataformas,
 	PlanAccion,
 	CTA,
 } from '@src/slides/index'
@@ -85,7 +85,7 @@ const slides = [
 	},
 	{
 		id: 'plataformas-digitales',
-		component: PlataformasDigitales,
+		component: SeccionPlataformas,
 	},
 	{
 		id: 'plan-accion',
@@ -164,6 +164,11 @@ export default function SlidesPage() {
 						if (currentSlideId === 'plataformas-buyer-persona') {
 							const observacionesSeoIndex = slides.findIndex((s) => s.id === 'observaciones-seo')
 							return <SlideComponent onRequestNext={() => cambiarSlide(observacionesSeoIndex)} />
+						}
+
+						if (currentSlideId === 'plataformas-digitales') {
+							const planAccionIndex = slides.findIndex((s) => s.id === 'plan-accion')
+							return <SlideComponent onRequestNext={() => cambiarSlide(planAccionIndex)} />
 						}
 
 						return <SlideComponent />
