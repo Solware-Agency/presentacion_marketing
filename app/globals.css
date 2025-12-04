@@ -19,7 +19,6 @@
 @layer base {
   :root {
     --background: 50, 60%, 95%;
-    /* --background: 45, 100%, 98%; */
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
@@ -89,7 +88,6 @@
     height: 100%;
   }
 
-  /* Sistema de escalado automático para presentaciones */
   .slide-content {
     display: flex;
     flex-direction: column;
@@ -97,7 +95,6 @@
     overflow: hidden;
   }
 
-  /* Ajustes responsive sin scroll */
   @media (max-width: 640px) {
     .slide-content {
       padding: 0.5rem;
@@ -117,12 +114,56 @@
   }
 }
 
-
 @layer utilities {
+  /* === UTILIDADES SOLWARE === */
+
+  /* Superficies */
+  .surface {
+    @apply bg-solware-surface dark:bg-solware-surface;
+  }
+
+  .subsurface {
+    @apply bg-solware-subsurface dark:bg-solware-subsurface;
+  }
+
+  /* Texto */
+  .text-muted {
+    @apply text-white/90 dark:text-white/90;
+  }
+
+  .text-difuminado {
+    @apply text-solware-difuminado;
+  }
+
+  .text-on-surface {
+    @apply text-gray-900 dark:text-white;
+  }
+
+  /* Tarjetas */
+  .card {
+    @apply bg-white/10 dark:bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10;
+  }
+
+  .card-hover {
+    @apply transition duration-300 ease-in-out hover:scale-105 hover:border-solware-primary/50 hover:shadow-xl;
+  }
+
+  /* Focus Ring */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-solware-primary focus:ring-offset-2 focus:ring-offset-gray-900 dark:focus:ring-offset-gray-900;
+  }
+
+  /* Gradientes de marca */
+  .gradient-solware {
+    @apply bg-gradient-to-br from-[#271944] via-[#34182f] to-[#1f2937];
+  }
+
+  .gradient-solware-purple {
+    @apply bg-gradient-to-br from-[#1e0c2f] via-[#2a1350] to-[#4b1c7a];
+  }
 
   /* Animaciones de partículas */
   @keyframes float {
-
     0%,
     100% {
       transform: translateY(0) translateX(0);
@@ -147,7 +188,7 @@
     animation: float linear infinite;
   }
 
-  /* Newton's Pendulum Animation */
+  /* Péndulo de Newton */
   @keyframes pendulum1 {
     0% {
       transform: translateY(0px);
@@ -234,10 +275,10 @@
     animation: pendulum3 6s ease-in-out infinite;
   }
 
-  /* Optimizaciones para transiciones de slides */
+  /* Optimizaciones para transiciones */
   .slide-transition-container {
     will-change: transform, opacity;
-    transform: translateZ(0); /* Force hardware acceleration */
+    transform: translateZ(0);
     backface-visibility: hidden;
     perspective: 1000px;
   }
@@ -248,7 +289,6 @@
     backface-visibility: hidden;
   }
 
-  /* Clases para diferentes tipos de transición */
   .transition-slide-horizontal {
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -264,15 +304,25 @@
                 transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Optimización de rendimiento para animaciones */
   .gpu-accelerated {
     transform: translateZ(0);
     will-change: transform, opacity;
   }
 
-  /* Prevenir parpadeos durante las transiciones */
   .no-flash {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Soporte para prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }

@@ -13,6 +13,8 @@ const config: Config = {
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+				'solware-gradient': 'linear-gradient(to bottom right, #271944, #34182f, #1f2937)',
+				'solware-gradient-purple': 'linear-gradient(to bottom right, #1e0c2f, #2a1350, #4b1c7a)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -20,6 +22,28 @@ const config: Config = {
 				sm: 'calc(var(--radius) - 4px)',
 			},
 			colors: {
+				solware: {
+					// Fondos
+					surface: '#111827',
+					subsurface: '#1f2937',
+					'dark-purple': '#271944',
+					'deep-purple': '#34182f',
+					// Texto
+					difuminado: '#dbeafe',
+					// Botones y acciones
+					primary: '#3b82f6',
+					'primary-hover': '#2563eb',
+					// Iconos y acentos
+					amarillo: '#ecb424',
+					azul: '#5d9ff0',
+					verde: '#3aa465',
+					fucsia: '#ce609c',
+					morado: '#bc81f8',
+					// Likert
+					agree: '#3aa465',
+					disagree: '#bc81f8',
+					'disagree-strong': '#ce609c',
+				},
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				card: {
@@ -138,6 +162,16 @@ const config: Config = {
 						transform: 'scale(1.05)',
 					},
 				},
+				'fade-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(8px)',
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)',
+					},
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -148,6 +182,7 @@ const config: Config = {
 				'slide-out-left': 'slide-out-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
 				'fade-in-scale': 'fade-in-scale 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
 				'fade-out-scale': 'fade-out-scale 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+				'fade-up': 'fade-up 0.4s ease-out',
 			},
 			transitionTimingFunction: {
 				'slide-ease': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
