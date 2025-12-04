@@ -1,8 +1,8 @@
 'use client'
 
-import { useEffect, useCallback, useState } from 'react'
+import { useEffect, useCallback, useState, useRef } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { User, MapPin, Building2, X } from 'lucide-react'
+import { User, MapPin, Building2 } from 'lucide-react'
 
 type PersonaId = 'carlos' | 'valeria' | 'rafael'
 
@@ -64,6 +64,7 @@ interface Props {
 export function BuyerPersonas({ onRequestNext }: Props) {
 	const [focus, setFocus] = useState<PersonaId | null>(null)
 	const [step, setStep] = useState<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>(0)
+	const containerRef = useRef<HTMLDivElement>(null)
 
 	const advance = useCallback(() => {
 		setStep((s) => {
@@ -82,11 +83,47 @@ export function BuyerPersonas({ onRequestNext }: Props) {
 		})
 	}, [onRequestNext])
 
+	const goBack = useCallback(() => {
+		setStep((s) => {
+			if (s === 0) return s
+			const prev = (s - 1) as typeof step
+			if (prev === 0) setFocus(null)
+			if (prev === 1) setFocus('carlos')
+			if (prev === 2) setFocus(null)
+			if (prev === 3) setFocus('valeria')
+			if (prev === 4) setFocus(null)
+			if (prev === 5) setFocus('rafael')
+			if (prev === 6) setFocus(null)
+			return prev
+		})
+	}, [])
+
+	const handleClick = useCallback(
+		(e: React.MouseEvent<HTMLElement>) => {
+			if (containerRef.current) {
+				const rect = containerRef.current.getBoundingClientRect()
+				const clickX = e.clientX - rect.left
+				const halfWidth = rect.width / 2
+
+				if (clickX > halfWidth) {
+					advance()
+				} else {
+					goBack()
+				}
+			}
+		},
+		[advance, goBack],
+	)
+
 	useEffect(() => {
 		const onKey = (e: KeyboardEvent) => {
 			if (e.key === 'ArrowRight' || e.code === 'Space') {
 				e.preventDefault()
 				advance()
+			}
+			if (e.key === 'ArrowLeft') {
+				e.preventDefault()
+				goBack()
 			}
 			if (e.key === 'Escape') {
 				setFocus(null)
@@ -94,15 +131,20 @@ export function BuyerPersonas({ onRequestNext }: Props) {
 		}
 		window.addEventListener('keydown', onKey)
 		return () => window.removeEventListener('keydown', onKey)
-	}, [advance])
+	}, [advance, goBack])
 
 	return (
 		<section
+			ref={containerRef}
 			data-slide="buyer-personas"
 			aria-label="Buyer Personas"
-			className="w-screen h-screen overflow-hidden bg-gradient-to-br from-[#111827] to-[#1e293b] text-white"
+			onClick={handleClick}
+			className="w-screen h-screen overflow-hidden bg-gradient-to-br from-[#111827] to-[#1e293b] text-white cursor-pointer"
 		>
-			<div className="mx-auto max-w-7xl h-full flex flex-col p-8">
+			<div
+				className={`mx-auto max-w-7xl h-full flex flex-col p-8 transition-opacity duration-300 ${focus ? 'pointer-events-none opacity-0' : 'opacity-100'}`}
+				aria-hidden={focus ? 'true' : 'false'}
+			>
 				<header className="text-center">
 					<h1 className="text-5xl md:text-6xl font-bold">Buyer Personas</h1>
 					<div className="mx-auto mt-3 h-1 w-32 rounded-full bg-gradient-to-r from-[#3b82f6] via-[#bc81f8] to-[#ce609c]" />
@@ -110,7 +152,7 @@ export function BuyerPersonas({ onRequestNext }: Props) {
 
 				<div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 place-content-center">
 					{PERSONAS.map((p) => (
-						<TarjetaPersona key={p.id} persona={p} onOpen={() => setFocus(p.id)} />
+						<TarjetaPersona key={p.id} persona={p} />
 					))}
 				</div>
 
@@ -119,18 +161,16 @@ export function BuyerPersonas({ onRequestNext }: Props) {
 				</p>
 			</div>
 
-			<AnimatePresence>{focus && <ModalPersona persona={PERSONAS.find((x) => x.id === focus)!} onClose={() => setFocus(null)} />}</AnimatePresence>
+			<AnimatePresence>{focus && <ModalPersona persona={PERSONAS.find((x) => x.id === focus)!} />}</AnimatePresence>
 		</section>
 	)
 }
 
-function TarjetaPersona({ persona, onOpen }: { persona: Persona; onOpen: () => void }) {
+function TarjetaPersona({ persona }: { persona: Persona }) {
 	return (
-		<motion.button
-			onClick={onOpen}
+		<motion.div
 			layoutId={`card-${persona.id}`}
-			aria-label={`Ver detalle de ${persona.nombre}`}
-			className="text-left bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-6 hover:scale-105 hover:border-[#3b82f6]/50 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#3b82f6]"
+			className="text-left bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-6 transition duration-300 ease-in-out"
 		>
 			<div className="flex items-center gap-3">
 				<User className="w-6 h-6 text-white/90" aria-hidden />
@@ -145,53 +185,62 @@ function TarjetaPersona({ persona, onOpen }: { persona: Persona; onOpen: () => v
 				<span className="text-sm">{persona.ubicacion}</span>
 			</div>
 			<p className="mt-4 text-white/90 line-clamp-3">{persona.problema}</p>
-		</motion.button>
+		</motion.div>
 	)
 }
 
-function ModalPersona({ persona, onClose }: { persona: Persona; onClose: () => void }) {
+function ModalPersona({ persona }: { persona: Persona }) {
 	return (
 		<>
 			<motion.div
-				onClick={onClose}
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
-				className="fixed inset-0 bg-black/60 z-40"
-				aria-hidden
+				className="fixed inset-0 bg-black/75 backdrop-blur-sm z-40"
+				aria-hidden="true"
 			/>
 			<motion.div
 				layoutId={`card-${persona.id}`}
 				role="dialog"
+				aria-modal="true"
 				aria-label={`Detalle de ${persona.nombre}`}
 				initial={{ opacity: 0, y: 8, scale: 0.98 }}
 				animate={{ opacity: 1, y: 0, scale: 1 }}
 				exit={{ opacity: 0, y: 8, scale: 0.98 }}
 				transition={{ duration: 0.35, ease: 'easeOut' }}
-				className="fixed inset-0 grid place-items-center p-4 z-50"
+				className="fixed inset-0 grid place-items-center p-4 z-50 pointer-events-none"
 			>
-				<div className="w-full max-w-2xl rounded-2xl border border-white/10 bg-gradient-to-br from-[#1f2937] via-[#271944] to-[#34182f] p-6 shadow-xl text-white">
+				<div className="w-[90vw] md:w-[56vw] max-w-3xl rounded-2xl border border-white/10 bg-gradient-to-br from-[#1f2937] via-[#271944] to-[#34182f] p-8 shadow-2xl text-white pointer-events-auto">
 					<div className="flex items-start justify-between gap-4">
-						<h3 className="text-2xl font-semibold">{persona.nombre}</h3>
-						<button
-							onClick={onClose}
-							aria-label="Cerrar"
-							className="p-2 rounded-lg hover:scale-105 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#3b82f6]"
-						>
-							<X className="w-5 h-5" aria-hidden />
-						</button>
+						<div>
+							<h3 className="text-3xl font-semibold">{persona.nombre}</h3>
+							<div className="mt-2 flex items-center gap-4 text-white/70">
+								<span className="flex items-center gap-2">
+									<MapPin className="w-4 h-4" aria-hidden />
+									{persona.ubicacion}
+								</span>
+								<span className="flex items-center gap-2">
+									<Building2 className="w-4 h-4" aria-hidden />
+									{persona.perfil}
+								</span>
+							</div>
+						</div>
 					</div>
 
-					<div className="mt-4">
-						<h4 className="font-semibold text-[#dbeafe]">Problema</h4>
-						<p className="mt-1 text-white/90 leading-relaxed">{persona.problema}</p>
+					<div className="mt-6">
+						<h4 className="text-lg font-semibold text-[#dbeafe]">Problema</h4>
+						<p className="mt-2 text-white/90 leading-relaxed text-lg">{persona.problema}</p>
 					</div>
 
-					<div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-4">
+					<div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
 						<ChipGroup titulo="Motivadores" chips={persona.motivadores} />
 						<ChipGroup titulo="Inhibidores" chips={persona.inhibidores} />
 						<ChipGroup titulo="Comportamiento" chips={persona.comportamiento} />
 					</div>
+
+					<p className="mt-8 text-center text-[#dbeafe]/70 text-sm">
+						Presiona <span className="font-semibold">→</span> para continuar o <span className="font-semibold">←</span> para retroceder
+					</p>
 				</div>
 			</motion.div>
 		</>
@@ -201,12 +250,12 @@ function ModalPersona({ persona, onClose }: { persona: Persona; onClose: () => v
 function ChipGroup({ titulo, chips }: { titulo: string; chips: string[] }) {
 	return (
 		<div>
-			<h5 className="text-sm font-semibold text-white/90">{titulo}</h5>
-			<div className="mt-2 flex flex-wrap gap-2">
+			<h5 className="text-base font-semibold text-white/90 mb-3">{titulo}</h5>
+			<div className="flex flex-wrap gap-2">
 				{chips.map((c) => (
 					<span
 						key={c}
-						className="inline-flex items-center rounded-full border border-white/10 bg-white/10 px-3 py-1 text-sm text-white/90 transition duration-300 ease-in-out"
+						className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-sm text-white/90 transition duration-300 ease-in-out"
 					>
 						{c}
 					</span>

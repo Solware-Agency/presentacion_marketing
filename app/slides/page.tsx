@@ -47,15 +47,15 @@ const slides = [
 	},
 	{
 		id: 'ventajas-oportunidades',
-		component: VentajasOportunidades,
-	},
-	{
-		id: 'ventajas-oportunidades-dos',
 		component: VentajasOportunidadesDos,
 	},
 	{
 		id: 'microentorno-inbound-infolab',
 		component: MicroentornoInboundInfoLab,
+	},
+	{
+		id: 'ventajas-oportunidades-dos',
+		component: VentajasOportunidades,
 	},
 	{
 		id: 'objetivos-comerciales',
