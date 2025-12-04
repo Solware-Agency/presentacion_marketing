@@ -7,7 +7,7 @@ import { User, Briefcase, MapPin } from 'lucide-react'
 export function BuyerPersonas() {
 	return (
 		<div className="bg-white w-screen h-screen flex flex-col items-center justify-center p-8 overflow-hidden">
-			<SlideTitle title="Buyer Personas" gradientColor="from-[#3b82f6] to-[#ce609c]" />
+			<SlideTitle title="Buyer Personas" gradientColor="from-[#3b82f6] to-[#ce609c]" darkBackground={false} />
 
 			<div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
 				<AnimatedCard delay={0.2} className="bg-gradient-to-br from-[#dbeafe] to-[#e0e7ff] rounded-2xl p-6 shadow-lg">
