@@ -22,6 +22,7 @@ import {
 	ObservacionesSeo,
 	PilaresContenido,
 	SeccionPlataformas,
+	PublicidadDigital,
 	PlanAccion,
 	CTA,
 } from '@src/slides/index'
@@ -86,6 +87,10 @@ const slides = [
 	{
 		id: 'plataformas-digitales',
 		component: SeccionPlataformas,
+	},
+	{
+		id: 'publicidad-digital',
+		component: PublicidadDigital,
 	},
 	{
 		id: 'plan-accion',
@@ -167,8 +172,8 @@ export default function SlidesPage() {
 						}
 
 						if (currentSlideId === 'plataformas-digitales') {
-							const planAccionIndex = slides.findIndex((s) => s.id === 'plan-accion')
-							return <SlideComponent onRequestNext={() => cambiarSlide(planAccionIndex)} />
+							const publicidadDigitalIndex = slides.findIndex((s) => s.id === 'publicidad-digital')
+							return <SlideComponent onRequestNext={() => cambiarSlide(publicidadDigitalIndex)} />
 						}
 
 						return <SlideComponent />
