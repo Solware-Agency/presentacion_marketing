@@ -19,6 +19,7 @@ import {
 	ObjetivosDigitales,
 	BuyerPersonas,
 	PlataformasBuyerPersona,
+	ObservacionesSeo,
 	PilaresContenido,
 	PlataformasDigitales,
 	PlanAccion,
@@ -73,6 +74,10 @@ const slides = [
 	{
 		id: 'plataformas-buyer-persona',
 		component: PlataformasBuyerPersona,
+	},
+	{
+		id: 'observaciones-seo',
+		component: ObservacionesSeo,
 	},
 	{
 		id: 'pilares-contenido',
@@ -157,8 +162,8 @@ export default function SlidesPage() {
 						}
 
 						if (currentSlideId === 'plataformas-buyer-persona') {
-							const pilaresIndex = slides.findIndex((s) => s.id === 'pilares-contenido')
-							return <SlideComponent onRequestNext={() => cambiarSlide(pilaresIndex)} />
+							const observacionesSeoIndex = slides.findIndex((s) => s.id === 'observaciones-seo')
+							return <SlideComponent onRequestNext={() => cambiarSlide(observacionesSeoIndex)} />
 						}
 
 						return <SlideComponent />
