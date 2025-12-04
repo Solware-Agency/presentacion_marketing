@@ -18,6 +18,7 @@ import {
 	ObjetivosComerciales,
 	ObjetivosDigitales,
 	BuyerPersonas,
+	PlataformasBuyerPersona,
 	PilaresContenido,
 	PlataformasDigitales,
 	PlanAccion,
@@ -68,6 +69,10 @@ const slides = [
 	{
 		id: 'buyer-personas',
 		component: BuyerPersonas,
+	},
+	{
+		id: 'plataformas-buyer-persona',
+		component: PlataformasBuyerPersona,
 	},
 	{
 		id: 'pilares-contenido',
@@ -144,9 +149,14 @@ export default function SlidesPage() {
 				<FadeTransition slideIndex={slideActual} direction={direction} className="w-full h-full">
 					{(() => {
 						const SlideComponent = slides[slideActual].component
-						const isBuyerPersonas = slides[slideActual].id === 'buyer-personas'
+						const currentSlideId = slides[slideActual].id
 
-						if (isBuyerPersonas) {
+						if (currentSlideId === 'buyer-personas') {
+							const plataformasIndex = slides.findIndex((s) => s.id === 'plataformas-buyer-persona')
+							return <SlideComponent onRequestNext={() => cambiarSlide(plataformasIndex)} />
+						}
+
+						if (currentSlideId === 'plataformas-buyer-persona') {
 							const pilaresIndex = slides.findIndex((s) => s.id === 'pilares-contenido')
 							return <SlideComponent onRequestNext={() => cambiarSlide(pilaresIndex)} />
 						}
