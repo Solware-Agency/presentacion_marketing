@@ -63,39 +63,34 @@ interface Props {
 
 export function BuyerPersonas({ onRequestNext }: Props) {
 	const [focus, setFocus] = useState<PersonaId | null>(null)
-	const [step, setStep] = useState<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>(0)
+	const [step, setStep] = useState(0)
 	const containerRef = useRef<HTMLDivElement>(null)
 
+	useEffect(() => {
+		if (step === 1) {
+			setFocus('carlos')
+		} else if (step === 2) {
+			setFocus(null)
+		} else if (step === 3) {
+			setFocus('valeria')
+		} else if (step === 4) {
+			setFocus(null)
+		} else if (step === 5) {
+			setFocus('rafael')
+		} else if (step === 6) {
+			setFocus(null)
+		} else if (step === 7) {
+			onRequestNext?.()
+			setStep(0)
+		}
+	}, [step, onRequestNext])
+
 	const advance = useCallback(() => {
-		setStep((s) => {
-			const next = (s + 1) as typeof step
-			if (next === 1) setFocus('carlos')
-			if (next === 2) setFocus(null)
-			if (next === 3) setFocus('valeria')
-			if (next === 4) setFocus(null)
-			if (next === 5) setFocus('rafael')
-			if (next === 6) setFocus(null)
-			if (next === 7) {
-				onRequestNext?.()
-				return 0 as typeof step
-			}
-			return next
-		})
-	}, [onRequestNext])
+		setStep((s) => s + 1)
+	}, [])
 
 	const goBack = useCallback(() => {
-		setStep((s) => {
-			if (s === 0) return s
-			const prev = (s - 1) as typeof step
-			if (prev === 0) setFocus(null)
-			if (prev === 1) setFocus('carlos')
-			if (prev === 2) setFocus(null)
-			if (prev === 3) setFocus('valeria')
-			if (prev === 4) setFocus(null)
-			if (prev === 5) setFocus('rafael')
-			if (prev === 6) setFocus(null)
-			return prev
-		})
+		setStep((s) => Math.max(0, s - 1))
 	}, [])
 
 	const handleClick = useCallback(
@@ -125,13 +120,14 @@ export function BuyerPersonas({ onRequestNext }: Props) {
 				e.preventDefault()
 				goBack()
 			}
-			if (e.key === 'Escape') {
-				setFocus(null)
+			if (e.key === 'Escape' && focus) {
+				e.preventDefault()
+				advance()
 			}
 		}
 		window.addEventListener('keydown', onKey)
 		return () => window.removeEventListener('keydown', onKey)
-	}, [advance, goBack])
+	}, [advance, goBack, focus])
 
 	return (
 		<section
@@ -214,7 +210,7 @@ function ModalPersona({ persona }: { persona: Persona }) {
 					<div className="flex items-start justify-between gap-4">
 						<div>
 							<h3 className="text-3xl font-semibold">{persona.nombre}</h3>
-							<div className="mt-2 flex items-center gap-4 text-white/70">
+							<div className="mt-2 flex flex-col md:flex-row md:items-center gap-2 md:gap-4 text-white/70">
 								<span className="flex items-center gap-2">
 									<MapPin className="w-4 h-4" aria-hidden />
 									{persona.ubicacion}
