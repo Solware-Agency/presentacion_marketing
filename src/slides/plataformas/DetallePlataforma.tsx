@@ -36,11 +36,11 @@ export function DetallePlataforma({ plataforma, onNext, onPrev }: DetallePlatafo
 					transition={{ duration: 0.45, ease: 'easeOut' }}
 					className="text-center mb-4"
 				>
-					<h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-2">
-						Primarias — Plataformas a utilizar
+					<h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-[#3b82f6] mb-2">
+						Plataformas a utilizar
 					</h1>
 					<div className="flex items-center justify-center gap-3 mt-2">
-						<h2 className="text-xl md:text-2xl font-bold text-[#3b82f6]">
+						<h2 className="text-xl md:text-2xl font-bold text-white">
 							{data.nombre}
 						</h2>
 						<span className={`px-2 py-1 rounded-full text-xs font-semibold ${
