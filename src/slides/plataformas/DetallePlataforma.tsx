@@ -25,25 +25,25 @@ export function DetallePlataforma({ plataforma, onNext, onPrev }: DetallePlatafo
 
 	return (
 		<div
-			className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-screen h-screen overflow-x-hidden overflow-y-auto relative px-4 sm:px-6 lg:px-8"
+			className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-screen h-screen overflow-hidden relative flex items-center justify-center px-4 sm:px-6 lg:px-8"
 			onKeyDown={handleKeyDown}
 			tabIndex={0}
 		>
-			<div className="max-w-7xl mx-auto py-8 sm:py-10">
+			<div className="max-w-7xl mx-auto w-full">
 				<motion.div
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.45, ease: 'easeOut' }}
-					className="text-center mt-10 sm:mt-12 lg:mt-14 mb-6 sm:mb-8 scroll-mt-24"
+					className="text-center mb-4"
 				>
-					<h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2">
+					<h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-2">
 						Primarias — Plataformas a utilizar
 					</h1>
-					<div className="flex items-center justify-center gap-3 mt-4">
-						<h2 className="text-2xl md:text-3xl font-bold text-[#3b82f6]">
+					<div className="flex items-center justify-center gap-3 mt-2">
+						<h2 className="text-xl md:text-2xl font-bold text-[#3b82f6]">
 							{data.nombre}
 						</h2>
-						<span className={`px-3 py-1 rounded-full text-sm font-semibold ${
+						<span className={`px-2 py-1 rounded-full text-xs font-semibold ${
 							data.tipo === 'Primaria'
 								? 'bg-[#3b82f6]/20 text-[#3b82f6]'
 								: 'bg-[#bc81f8]/20 text-[#bc81f8]'
@@ -57,17 +57,17 @@ export function DetallePlataforma({ plataforma, onNext, onPrev }: DetallePlatafo
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ duration: 0.45, delay: 0.1, ease: 'easeOut' }}
-					className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start"
+					className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center"
 				>
-					<div className="flex flex-col gap-6">
+					<div className="flex flex-col gap-3">
 						<motion.div
 							initial={{ opacity: 0, x: -20 }}
 							animate={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.45, delay: 0.2, ease: 'easeOut' }}
-							className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6"
+							className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-4"
 						>
-							<h3 className="text-xl font-bold text-[#3b82f6] mb-3">Resumen</h3>
-							<p className="text-base sm:text-lg text-white/90 leading-relaxed">
+							<h3 className="text-base font-bold text-[#3b82f6] mb-2">Resumen</h3>
+							<p className="text-sm text-white/90 leading-snug">
 								{data.resumen}
 							</p>
 						</motion.div>
@@ -76,20 +76,20 @@ export function DetallePlataforma({ plataforma, onNext, onPrev }: DetallePlatafo
 							initial={{ opacity: 0, x: -20 }}
 							animate={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.45, delay: 0.32, ease: 'easeOut' }}
-							className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6"
+							className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-4"
 						>
-							<h3 className="text-xl font-bold text-[#3b82f6] mb-4">Recomendaciones</h3>
-							<ul className="space-y-2.5">
+							<h3 className="text-base font-bold text-[#3b82f6] mb-2">Recomendaciones</h3>
+							<ul className="space-y-1.5">
 								{data.recomendaciones.map((rec, idx) => (
 									<motion.li
 										key={idx}
 										initial={{ opacity: 0, x: -10 }}
 										animate={{ opacity: 1, x: 0 }}
 										transition={{ duration: 0.45, delay: 0.4 + idx * 0.08, ease: 'easeOut' }}
-										className="flex items-start gap-3"
+										className="flex items-start gap-2"
 									>
-										<span className="inline-block w-2 h-2 rounded-full bg-[#3b82f6] mt-2 flex-shrink-0" />
-										<span className="text-base text-white/90">{rec}</span>
+										<span className="inline-block w-1.5 h-1.5 rounded-full bg-[#3b82f6] mt-1.5 flex-shrink-0" />
+										<span className="text-sm text-white/90">{rec}</span>
 									</motion.li>
 								))}
 							</ul>
@@ -100,10 +100,10 @@ export function DetallePlataforma({ plataforma, onNext, onPrev }: DetallePlatafo
 								initial={{ opacity: 0, x: -20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.45, delay: 0.56, ease: 'easeOut' }}
-								className="rounded-2xl border border-[#3b82f6]/30 bg-[#3b82f6]/10 backdrop-blur-sm p-5"
+								className="rounded-xl border border-[#3b82f6]/30 bg-[#3b82f6]/10 backdrop-blur-sm p-3"
 							>
-								<h3 className="text-lg font-bold text-[#3b82f6] mb-2">Ejemplo</h3>
-								<p className="text-sm sm:text-base text-white/90 italic leading-relaxed">
+								<h3 className="text-sm font-bold text-[#3b82f6] mb-1.5">Ejemplo</h3>
+								<p className="text-xs text-white/90 italic leading-snug">
 									{data.ejemplo}
 								</p>
 							</motion.div>
@@ -115,9 +115,9 @@ export function DetallePlataforma({ plataforma, onNext, onPrev }: DetallePlatafo
 							initial={{ opacity: 0, scale: 0.95 }}
 							animate={{ opacity: 1, scale: 1 }}
 							transition={{ duration: 0.45, delay: 0.3, ease: 'easeOut' }}
-							className="flex justify-center items-start mt-6 sm:mt-8"
+							className="flex justify-center items-center"
 						>
-							<div className="mx-auto max-w-[720px] w-full aspect-[9/16] sm:max-w-[540px] lg:max-w-[620px] max-h-[70vh] sm:max-h-[75vh]">
+							<div className="mx-auto w-full max-w-[420px] max-h-[65vh]">
 								<Image
 									src={data.imagenSrc}
 									alt={data.imagenAlt || `Captura de pantalla de ${data.nombre}`}
