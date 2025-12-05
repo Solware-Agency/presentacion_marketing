@@ -207,7 +207,7 @@ export function AgradecimientoFinal({ onFinish, onPrevious }: AgradecimientoFina
 					transition={{ duration: 0.6, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
 					className="text-6xl md:text-7xl font-bold text-white"
 				>
-					¡Gracias por acompañarnos! 🚀
+					¡Gracias por acompañarnos!
 				</motion.h1>
 
 				<motion.p
