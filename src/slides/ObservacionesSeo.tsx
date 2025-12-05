@@ -67,7 +67,7 @@ export function ObservacionesSeo() {
 				>
 					<div className="relative w-full h-auto">
 						<Image
-							src="/mnt/data/estrategia_digital_solware_agency.png"
+							src="/mnt/data/seo_solware.png"
 							alt="Resultados en Google al buscar 'solware'"
 							width={800}
 							height={600}
@@ -86,7 +86,7 @@ export function ObservacionesSeo() {
 			>
 				<div className="relative w-full max-w-md">
 					<Image
-						src="/mnt/data/estrategia_digital_solware_agency.png"
+						src="/mnt/data/seo_solware.png"
 						alt="Resultados en Google al buscar 'solware'"
 						width={800}
 						height={600}
