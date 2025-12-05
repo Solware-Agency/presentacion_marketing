@@ -24,7 +24,7 @@ import {
 	SeccionPlataformas,
 	PublicidadDigital,
 	PlanAccion,
-	CTA,
+	AgradecimientoFinal,
 } from '@src/slides/index'
 
 const slides = [
@@ -97,8 +97,8 @@ const slides = [
 		component: PlanAccion,
 	},
 	{
-		id: 'cta',
-		component: CTA,
+		id: 'agradecimiento',
+		component: AgradecimientoFinal,
 	},
 ]
 
@@ -174,6 +174,15 @@ export default function SlidesPage() {
 						if (currentSlideId === 'plataformas-digitales') {
 							const publicidadDigitalIndex = slides.findIndex((s) => s.id === 'publicidad-digital')
 							return <SlideComponent onRequestNext={() => cambiarSlide(publicidadDigitalIndex)} />
+						}
+
+						if (currentSlideId === 'agradecimiento') {
+							return (
+								<SlideComponent
+									onFinish={() => cambiarSlide(0)}
+									onPrevious={() => cambiarSlide(slideActual - 1)}
+								/>
+							)
 						}
 
 						return <SlideComponent />
