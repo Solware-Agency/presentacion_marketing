@@ -50,7 +50,7 @@ const slides = [
 	},
 	{
 		id: 'ventajas-oportunidades',
-		component: VentajasOportunidadesDos,
+		component: VentajasOportunidades,
 	},
 	{
 		id: 'microentorno-inbound-infolab',
@@ -58,7 +58,7 @@ const slides = [
 	},
 	{
 		id: 'ventajas-oportunidades-dos',
-		component: VentajasOportunidades,
+		component: VentajasOportunidadesDos,
 	},
 	{
 		id: 'objetivos-comerciales',
