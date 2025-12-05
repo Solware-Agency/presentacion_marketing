@@ -117,7 +117,7 @@ export function InstagramFacebook({ onNext, onPrev }: InstagramFacebookProps) {
 						transition={{ duration: 0.45, delay: 0.3, ease: 'easeOut' }}
 						className="flex justify-center items-center"
 					>
-						<div className="mx-auto w-full max-w-[420px] max-h-[65vh]">
+						<div className="mx-auto w-full max-w-[280px] sm:max-w-[320px] max-h-[55vh]">
 							<Image
 								src={instagramData.imagenSrc!}
 								alt="Interfaz de Instagram y Facebook con publicaciones de Solware"
