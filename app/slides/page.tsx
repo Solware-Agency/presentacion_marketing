@@ -1,37 +1,136 @@
 'use client'
 
-import { useMemo, useEffect, useState, useRef } from 'react'
+import { useState, useRef, useMemo, useEffect } from 'react'
 import { DeckControls } from '@src/components/DeckControls'
 import { TimerWrapper } from '@src/components/TimerWrapper'
 import { Logo } from '@src/components/Logo'
 import { FadeTransition } from '@src/components/SlideTransition'
 import { useSlideAnimations } from '@src/hooks/useSlideAnimations'
-import { SlidesProvider, useSlidesRegistry } from '@src/context/SlidesContext'
-import { slidesConfig } from '@src/config/slidesConfig'
+import {
+	EstrategiaPortada,
+	QuienEsSolware,
+	PropuestaValor,
+	AnalisisMacro,
+	MicroentornoMonartechAvila,
+	VentajasOportunidades,
+	VentajasOportunidadesDos,
+	MicroentornoInboundInfoLab,
+	ObjetivosComerciales,
+	ObjetivosDigitales,
+	BuyerPersonas,
+	PlataformasBuyerPersona,
+	ObservacionesSeo,
+	PilaresContenido,
+	SeccionPlataformas,
+	PublicidadDigital,
+	PlanAccion,
+	AgradecimientoFinal,
+} from '@src/slides/index'
 
-function SlidesContent() {
-	const { slides, currentIndex, setCurrentIndex } = useSlidesRegistry()
+const slides = [
+	{
+		id: 'portada',
+		component: EstrategiaPortada,
+	},
+	{
+		id: 'quien-es-solware',
+		component: QuienEsSolware,
+	},
+	{
+		id: 'propuesta-valor',
+		component: PropuestaValor,
+	},
+	{
+		id: 'analisis-macro',
+		component: AnalisisMacro,
+	},
+	{
+		id: 'microentorno-monartech-avila',
+		component: MicroentornoMonartechAvila,
+	},
+	{
+		id: 'ventajas-oportunidades',
+		component: VentajasOportunidades,
+	},
+	{
+		id: 'microentorno-inbound-infolab',
+		component: MicroentornoInboundInfoLab,
+	},
+	{
+		id: 'ventajas-oportunidades-dos',
+		component: VentajasOportunidadesDos,
+	},
+	{
+		id: 'objetivos-comerciales',
+		component: ObjetivosComerciales,
+	},
+	{
+		id: 'objetivos-digitales',
+		component: ObjetivosDigitales,
+	},
+	{
+		id: 'buyer-personas',
+		component: BuyerPersonas,
+	},
+	{
+		id: 'plataformas-buyer-persona',
+		component: PlataformasBuyerPersona,
+	},
+	{
+		id: 'observaciones-seo',
+		component: ObservacionesSeo,
+	},
+	{
+		id: 'pilares-contenido',
+		component: PilaresContenido,
+	},
+	{
+		id: 'plataformas-digitales',
+		component: SeccionPlataformas,
+	},
+	{
+		id: 'publicidad-digital',
+		component: PublicidadDigital,
+	},
+	{
+		id: 'plan-accion',
+		component: PlanAccion,
+	},
+	{
+		id: 'agradecimiento',
+		component: AgradecimientoFinal,
+	},
+]
+
+export default function SlidesPage() {
+	const [slideActual, setSlideActual] = useState(0)
+	const [mostrarInteractividad, setMostrarInteractividad] = useState(false)
 	const [timerIniciado, setTimerIniciado] = useState(false)
 	const previousSlideRef = useRef(0)
 
+	const totalSlides = slides.length
 	const { getTransitionDirection } = useSlideAnimations()
 
 	const cambiarSlide = (nuevoSlide: number) => {
-		if (nuevoSlide >= 0 && nuevoSlide < slides.length) {
-			previousSlideRef.current = currentIndex
-			setCurrentIndex(nuevoSlide)
+		if (nuevoSlide >= 0 && nuevoSlide < totalSlides) {
+			previousSlideRef.current = slideActual
+			setSlideActual(nuevoSlide)
 		}
 	}
 
+	const toggleInteractividad = () => {
+		setMostrarInteractividad(!mostrarInteractividad)
+	}
+
 	useEffect(() => {
-		if (currentIndex === 1) {
+		if (slideActual === 1) {
 			setTimerIniciado(true)
-		} else if (currentIndex === 0) {
+		} else if (slideActual === 0) {
 			setTimerIniciado(false)
 		}
-	}, [currentIndex])
+	}, [slideActual])
 
-	const direction = getTransitionDirection(previousSlideRef.current, currentIndex)
+	const direction = getTransitionDirection(previousSlideRef.current, slideActual)
 
 	const timerComponent = useMemo(
 		() => (
@@ -48,13 +147,19 @@ function SlidesContent() {
 
 	return (
 		<div className="h-screen w-screen overflow-hidden">
-			<DeckControls />
+			<DeckControls
+				slideActual={slideActual}
+				totalSlides={totalSlides}
+				onCambiarSlide={cambiarSlide}
+				onToggleInteractividad={toggleInteractividad}
+				participantes={0}
+			/>
 
 			<div className="h-full w-full overflow-hidden relative">
-				<FadeTransition slideIndex={currentIndex} direction={direction} className="w-full h-full">
+				<FadeTransition slideIndex={slideActual} direction={direction} className="w-full h-full">
 					{(() => {
-						const SlideComponent = slides[currentIndex].component
-						const currentSlideId = slides[currentIndex].id
+						const SlideComponent = slides[slideActual].component
+						const currentSlideId = slides[slideActual].id
 
 						if (currentSlideId === 'buyer-personas') {
 							const plataformasIndex = slides.findIndex((s) => s.id === 'plataformas-buyer-persona')
@@ -73,7 +178,10 @@ function SlidesContent() {
 
 						if (currentSlideId === 'agradecimiento') {
 							return (
-								<SlideComponent onFinish={() => cambiarSlide(0)} onPrevious={() => cambiarSlide(currentIndex - 1)} />
+								<SlideComponent
+									onFinish={() => cambiarSlide(0)}
+									onPrevious={() => cambiarSlide(slideActual - 1)}
+								/>
 							)
 						}
 
@@ -86,13 +194,5 @@ function SlidesContent() {
 
 			{timerComponent}
 		</div>
-	)
-}
-
-export default function SlidesPage() {
-	return (
-		<SlidesProvider slides={slidesConfig} initialIndex={0}>
-			<SlidesContent />
-		</SlidesProvider>
 	)
 }

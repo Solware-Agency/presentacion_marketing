@@ -1,51 +1,63 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from '@src/components/ui/button'
 import { Progress } from '@src/components/ui/progress'
-import { ChevronLeft, ChevronRight, Home, Maximize, Minimize, Menu } from 'lucide-react'
-import { useSlidesRegistry } from '@src/context/SlidesContext'
-import { getSlideTitle } from '@src/lib/slideUtils'
-import { PanelSecciones } from './PanelSecciones'
+import { 
+  ChevronLeft, 
+  ChevronRight, 
+  Home, 
+  Maximize, 
+  Minimize,
+  Menu,
+} from 'lucide-react'
+import { cn } from '@src/lib/utils'
 
-export function DeckControls() {
-	const { currentIndex, total, next, prev, goToFirst, goToLast, getCurrentSlide } = useSlidesRegistry()
-	const [pantallaCompleta, setPantallaCompleta] = useState(false)
-	const [mostrarPanel, setMostrarPanel] = useState(false)
-	const [isMobile, setIsMobile] = useState(false)
-	const menuButtonRef = useRef<HTMLButtonElement>(null)
+interface DeckControlsProps {
+  slideActual: number
+  totalSlides: number
+  // eslint-disable-next-line no-unused-vars
+  onCambiarSlide: (slide: number) => void
+  onToggleInteractividad: () => void
+  participantes?: number
+}
 
-	const progreso = ((currentIndex + 1) / total) * 100
-	const slideActual = getCurrentSlide()
-	const tituloSlide = slideActual ? getSlideTitle(slideActual) : ''
+const secciones = [
+  { nombre: 'Portada', slide: 0 },
+  { nombre: 'Problema', slide: 2 },
+  { nombre: 'Solución', slide: 4 },
+  { nombre: 'Mercado', slide: 7 },
+  { nombre: 'Negocio', slide: 9 },
+  { nombre: 'Equipo', slide: 12 }
+]
 
-	useEffect(() => {
-		const checkMobile = () => {
-			setIsMobile(window.innerWidth < 768)
-		}
-		checkMobile()
-		window.addEventListener('resize', checkMobile)
-		return () => window.removeEventListener('resize', checkMobile)
-	}, [])
+export function DeckControls({ 
+  slideActual, 
+  totalSlides, 
+  onCambiarSlide
+}: DeckControlsProps) {
+  const [pantallaCompleta, setPantallaCompleta] = useState(false)
+  const [mostrarMiniMapa, setMostrarMiniMapa] = useState(false)
 
+	const progreso = ((slideActual + 1) / totalSlides) * 100
+
+	// Navegación por teclado
 	useEffect(() => {
 		const manejarTecla = (e: KeyboardEvent) => {
-			if (mostrarPanel) return
-
 			switch (e.key) {
 				case 'ArrowLeft':
-					prev()
+					if (slideActual > 0) onCambiarSlide(slideActual - 1)
 					break
 				case 'ArrowRight':
-				case ' ':
+				case ' ': // Tecla espacio
 					e.preventDefault()
-					next()
+					if (slideActual < totalSlides - 1) onCambiarSlide(slideActual + 1)
 					break
 				case 'Home':
-					goToFirst()
+					onCambiarSlide(0)
 					break
 				case 'End':
-					goToLast()
+					onCambiarSlide(totalSlides - 1)
 					break
 				case 'f':
 				case 'F11':
@@ -57,7 +69,7 @@ export function DeckControls() {
 
 		window.addEventListener('keydown', manejarTecla)
 		return () => window.removeEventListener('keydown', manejarTecla)
-	}, [currentIndex, total, mostrarPanel, next, prev, goToFirst, goToLast])
+	}, [slideActual, totalSlides, onCambiarSlide])
 
 	const togglePantallaCompleta = () => {
 		if (!document.fullscreenElement) {
@@ -69,55 +81,35 @@ export function DeckControls() {
 		}
 	}
 
-	const handlePanelToggle = () => {
-		setMostrarPanel(!mostrarPanel)
-	}
-
 	return (
 		<>
+			{/* Contenedor con hover para mostrar barra superior */}
+					<Progress value={progreso} className="h-1 rounded-none" />
 			<div className="fixed top-0 left-0 right-0 h-20 z-40 group">
-				<Progress
-					value={progreso}
-					className="h-1 rounded-none fixed top-0 left-0 right-0 z-50"
-					aria-label={`Progreso de la presentación: diapositiva ${currentIndex + 1} de ${total}`}
-				/>
-
-				<div className="fixed top-0 left-0 right-0 z-40 bg-gray-900/95 backdrop-blur-sm border-b border-white/10 opacity-0 -translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-					<div className="flex items-center justify-between px-4 py-3">
+				{/* Barra de progreso superior - aparece con hover */}
+				<div className="fixed top-0 left-0 right-0 z-50 bg-background backdrop-blur-sm border-b opacity-0 -translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+					<div className="flex items-center justify-between px-4 py-2">
 						<div className="flex items-center space-x-4">
-							<div className="flex items-center space-x-2" role="status" aria-live="polite">
-								<span className="text-sm font-medium text-white font-mono">
-									{currentIndex + 1} / {total}
-								</span>
-								{!isMobile && tituloSlide && (
-									<>
-										<span className="text-white/30">•</span>
-										<span className="text-sm text-white/70 max-w-md truncate">{tituloSlide}</span>
-									</>
-								)}
-							</div>
-							<Button
-								ref={menuButtonRef}
-								variant="ghost"
-								size="sm"
-								onClick={handlePanelToggle}
-								aria-label="Abrir navegación de diapositivas"
-								aria-expanded={mostrarPanel}
-								aria-controls="panel-secciones"
-								className="text-white hover:bg-white/10 focus:ring-2 focus:ring-[#3b82f6] focus:ring-offset-2 focus:ring-offset-gray-900"
-							>
+							<span className="text-sm font-medium">
+								{slideActual + 1} / {totalSlides}
+							</span>
+							<Button variant="ghost" size="sm" onClick={() => setMostrarMiniMapa(!mostrarMiniMapa)}>
 								<Menu className="w-4 h-4" />
 							</Button>
 						</div>
 
 						<div className="flex items-center space-x-2">
-							<Button
+							{/* <Button
 								variant="ghost"
 								size="sm"
-								onClick={togglePantallaCompleta}
-								aria-label={pantallaCompleta ? 'Salir de pantalla completa' : 'Pantalla completa'}
-								className="text-white hover:bg-white/10 focus:ring-2 focus:ring-[#3b82f6] focus:ring-offset-2 focus:ring-offset-gray-900"
+								onClick={onToggleInteractividad}
+								className="flex items-center space-x-2"
 							>
+								<Users className="w-4 h-4" />
+								<span>{participantes}</span>
+							</Button> */}
+
+							<Button variant="ghost" size="sm" onClick={togglePantallaCompleta}>
 								{pantallaCompleta ? <Minimize className="w-4 h-4" /> : <Maximize className="w-4 h-4" />}
 							</Button>
 						</div>
@@ -125,62 +117,65 @@ export function DeckControls() {
 				</div>
 			</div>
 
-			<PanelSecciones isOpen={mostrarPanel} onClose={() => setMostrarPanel(false)} triggerRef={menuButtonRef} />
+			{/* Mini-mapa de secciones */}
+			{mostrarMiniMapa && (
+				<div className="fixed top-16 left-4 z-50 bg-card border rounded-lg shadow-lg p-4 w-64">
+					<h3 className="font-semibold mb-3">Secciones</h3>
+					<div className="space-y-2">
+						{secciones.map((seccion) => (
+							<button
+								key={seccion.slide}
+								onClick={() => {
+									onCambiarSlide(seccion.slide)
+									setMostrarMiniMapa(false)
+								}}
+								className={cn(
+									'w-full text-left px-3 py-2 rounded text-sm transition-colors',
+									slideActual >= seccion.slide &&
+										slideActual < (secciones[secciones.indexOf(seccion) + 1]?.slide || totalSlides)
+										? 'bg-primary text-primary-foreground'
+										: 'hover:bg-muted',
+								)}
+							>
+								{seccion.nombre}
+							</button>
+						))}
+					</div>
+				</div>
+			)}
 
+			{/* Contenedor con hover para mostrar controles */}
 			<div className="fixed bottom-0 left-0 right-0 h-20 z-40 group w-full max-w-xs mx-auto">
-				<div
-					className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300"
-					role="navigation"
-					aria-label="Controles de navegación de la presentación"
-				>
-					<div className="flex items-center space-x-2 bg-gray-900/95 backdrop-blur-sm border border-white/10 rounded-xl shadow-2xl p-2">
-						<Button
-							variant="ghost"
-							size="sm"
-							onClick={goToFirst}
-							disabled={currentIndex === 0}
-							aria-label="Ir a la primera diapositiva"
-							className="text-white hover:bg-white/10 disabled:opacity-30 focus:ring-2 focus:ring-[#3b82f6] focus:ring-offset-2 focus:ring-offset-gray-900 transition-transform hover:scale-105"
-						>
+				{/* Controles de navegación inferiores - aparecen con hover CSS puro */}
+				<div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
+					<div className="flex items-center space-x-2 bg-card border rounded-lg shadow-lg p-2">
+						<Button variant="ghost" size="sm" onClick={() => onCambiarSlide(0)} disabled={slideActual === 0}>
 							<Home className="w-4 h-4" />
 						</Button>
 
 						<Button
 							variant="ghost"
 							size="sm"
-							onClick={prev}
-							disabled={currentIndex === 0}
-							aria-label="Diapositiva anterior"
-							className="text-white hover:bg-white/10 disabled:opacity-30 focus:ring-2 focus:ring-[#3b82f6] focus:ring-offset-2 focus:ring-offset-gray-900 transition-transform hover:scale-105"
+							onClick={() => onCambiarSlide(slideActual - 1)}
+							disabled={slideActual === 0}
 						>
 							<ChevronLeft className="w-4 h-4" />
 						</Button>
 
-						<span
-							className="px-4 py-2 text-sm font-medium font-mono min-w-[80px] text-center text-white"
-							role="status"
-							aria-live="polite"
-							aria-atomic="true"
-						>
-							{currentIndex + 1} / {total}
+						<span className="px-4 py-2 text-sm font-medium min-w-[80px] text-center">
+							{slideActual + 1} / {totalSlides}
 						</span>
 
 						<Button
 							variant="ghost"
 							size="sm"
-							onClick={next}
-							disabled={currentIndex === total - 1}
-							aria-label="Siguiente diapositiva"
-							className="text-white hover:bg-white/10 disabled:opacity-30 focus:ring-2 focus:ring-[#3b82f6] focus:ring-offset-2 focus:ring-offset-gray-900 transition-transform hover:scale-105"
+							onClick={() => onCambiarSlide(slideActual + 1)}
+							disabled={slideActual === totalSlides - 1}
 						>
 							<ChevronRight className="w-4 h-4" />
 						</Button>
 					</div>
 				</div>
-			</div>
-
-			<div className="sr-only" role="status" aria-live="polite" aria-atomic="true">
-				{`Diapositiva ${currentIndex + 1} de ${total}: ${tituloSlide}`}
 			</div>
 		</>
 	)
