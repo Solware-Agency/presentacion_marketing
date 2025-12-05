@@ -1,99 +1,144 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Megaphone, Linkedin, Search } from 'lucide-react'
+import type { ReactNode } from 'react'
 
-interface TarjetaPublicidadProps {
+interface CardPublicidadProps {
+	icon: ReactNode
 	titulo: string
 	objetivo: string
-	resumen: string[]
+	bullets: string[]
+	kpis?: string[]
 	delay: number
-	colorBorde: string
+	ariaLabel: string
 }
 
-function TarjetaPublicidad({ titulo, objetivo, resumen, delay, colorBorde }: TarjetaPublicidadProps) {
+function CardPublicidad({ icon, titulo, objetivo, bullets, kpis, delay, ariaLabel }: CardPublicidadProps) {
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.45, delay, ease: 'easeOut' }}
-			className={`bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-6 md:p-7 transition duration-300 ease-in-out hover:scale-105 hover:border-${colorBorde}/50 focus:outline-none focus:ring-2 focus:ring-${colorBorde}`}
+			className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-7 shadow-xl transition duration-300 ease-in-out hover:scale-105 hover:border-[#3b82f6]/50 focus:outline-none focus:ring-2 focus:ring-[#3b82f6] focus:ring-offset-2 focus:ring-offset-gray-900"
+			aria-label={ariaLabel}
+			tabIndex={0}
 		>
-			<h3 className="text-2xl md:text-3xl font-bold text-white mb-4">{titulo}</h3>
-			<p className="text-xl md:text-2xl font-bold text-[#3b82f6] mb-5">
+			<div className="flex items-start gap-4 mb-4">
+				<div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 grid place-items-center text-[#3b82f6] flex-shrink-0">
+					{icon}
+				</div>
+				<h3 className="text-xl md:text-2xl font-bold text-white pt-1">{titulo}</h3>
+			</div>
+
+			<p className="text-lg md:text-xl font-bold text-[#5d9ff0] mb-4 leading-snug">
 				{objetivo}
 			</p>
-			<ul className="space-y-3">
-				{resumen.map((item, idx) => (
+
+			<ul className="space-y-2.5 mb-4" role="list">
+				{bullets.map((bullet, idx) => (
 					<motion.li
 						key={idx}
 						initial={{ opacity: 0, x: -10 }}
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.45, delay: delay + 0.1 + idx * 0.08, ease: 'easeOut' }}
-						className="flex items-start gap-3"
+						className="flex items-start gap-2.5"
 					>
-						<span className="inline-block w-2 h-2 rounded-full bg-[#3b82f6] mt-2 flex-shrink-0" />
-						<span className="text-base lg:text-lg text-white/90 leading-relaxed">{item}</span>
+						<span className="inline-block w-1.5 h-1.5 rounded-full bg-[#3b82f6] mt-2 flex-shrink-0" />
+						<span className="text-sm md:text-base text-white/90 leading-relaxed">{bullet}</span>
 					</motion.li>
 				))}
 			</ul>
+
+			{kpis && kpis.length > 0 && (
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{ duration: 0.45, delay: delay + 0.3, ease: 'easeOut' }}
+					className="flex flex-wrap gap-2"
+				>
+					{kpis.map((kpi, idx) => (
+						<span
+							key={idx}
+							className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/10 px-2.5 py-1 text-xs text-white/80"
+							aria-label={`Indicador: ${kpi}`}
+						>
+							{kpi}
+						</span>
+					))}
+				</motion.div>
+			)}
 		</motion.div>
 	)
 }
 
 export function PublicidadDigital() {
-	const plataformas = [
+	const plataformas: Array<Omit<CardPublicidadProps, 'delay'>> = [
 		{
+			icon: <Megaphone className="w-5 h-5 md:w-6 md:h-6" />,
 			titulo: 'Meta ADS',
-			objetivo: 'Incrementar visibilidad y generación de leads para Solware y awareness inicial para Solhub.',
-			resumen: [
-				'Campañas de tráfico y generación de clientes potenciales a landings con formularios o WhatsApp.',
+			objetivo: 'Incrementar visibilidad y leads para Solware; awareness inicial de Solhub.',
+			bullets: [
+				'Tráfico y generación de clientes potenciales a landings o WhatsApp.',
 				'Remarketing a quienes visitaron la web o interactuaron con contenidos.'
 			],
-			colorBorde: '[#3b82f6]'
+			kpis: ['CTR', 'Formularios enviados', 'Conversión a WhatsApp'],
+			ariaLabel: 'Meta ADS'
 		},
 		{
+			icon: <Linkedin className="w-5 h-5 md:w-6 md:h-6" />,
 			titulo: 'LinkedIn ADS',
-			objetivo: 'Llegar a nichos específicos (doctores, dueños de laboratorios, directores médicos y tomadores de decisión) para Solware/Solhub.',
-			resumen: [
-				'Sponsored Content y Lead Gen Forms para capturar datos sin salir de LinkedIn.',
+			objetivo: 'Alcanzar nichos de doctores, dueños/directores y tomadores de decisión.',
+			bullets: [
+				'Sponsored Content y Lead Gen Forms (captura sin salir de LinkedIn).',
 				'Segmentación por cargo, industria y tamaño de empresa en Venezuela y ciudades clave.'
 			],
-			colorBorde: '[#3b82f6]'
+			kpis: ['Leads B2B', 'Costo por lead', 'Tasa de calificación'],
+			ariaLabel: 'LinkedIn ADS'
 		},
 		{
+			icon: <Search className="w-5 h-5 md:w-6 md:h-6" />,
 			titulo: 'Google ADS',
-			objetivo: 'Captar demanda activa y posicionar a Solware/Solhub cuando el usuario ya está buscando soluciones.',
-			resumen: [
-				'Búsqueda con keywords de desarrollo web B2B, automatización de procesos, agencia tecnológica en Venezuela.',
-				'Para Solhub: keywords del sector salud (software para laboratorios, sistema para laboratorio, plataforma de gestión).'
+			objetivo: 'Captar demanda activa y posicionar Solware/Solhub cuando el usuario busca soluciones.',
+			bullets: [
+				'Búsqueda con keywords: desarrollo web B2B, automatización de procesos, agencia tecnológica.',
+				'Salud (Solhub): software para laboratorios, sistema para laboratorio, plataforma de gestión.'
 			],
-			colorBorde: '[#3b82f6]'
+			kpis: ['Impresiones en búsqueda', 'Tasa de clics', 'Conversiones'],
+			ariaLabel: 'Google ADS'
 		}
 	]
 
 	return (
-		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-screen h-screen flex flex-col items-center justify-center p-6 md:p-8 overflow-hidden relative">
-			<motion.h1
+		<div className="w-screen h-screen overflow-hidden bg-gray-900 text-white p-6 md:p-8 flex flex-col items-center justify-center">
+			<motion.header
 				initial={{ opacity: 0, y: -20 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.5 }}
-				className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 md:mb-10 text-center"
+				className="text-center mb-6 md:mb-8"
 			>
-				Publicidad digital
-			</motion.h1>
+				<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+					Publicidad digital
+				</h1>
+				<p className="text-[#dbeafe] text-sm md:text-base mt-2">
+					Estrategia de alcance y conversión en plataformas clave
+				</p>
+			</motion.header>
 
-			<div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 0.5, delay: 0.1 }}
+				className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
+			>
 				{plataformas.map((plataforma, idx) => (
-					<TarjetaPublicidad
+					<CardPublicidad
 						key={plataforma.titulo}
-						titulo={plataforma.titulo}
-						objetivo={plataforma.objetivo}
-						resumen={plataforma.resumen}
-						delay={0.2 + idx * 0.15}
-						colorBorde={plataforma.colorBorde}
+						{...plataforma}
+						delay={0.2 + idx * 0.12}
 					/>
 				))}
-			</div>
+			</motion.div>
 		</div>
 	)
 }
