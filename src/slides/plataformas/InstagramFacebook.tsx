@@ -2,16 +2,16 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { type PlataformaKey, CONTENIDO } from './data'
+import { CONTENIDO } from './data'
 
-interface DetallePlataformaProps {
-	plataforma: PlataformaKey
+interface InstagramFacebookProps {
 	onNext: () => void
 	onPrev: () => void
 }
 
-export function DetallePlataforma({ plataforma, onNext, onPrev }: DetallePlataformaProps) {
-	const data = CONTENIDO[plataforma]
+export function InstagramFacebook({ onNext, onPrev }: InstagramFacebookProps) {
+	const instagramData = CONTENIDO.instagram
+	const facebookData = CONTENIDO.facebook
 
 	const handleKeyDown = (e: React.KeyboardEvent) => {
 		if (e.key === 'ArrowRight' || e.key === ' ') {
@@ -41,14 +41,10 @@ export function DetallePlataforma({ plataforma, onNext, onPrev }: DetallePlatafo
 					</h1>
 					<div className="flex items-center justify-center gap-3 mt-4">
 						<h2 className="text-2xl md:text-3xl font-bold text-[#3b82f6]">
-							{data.nombre}
+							Instagram y Facebook
 						</h2>
-						<span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-							data.tipo === 'Primaria'
-								? 'bg-[#3b82f6]/20 text-[#3b82f6]'
-								: 'bg-[#bc81f8]/20 text-[#bc81f8]'
-						}`}>
-							{data.tipo}
+						<span className="px-3 py-1 rounded-full text-sm font-semibold bg-[#3b82f6]/20 text-[#3b82f6]">
+							Primaria
 						</span>
 					</div>
 				</motion.div>
@@ -66,10 +62,19 @@ export function DetallePlataforma({ plataforma, onNext, onPrev }: DetallePlatafo
 							transition={{ duration: 0.45, delay: 0.2, ease: 'easeOut' }}
 							className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6"
 						>
-							<h3 className="text-xl font-bold text-[#3b82f6] mb-3">Resumen</h3>
-							<p className="text-base sm:text-lg text-white/90 leading-relaxed">
-								{data.resumen}
+							<h3 className="text-xl font-bold text-[#E4405F] mb-3">Instagram</h3>
+							<p className="text-base sm:text-lg text-white/90 leading-relaxed mb-4">
+								{instagramData.resumen}
 							</p>
+							<h4 className="text-sm font-bold text-[#3b82f6] mb-2">Recomendaciones</h4>
+							<ul className="space-y-2">
+								{instagramData.recomendaciones.map((rec, idx) => (
+									<li key={idx} className="flex items-start gap-2">
+										<span className="inline-block w-1.5 h-1.5 rounded-full bg-[#E4405F] mt-2 flex-shrink-0" />
+										<span className="text-sm text-white/90">{rec}</span>
+									</li>
+								))}
+							</ul>
 						</motion.div>
 
 						<motion.div
@@ -78,58 +83,52 @@ export function DetallePlataforma({ plataforma, onNext, onPrev }: DetallePlatafo
 							transition={{ duration: 0.45, delay: 0.32, ease: 'easeOut' }}
 							className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6"
 						>
-							<h3 className="text-xl font-bold text-[#3b82f6] mb-4">Recomendaciones</h3>
-							<ul className="space-y-2.5">
-								{data.recomendaciones.map((rec, idx) => (
-									<motion.li
-										key={idx}
-										initial={{ opacity: 0, x: -10 }}
-										animate={{ opacity: 1, x: 0 }}
-										transition={{ duration: 0.45, delay: 0.4 + idx * 0.08, ease: 'easeOut' }}
-										className="flex items-start gap-3"
-									>
-										<span className="inline-block w-2 h-2 rounded-full bg-[#3b82f6] mt-2 flex-shrink-0" />
-										<span className="text-base text-white/90">{rec}</span>
-									</motion.li>
+							<h3 className="text-xl font-bold text-[#1877f2] mb-3">Facebook</h3>
+							<p className="text-base sm:text-lg text-white/90 leading-relaxed mb-4">
+								{facebookData.resumen}
+							</p>
+							<h4 className="text-sm font-bold text-[#3b82f6] mb-2">Recomendaciones</h4>
+							<ul className="space-y-2">
+								{facebookData.recomendaciones.map((rec, idx) => (
+									<li key={idx} className="flex items-start gap-2">
+										<span className="inline-block w-1.5 h-1.5 rounded-full bg-[#1877f2] mt-2 flex-shrink-0" />
+										<span className="text-sm text-white/90">{rec}</span>
+									</li>
 								))}
 							</ul>
 						</motion.div>
 
-						{data.ejemplo && (
-							<motion.div
-								initial={{ opacity: 0, x: -20 }}
-								animate={{ opacity: 1, x: 0 }}
-								transition={{ duration: 0.45, delay: 0.56, ease: 'easeOut' }}
-								className="rounded-2xl border border-[#3b82f6]/30 bg-[#3b82f6]/10 backdrop-blur-sm p-5"
-							>
-								<h3 className="text-lg font-bold text-[#3b82f6] mb-2">Ejemplo</h3>
-								<p className="text-sm sm:text-base text-white/90 italic leading-relaxed">
-									{data.ejemplo}
-								</p>
-							</motion.div>
-						)}
+						<motion.div
+							initial={{ opacity: 0, x: -20 }}
+							animate={{ opacity: 1, x: 0 }}
+							transition={{ duration: 0.45, delay: 0.44, ease: 'easeOut' }}
+							className="rounded-2xl border border-[#3b82f6]/30 bg-[#3b82f6]/10 backdrop-blur-sm p-5"
+						>
+							<h3 className="text-lg font-bold text-[#3b82f6] mb-2">Ejemplo</h3>
+							<p className="text-sm sm:text-base text-white/90 italic leading-relaxed">
+								{instagramData.ejemplo}
+							</p>
+						</motion.div>
 					</div>
 
-					{data.imagenSrc && (
-						<motion.div
-							initial={{ opacity: 0, scale: 0.95 }}
-							animate={{ opacity: 1, scale: 1 }}
-							transition={{ duration: 0.45, delay: 0.3, ease: 'easeOut' }}
-							className="flex justify-center items-start mt-6 sm:mt-8"
-						>
-							<div className="mx-auto max-w-[720px] w-full aspect-[9/16] sm:max-w-[540px] lg:max-w-[620px] max-h-[70vh] sm:max-h-[75vh]">
-								<Image
-									src={data.imagenSrc}
-									alt={data.imagenAlt || `Captura de pantalla de ${data.nombre}`}
-									width={800}
-									height={1422}
-									className="w-full h-full object-contain rounded-2xl shadow-lg"
-									loading="lazy"
-									decoding="async"
-								/>
-							</div>
-						</motion.div>
-					)}
+					<motion.div
+						initial={{ opacity: 0, scale: 0.95 }}
+						animate={{ opacity: 1, scale: 1 }}
+						transition={{ duration: 0.45, delay: 0.3, ease: 'easeOut' }}
+						className="flex justify-center items-start mt-6 sm:mt-8"
+					>
+						<div className="mx-auto max-w-[720px] w-full aspect-[9/16] sm:max-w-[540px] lg:max-w-[620px] max-h-[70vh] sm:max-h-[75vh]">
+							<Image
+								src={instagramData.imagenSrc!}
+								alt="Interfaz de Instagram y Facebook con publicaciones de Solware"
+								width={800}
+								height={1422}
+								className="w-full h-full object-contain rounded-2xl shadow-lg"
+								loading="lazy"
+								decoding="async"
+							/>
+						</div>
+					</motion.div>
 				</motion.div>
 			</div>
 

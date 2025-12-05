@@ -4,13 +4,14 @@ import { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { PortadaPlataformas } from './PortadaPlataformas'
 import { DetallePlataforma } from './DetallePlataforma'
+import { InstagramFacebook } from './InstagramFacebook'
 import { type PlataformaKey } from './data'
 
 interface SeccionPlataformasProps {
 	onRequestNext?: () => void
 }
 
-type VistaType = 'intro' | PlataformaKey
+type VistaType = 'intro' | 'instagram-facebook' | PlataformaKey
 
 export function SeccionPlataformas({ onRequestNext }: SeccionPlataformasProps) {
 	const [indiceInterno, setIndiceInterno] = useState(0)
@@ -19,8 +20,7 @@ export function SeccionPlataformas({ onRequestNext }: SeccionPlataformasProps) {
 		'intro',
 		'website',
 		'linkedin',
-		'instagram',
-		'facebook',
+		'instagram-facebook',
 		'email',
 		'whatsapp',
 		'intro',
@@ -70,9 +70,11 @@ export function SeccionPlataformas({ onRequestNext }: SeccionPlataformasProps) {
 				className="w-screen h-screen"
 			>
 				{vistaActual === 'intro' ? (
-					<PortadaPlataformas onNext={avanzar} onPrev={retroceder} esSegundaVez={indiceInterno === 7} />
+					<PortadaPlataformas onNext={avanzar} onPrev={retroceder} esSegundaVez={indiceInterno === 6} />
+				) : vistaActual === 'instagram-facebook' ? (
+					<InstagramFacebook onNext={avanzar} onPrev={retroceder} />
 				) : (
-					<DetallePlataforma plataforma={vistaActual} onNext={avanzar} onPrev={retroceder} />
+					<DetallePlataforma plataforma={vistaActual as PlataformaKey} onNext={avanzar} onPrev={retroceder} />
 				)}
 			</motion.div>
 		</AnimatePresence>

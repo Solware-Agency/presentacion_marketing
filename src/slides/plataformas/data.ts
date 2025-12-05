@@ -27,7 +27,7 @@ export const CONTENIDO: Record<PlataformaKey, {
     ejemplo:
       "'Guía rápida para saber si la tecnología de tu empresa se quedó obsoleta', descargable desde un artículo con formulario para crear base de datos.",
     imagenSrc: "/mnt/data/ppt_solware_web.png",
-    imagenAlt: "Landing de Solware con ejemplo de lead magnet."
+    imagenAlt: "Captura de pantalla de la página web de Solware mostrando ejemplo de lead magnet"
   },
   linkedin: {
     nombre: "LinkedIn",
@@ -42,7 +42,7 @@ export const CONTENIDO: Record<PlataformaKey, {
     ejemplo:
       "Post 'Cómo una web bien hecha redujo el tiempo de respuesta comercial en 40%', con enlace a la web para leer más o agendar.",
     imagenSrc: "/mnt/data/ppt_solware_linkeid.png",
-    imagenAlt: "Ejemplo de publicación en LinkedIn de Solware."
+    imagenAlt: "Captura de pantalla de publicaciones en LinkedIn de Solware"
   },
   instagram: {
     nombre: "Instagram",
@@ -57,7 +57,7 @@ export const CONTENIDO: Record<PlataformaKey, {
     ejemplo:
       "Reel 'Así lanzamos la web de X empresa en 7 días' con cierre: '¿Quieres algo así? Escríbenos por DM o en la bio'.",
     imagenSrc: "/mnt/data/ppt_solware_insta.png",
-    imagenAlt: "Grid de publicaciones de Instagram de Solware."
+    imagenAlt: "Interfaz móvil mostrando grid de publicaciones de Instagram de Solware"
   },
   facebook: {
     nombre: "Facebook",
@@ -72,7 +72,7 @@ export const CONTENIDO: Record<PlataformaKey, {
     ejemplo:
       "Publicación '3 procesos que podrías automatizar este mes' con enlace a landing para diagnóstico y botón de WhatsApp.",
     imagenSrc: "/mnt/data/ppt_solware_insta.png",
-    imagenAlt: "Ejemplo de interfaz móvil con publicaciones."
+    imagenAlt: "Interfaz móvil mostrando publicaciones de Facebook"
   },
   email: {
     nombre: "Email marketing",
@@ -87,7 +87,7 @@ export const CONTENIDO: Record<PlataformaKey, {
     ejemplo:
       "Correo 'Lo que aprendimos automatizando procesos este mes' + mini caso + artículo del blog + CTA 'Agenda una llamada de diagnóstico'.",
     imagenSrc: "/mnt/data/ppt_solware_mail.png",
-    imagenAlt: "Wire de email marketing con ejemplos de asuntos."
+    imagenAlt: "Esquema de email marketing con ejemplos de asuntos y estructura de correos"
   },
   whatsapp: {
     nombre: "WhatsApp Business",
@@ -102,7 +102,7 @@ export const CONTENIDO: Record<PlataformaKey, {
     ejemplo:
       "CTA desde redes: 'Escríbenos al WhatsApp para una asesoría gratuita'. Respuesta automática: 'Hola, gracias por contactarnos 👋 Cuéntanos brevemente sobre tu empresa y qué te gustaría mejorar'.",
     imagenSrc: "/mnt/data/ppt_solware_wa.png",
-    imagenAlt: "Conversación de WhatsApp Business con lead."
+    imagenAlt: "Interfaz de WhatsApp Business mostrando conversación con potencial cliente"
   },
   youtube: {
     nombre: "YouTube",
@@ -117,7 +117,7 @@ export const CONTENIDO: Record<PlataformaKey, {
     ejemplo:
       "'Conversaciones en Código' – Episodio 1 con cierre a agendar diagnóstico o visitar la web.",
     imagenSrc: "/mnt/data/ppt_solware_yt.png",
-    imagenAlt: "Canal de YouTube de Solware con Shorts y videos."
+    imagenAlt: "Interfaz de canal de YouTube de Solware mostrando Shorts y videos de contenido"
   },
   tiktok: {
     nombre: "TikTok",
@@ -132,6 +132,6 @@ export const CONTENIDO: Record<PlataformaKey, {
     ejemplo:
       "Video '3 cosas que delatan que tu web se quedó en el 2010' con cierre a visitar la web o escribir por IG/WhatsApp.",
     imagenSrc: "/mnt/data/ppt_solware_tiktok.png",
-    imagenAlt: "Perfil de TikTok con cuadrícula de videos educativos."
+    imagenAlt: "Interfaz de perfil de TikTok mostrando cuadrícula de videos educativos"
   }
 };
