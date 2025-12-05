@@ -1,3 +1,4 @@
+export { default as IntroGenerica } from './IntroGenerica'
 export { EstrategiaPortada } from './EstrategiaPortada'
 export { QuienEsSolware } from './QuienEsSolware'
 export { PropuestaValor } from './PropuestaValor'
