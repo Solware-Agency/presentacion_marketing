@@ -2,58 +2,66 @@
 
 import { useEffect, useCallback, useState, useRef } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { User, MapPin, Building2 } from 'lucide-react'
+import { User, MapPin, Building2, Calendar, UserRound } from 'lucide-react'
 
 type PersonaId = 'carlos' | 'valeria' | 'rafael'
 
 interface Persona {
 	id: PersonaId
 	nombre: string
+	sexo: string
+	edad: string
 	ubicacion: string
-	perfil: string
+	tipoNegocio: string
+	insights: readonly string[]
 	problema: string
 	motivadores: string[]
 	inhibidores: string[]
 	comportamiento: string[]
-	color: string
 }
 
 const PERSONAS: Persona[] = [
 	{
 		id: 'carlos',
 		nombre: 'Carlos Confianza',
+		sexo: 'Masculino',
+		edad: '40–50 años',
 		ubicacion: 'Venezuela',
-		perfil: 'Masculino, 40-50 años · Empresa familiar industrial o B2B',
+		tipoNegocio: 'Empresa familiar industrial o B2B',
+		insights: ['Busca formalidad', 'Quiere credibilidad', 'Proceso simple'],
 		problema:
 			'Su negocio tiene trayectoria y mueve buen volumen, pero no tiene presencia digital, lo que genera desconfianza externa. Entiende que hoy la web es sinónimo de autoridad: si no existe online, parece informal o sospechoso.',
 		motivadores: ['Credibilidad', 'Seguridad', 'Formalidad'],
 		inhibidores: ['Desconfianza', 'Incertidumbre', 'Complejidad técnica'],
 		comportamiento: ['Compra por necesidad', 'Proceso simple', 'Resultados rápidos'],
-		color: 'from-[#1f2937] to-[#271944]',
 	},
 	{
 		id: 'valeria',
 		nombre: 'Valeria Ventas',
+		sexo: 'Femenino',
+		edad: '30–45 años',
 		ubicacion: 'Miami, EE. UU.',
-		perfil: 'Femenino, 30-45 años · Servicios/educación con foco en captación',
+		tipoNegocio: 'Servicios o educación con foco en captación',
+		insights: ['Resultados medibles', 'Proactiva', 'Evalúa portafolio'],
 		problema:
 			'Sabe que una web debe atraer y convertir; busca un portal claro y amigable para lograr acciones (inscribirse, pedir cita, contactar, comprar). Ha investigado y es específica con sus solicitudes.',
 		motivadores: ['Crecimiento', 'Conversión', 'Profesionalismo'],
 		inhibidores: ['Lentitud', 'Falta de estrategia', 'Resultados débiles'],
 		comportamiento: ['Proactiva', 'Evalúa portafolio/casos', 'Decide por resultados medibles'],
-		color: 'from-[#34182f] to-[#3b82f6]/20',
 	},
 	{
 		id: 'rafael',
 		nombre: 'Dr. Rafael Racionaliza',
+		sexo: 'Masculino',
+		edad: '30–45 años',
 		ubicacion: 'Caracas',
-		perfil: 'Masculino, 30-45 años · Dueño/director médico o gerente',
+		tipoNegocio: 'Dueño/director médico o gerente general del laboratorio/clínica',
+		insights: ['Eficiencia', 'Control', 'Prestigio'],
 		problema:
 			'Opera con procesos largos y desordenados (registro manual, gestión lenta, información dispersa). Sabe que esto frena la eficiencia y aumenta errores; necesita una solución clara que ordene sin complicar.',
 		motivadores: ['Eficiencia', 'Control', 'Prestigio'],
 		inhibidores: ['Costo', 'Escepticismo', 'Resistencia al cambio'],
 		comportamiento: ['Decide con evidencia', 'Demostraciones/impacto', 'Acompañamiento y soporte'],
-		color: 'from-[#1f2937] to-[#3aa465]/20',
 	},
 ]
 
@@ -148,7 +156,7 @@ export function BuyerPersonas({ onRequestNext }: Props) {
 
 				<div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 place-content-center">
 					{PERSONAS.map((p) => (
-						<TarjetaPersona key={p.id} persona={p} />
+						<TarjetaPersonaCompacta key={p.id} persona={p} />
 					))}
 				</div>
 
@@ -162,25 +170,50 @@ export function BuyerPersonas({ onRequestNext }: Props) {
 	)
 }
 
-function TarjetaPersona({ persona }: { persona: Persona }) {
+function TarjetaPersonaCompacta({ persona }: { persona: Persona }) {
 	return (
 		<motion.div
 			layoutId={`card-${persona.id}`}
-			className="text-left bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-6 transition duration-300 ease-in-out"
+			className="text-left bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-6 transition duration-300 ease-in-out hover:scale-105 hover:border-[#3b82f6]/50"
 		>
-			<div className="flex items-center gap-3">
-				<User className="w-6 h-6 text-white/90" aria-hidden />
+			<div className="flex items-center gap-3 mb-6">
+				<User className="w-6 h-6 text-white/90" aria-hidden="true" />
 				<h3 className="text-2xl font-semibold">{persona.nombre}</h3>
 			</div>
-			<div className="mt-3 flex items-center gap-3 text-white/80">
-				<Building2 className="w-5 h-5" aria-hidden />
-				<span className="text-sm">{persona.perfil}</span>
+
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+				<div className="flex items-center gap-2 text-white/90 text-sm" aria-label={`Sexo: ${persona.sexo}`}>
+					<UserRound className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+					<span>{persona.sexo}</span>
+				</div>
+
+				<div className="flex items-center gap-2 text-white/90 text-sm" aria-label={`Edad: ${persona.edad}`}>
+					<Calendar className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+					<span>{persona.edad}</span>
+				</div>
+
+				<div className="flex items-center gap-2 text-white/90 text-sm" aria-label={`Ubicación: ${persona.ubicacion}`}>
+					<MapPin className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+					<span>{persona.ubicacion}</span>
+				</div>
+
+				<div className="flex items-start gap-2 text-white/90 text-sm md:col-span-2" aria-label={`Tipo de negocio: ${persona.tipoNegocio}`}>
+					<Building2 className="w-4 h-4 flex-shrink-0 mt-0.5" aria-hidden="true" />
+					<span className="line-clamp-2">{persona.tipoNegocio}</span>
+				</div>
 			</div>
-			<div className="mt-1 flex items-center gap-3 text-white/80">
-				<MapPin className="w-5 h-5" aria-hidden />
-				<span className="text-sm">{persona.ubicacion}</span>
+
+			<div className="mt-4 flex flex-wrap gap-2" role="list" aria-label="Características clave">
+				{persona.insights.map((insight) => (
+					<span
+						key={insight}
+						role="listitem"
+						className="inline-flex rounded-full border border-white/10 bg-white/10 px-2.5 py-1 text-xs text-white/80 transition duration-300 ease-in-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#3b82f6]"
+					>
+						{insight}
+					</span>
+				))}
 			</div>
-			<p className="mt-4 text-white/90 line-clamp-3">{persona.problema}</p>
 		</motion.div>
 	)
 }
@@ -210,15 +243,23 @@ function ModalPersona({ persona }: { persona: Persona }) {
 					<div className="flex items-start justify-between gap-4">
 						<div>
 							<h3 className="text-3xl font-semibold">{persona.nombre}</h3>
-							<div className="mt-2 flex flex-col md:flex-row md:items-center gap-2 md:gap-4 text-white/70">
-								<span className="flex items-center gap-2">
-									<MapPin className="w-4 h-4" aria-hidden />
+							<div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-white/70 text-sm">
+								<span className="flex items-center gap-2" aria-label={`Sexo: ${persona.sexo}`}>
+									<UserRound className="w-4 h-4" aria-hidden="true" />
+									{persona.sexo}
+								</span>
+								<span className="flex items-center gap-2" aria-label={`Edad: ${persona.edad}`}>
+									<Calendar className="w-4 h-4" aria-hidden="true" />
+									{persona.edad}
+								</span>
+								<span className="flex items-center gap-2" aria-label={`Ubicación: ${persona.ubicacion}`}>
+									<MapPin className="w-4 h-4" aria-hidden="true" />
 									{persona.ubicacion}
 								</span>
-								<span className="flex items-center gap-2">
-									<Building2 className="w-4 h-4" aria-hidden />
-									{persona.perfil}
-								</span>
+							</div>
+							<div className="mt-2 flex items-start gap-2 text-white/70 text-sm">
+								<Building2 className="w-4 h-4 flex-shrink-0 mt-0.5" aria-hidden="true" />
+								<span>{persona.tipoNegocio}</span>
 							</div>
 						</div>
 					</div>
