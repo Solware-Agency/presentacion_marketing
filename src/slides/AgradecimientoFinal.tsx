@@ -205,7 +205,8 @@ export function AgradecimientoFinal({ onFinish, onPrevious }: AgradecimientoFina
 					initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
 					animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
-					className="text-6xl md:text-7xl font-bold text-white"
+					className="text-6xl md:text-7xl font-bold !text-white"
+					style={{ color: '#ffffff' }}
 				>
 					¡Gracias por acompañarnos!
 				</motion.h1>
@@ -214,7 +215,8 @@ export function AgradecimientoFinal({ onFinish, onPrevious }: AgradecimientoFina
 					initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
 					animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}
-					className="text-xl md:text-2xl text-white"
+					className="text-xl md:text-2xl !text-white"
+					style={{ color: '#ffffff' }}
 				>
 					Sigamos impulsando la innovación.
 				</motion.p>
@@ -223,7 +225,8 @@ export function AgradecimientoFinal({ onFinish, onPrevious }: AgradecimientoFina
 					initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
 					animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.8, ease: [0.4, 0, 0.2, 1] }}
-					className="text-lg md:text-xl text-white italic"
+					className="text-lg md:text-xl !text-white italic"
+					style={{ color: '#ffffff' }}
 				>
 					{fraseAleatoria}
 				</motion.p>
