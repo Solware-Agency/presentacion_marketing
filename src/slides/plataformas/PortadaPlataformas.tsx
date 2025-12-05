@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { SlideTitle } from '@src/components/SlideTitle'
 import { AnimatedText } from '@src/components/AnimatedElements'
+import { LogoCorner } from '@src/components/LogoCorner'
 import { Globe, Linkedin, Instagram, Facebook, Mail, Youtube } from 'lucide-react'
 
 interface PortadaPlataformasProps {
@@ -28,7 +29,8 @@ export function PortadaPlataformas({ onNext, onPrev, esSegundaVez = false }: Por
 			onKeyDown={handleKeyDown}
 			tabIndex={0}
 		>
-			<SlideTitle title="Plataformas Digitales" gradientColor="from-[#3b82f6] to-[#bc81f8]" />
+			<LogoCorner />
+			<SlideTitle title="Plataformas Digitales" />
 
 			<div className="max-w-6xl w-full space-y-8 mt-6">
 				<AnimatedText delay={0.2}>

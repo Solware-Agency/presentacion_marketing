@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Megaphone, Linkedin, Search } from 'lucide-react'
 import type { ReactNode } from 'react'
+import { LogoCorner } from '@src/components/LogoCorner'
 
 interface CardPublicidadProps {
 	icon: ReactNode
@@ -45,7 +46,7 @@ function CardPublicidad({ icon, titulo, objetivo, bullets, kpis, delay, ariaLabe
 						className="flex items-start gap-2.5"
 					>
 						<span className="inline-block w-1.5 h-1.5 rounded-full bg-[#3b82f6] mt-2 flex-shrink-0" />
-						<span className="text-sm md:text-base text-white/90 leading-relaxed">{bullet}</span>
+						<span className="text-sm md:text-base text-white/90 leading-relaxed font-bold">{bullet}</span>
 					</motion.li>
 				))}
 			</ul>
@@ -110,19 +111,18 @@ export function PublicidadDigital() {
 	]
 
 	return (
-		<div className="w-screen h-screen overflow-hidden bg-gray-900 text-white p-6 md:p-8 flex flex-col items-center justify-center">
+		<div className="w-screen h-screen overflow-hidden bg-gray-900 text-white p-6 md:p-8 flex flex-col items-center justify-center relative">
+			<LogoCorner />
 			<motion.header
 				initial={{ opacity: 0, y: -20 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.5 }}
-				className="text-center mb-6 md:mb-8"
+				className="text-center mb-8 h-24 flex flex-col justify-center"
 			>
-				<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+				<h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2" style={{ color: '#41e2b8' }}>
 					Publicidad digital
 				</h1>
-				<p className="text-[#dbeafe] text-sm md:text-base mt-2">
-					Estrategia de alcance y conversión en plataformas clave
-				</p>
+				<div className="w-32 h-1 bg-gradient-to-r from-[#3b82f6] via-[#bc81f8] to-[#ce609c] mx-auto rounded-full"></div>
 			</motion.header>
 
 			<motion.div

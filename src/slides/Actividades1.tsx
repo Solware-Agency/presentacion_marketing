@@ -5,7 +5,7 @@ import { AnimatedText, AnimatedCard, AnimatedIcon } from '@src/components/Animat
 export function Actividades1() {
 	return (
 		<div className="bg-gradient-to-br from-indigo-900 to-indigo-950 w-screen h-screen flex flex-col p-6">
-			<SlideTitle title="La trampa de lo manual" gradientColor="from-green-400 to-blue-400" />
+			<SlideTitle title="La trampa de lo manual" />
 
 			{/* Pregunta introductoria */}
 			<AnimatedText delay={0.2} className="text-center mb-10">
@@ -14,10 +14,10 @@ export function Actividades1() {
 					className="bg-gradient-to-r from-orange-500/20 to-red-500/20 backdrop-blur-sm rounded-2xl p-8 border-2 border-orange-400/30 shadow-xl max-w-4xl mx-auto"
 				>
 					<AnimatedText delay={0.6}>
-						<h3 className="text-4xl font-bold text-white mb-4">¿De dónde vienen las pérdidas?</h3>
+						<h3 className="text-4xl font-bold text-white mb-4-strong">¿De dónde vienen las pérdidas?</h3>
 					</AnimatedText>
 					<AnimatedText delay={0.8}>
-						<p className="text-2xl text-orange-200">
+						<p className="text-2xl text-orange-200 font-bold">
 							De las actividades que realizan <span className="text-orange-400 font-semibold">todos los días</span>
 						</p>
 					</AnimatedText>

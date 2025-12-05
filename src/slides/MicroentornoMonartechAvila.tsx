@@ -1,31 +1,29 @@
 'use client'
 
 import { AnimatedCard } from '@src/components/AnimatedElements'
+import { LogoCorner } from '@src/components/LogoCorner'
 import { Instagram, Linkedin, Youtube, Facebook, Globe } from 'lucide-react'
 
 export function MicroentornoMonartechAvila() {
 	return (
-		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-screen h-screen flex flex-col items-center justify-center p-8 overflow-hidden">
-			<header className="w-full max-w-6xl flex items-start justify-between mb-8">
-				<div>
-					<h1 className="text-4xl md:text-5xl font-bold text-white">Análisis competitivo</h1>
-					<h2 className="text-2xl font-semibold text-white/80 mt-2">Microentorno</h2>
-				</div>
-				<div className="text-right">
-					<p className="text-2xl font-semibold text-[#dbeafe]">Solware</p>
-				</div>
-			</header>
+		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-screen h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 overflow-hidden relative">
+			<LogoCorner />
+			<div className="text-center mb-4 sm:mb-6 md:mb-8 h-auto sm:h-20 md:h-24 flex flex-col justify-center w-full px-4">
+				<h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2" style={{ color: '#41e2b8' }}>Análisis competitivo</h1>
+				<h2 className="text-base sm:text-lg md:text-xl font-semibold mb-2" style={{ color: '#41e2b8' }}>Microentorno</h2>
+				<div className="w-24 sm:w-28 md:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-[#3b82f6] via-[#bc81f8] to-[#ce609c] mx-auto rounded-full"></div>
+			</div>
 
-			<div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch justify-center">
+			<div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-stretch justify-center px-4">
 				<AnimatedCard
 					delay={0.2}
-					className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-6 transition duration-300 ease-in-out hover:scale-105 hover:border-[#3b82f6]/50 focus-within:ring-2 focus-within:ring-[#3b82f6]"
+					className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-4 sm:p-5 md:p-6 transition duration-300 ease-in-out hover:scale-105 hover:border-[#3b82f6]/50 focus-within:ring-2 focus-within:ring-[#3b82f6]"
 				>
-					<h3 className="text-2xl font-semibold text-white mb-4">Monartech</h3>
-					<p className="text-white/90 text-lg leading-relaxed mb-6">
+					<h3 className="text-xl sm:text-2xl font-semibold text-white mb-3 sm:mb-4">Monartech</h3>
+					<p className="text-white/90 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6 font-bold">
 						Soluciones impulsadas por IA para negocios; comunicación directa y enfoque en adopción práctica.
 					</p>
-					<div className="flex items-center gap-3">
+					<div className="flex items-center gap-2 sm:gap-3">
 						<a
 							href="https://instagram.com/monartech"
 							target="_blank"
@@ -33,7 +31,7 @@ export function MicroentornoMonartechAvila() {
 							aria-label="Instagram de Monartech"
 							className="text-white/90 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-[#3b82f6] rounded"
 						>
-							<Instagram className="w-6 h-6" />
+							<Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
 						</a>
 						<a
 							href="https://monartech.com"
@@ -67,10 +65,10 @@ export function MicroentornoMonartechAvila() {
 
 				<AnimatedCard
 					delay={0.4}
-					className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-6 transition duration-300 ease-in-out hover:scale-105 hover:border-[#3b82f6]/50 focus-within:ring-2 focus-within:ring-[#3b82f6]"
+					className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-4 sm:p-5 md:p-6 transition duration-300 ease-in-out hover:scale-105 hover:border-[#3b82f6]/50 focus-within:ring-2 focus-within:ring-[#3b82f6]"
 				>
-					<h3 className="text-2xl font-semibold text-white mb-4">AvilaTek</h3>
-					<p className="text-white/90 text-lg leading-relaxed mb-6">
+					<h3 className="text-xl sm:text-2xl font-semibold text-white mb-3 sm:mb-4">AvilaTek</h3>
+					<p className="text-white/90 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6 font-bold">
 						Socio de desarrollo tecnológico; narrativa de calidad, cercanía y entendimiento del negocio.
 					</p>
 					<div className="flex items-center gap-3">

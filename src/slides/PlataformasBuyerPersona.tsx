@@ -2,6 +2,7 @@
 
 import { useEffect, useCallback, useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { LogoCorner } from '@src/components/LogoCorner'
 
 type PersonaId = 'carlos' | 'valeria' | 'rafael'
 
@@ -128,23 +129,20 @@ export function PlataformasBuyerPersona({ onRequestNext }: Props) {
 			data-slide="plataformas-buyer-persona"
 			aria-label="Plataforma digital relevante para cada buyer persona"
 			onClick={manejarClick}
-			className="w-screen h-screen overflow-hidden bg-gray-900 text-white p-8 cursor-pointer flex flex-col"
+			className="w-screen h-screen overflow-hidden bg-gray-900 text-white p-8 cursor-pointer flex flex-col relative"
 		>
-			<header className="text-center mb-8">
+			<LogoCorner />
+			<header className="text-center mb-8 h-24 flex flex-col justify-center">
 				<motion.h1
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
-					className="text-4xl md:text-5xl lg:text-6xl font-bold"
+					className="text-4xl font-bold mb-2"
+					style={{ color: '#41e2b8' }}
 				>
 					Plataforma digital relevante para cada buyer persona
 				</motion.h1>
-				<motion.div
-					initial={{ scaleX: 0 }}
-					animate={{ scaleX: 1 }}
-					transition={{ duration: 0.6, delay: 0.2 }}
-					className="mx-auto mt-4 h-1 w-32 rounded-full bg-gradient-to-r from-[#3b82f6] via-[#bc81f8] to-[#ce609c]"
-				/>
+				<div className="w-32 h-1 bg-gradient-to-r from-[#3b82f6] via-[#bc81f8] to-[#ce609c] mx-auto rounded-full"></div>
 			</header>
 
 			<div className="flex-1 flex flex-col items-center justify-center max-w-6xl mx-auto w-full">
@@ -215,7 +213,7 @@ export function PlataformasBuyerPersona({ onRequestNext }: Props) {
 
 				<AnimatePresence mode="wait">{obtenerTextoCaption()}</AnimatePresence>
 
-				<p className="mt-6 text-center text-[#dbeafe]/70 text-sm">
+				<p className="mt-6 text-center text-[#dbeafe]/70 text-sm font-bold">
 					Presiona <span className="font-semibold">→</span> o <span className="font-semibold">Espacio</span> para avanzar, <span className="font-semibold">←</span> para retroceder
 				</p>
 			</div>

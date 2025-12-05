@@ -5,7 +5,7 @@ import { AnimatedText, AnimatedCard, AnimatedIcon } from '@src/components/Animat
 export function Dolencia1() {
 	return (
 		<div className="bg-gradient-to-br from-indigo-900 to-indigo-950 w-screen h-screen flex flex-col p-6">
-			<SlideTitle title="Costos ocultos" gradientColor="from-green-400 to-blue-400" />
+			<SlideTitle title="Costos ocultos" />
 
 			{/* Estadística principal - centrada y prominente */}
 			<AnimatedText delay={0.2} className="text-center mb-8">
@@ -15,14 +15,14 @@ export function Dolencia1() {
 							<AlertTriangle className="w-16 h-16 text-red-400 mr-4" />
 						</AnimatedIcon>
 						<AnimatedText delay={0.8}>
-							<h2 className="text-4xl font-bold text-white">La Realidad Cruda</h2>
+							<h2 className="text-4xl font-bold text-white-strong">La Realidad Cruda</h2>
 						</AnimatedText>
 					</div>
 					<AnimatedText delay={1.0}>
-						<p className="text-2xl text-white leading-relaxed">
+						<p className="text-2xl text-white leading-relaxed font-bold">
 							<span className="text-6xl font-black text-red-400">8 de cada 10</span>
 							<br />
-							<span className="text-xl">laboratorios en Venezuela</span>
+							<span className="text-xl font-bold">laboratorios en Venezuela</span>
 							<br />
 							<span className="text-2xl font-semibold text-yellow-300">siguen sin una base de datos</span>
 						</p>
@@ -41,10 +41,10 @@ export function Dolencia1() {
 							<h3 className="text-2xl font-bold text-white mb-4">Procesos Manuales</h3>
 						</AnimatedText>
 						<AnimatedText delay={1.8}>
-							<p className="text-white/90 text-lg">
+							<p className="text-white/90 text-lg font-bold">
 								<span className="text-4xl font-black text-yellow-400">95%</span>
 								<br />
-								<span className="text-base"> Lentos, inseguros y costosos</span>
+								<span className="text-base font-bold"> Lentos, inseguros y costosos</span>
 							</p>
 						</AnimatedText>
 						<div className="mt-4 w-full h-1 bg-yellow-400/50 rounded-full"></div>
@@ -60,10 +60,10 @@ export function Dolencia1() {
 							<h3 className="text-2xl font-bold text-white mb-4">Pérdida de Tiempo</h3>
 						</AnimatedText>
 						<AnimatedText delay={2.0}>
-							<p className="text-white/90 text-lg">
+							<p className="text-white/90 text-lg font-bold">
 								<span className="text-4xl font-black text-orange-400">1,800 - 2,600</span>
 								<br />
-								<span className="text-base">horas de trabajo perdidas al año</span>
+								<span className="text-base font-bold">horas de trabajo perdidas al año</span>
 							</p>
 						</AnimatedText>
 						<div className="mt-4 w-full h-1 bg-orange-400/50 rounded-full"></div>
@@ -79,10 +79,10 @@ export function Dolencia1() {
 							<h3 className="text-2xl font-bold text-white mb-4">Pérdida Económica</h3>
 						</AnimatedText>
 						<AnimatedText delay={2.2}>
-							<p className="text-white/90 text-lg">
+							<p className="text-white/90 text-lg font-bold">
 								<span className="text-4xl font-black text-red-400">$4,500 - $6,500</span>
 								<br />
-								<span className="text-base">dólares tirados a la basura</span>
+								<span className="text-base font-bold">dólares tirados a la basura</span>
 							</p>
 						</AnimatedText>
 						<div className="mt-4 w-full h-1 bg-red-400/50 rounded-full"></div>

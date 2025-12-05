@@ -10,6 +10,18 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			fontSize: {
+				// Tamaños personalizados para presentaciones
+				'display': ['4rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }], // 64px
+				'display-sm': ['3rem', { lineHeight: '1.2', letterSpacing: '-0.01em' }], // 48px
+				'heading': ['2.5rem', { lineHeight: '1.3' }], // 40px
+				'heading-sm': ['2rem', { lineHeight: '1.4' }], // 32px
+				'subheading': ['1.5rem', { lineHeight: '1.5' }], // 24px
+				'body-lg': ['1.125rem', { lineHeight: '1.6' }], // 18px
+				'body': ['1rem', { lineHeight: '1.6' }], // 16px
+				'body-sm': ['0.875rem', { lineHeight: '1.5' }], // 14px
+				'caption': ['0.75rem', { lineHeight: '1.4' }], // 12px
+			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { AlertCircle } from 'lucide-react'
 import Image from 'next/image'
+import { LogoCorner } from '@src/components/LogoCorner'
 
 const OBSERVACIONES_SEO = [
 	'Conflicto de marca en Google: "Solware" → sugiere "software".',
@@ -30,22 +31,27 @@ function ChipSEO({ texto, delay }: ChipSEOProps) {
 			title={texto}
 		>
 			<AlertCircle className="w-4 h-4 md:w-5 md:h-5 text-[#3b82f6] flex-shrink-0" aria-hidden="true" />
-			<span className="text-left">{texto}</span>
+			<span className="text-left font-bold">{texto}</span>
 		</motion.span>
 	)
 }
 
 export function ObservacionesSeo() {
 	return (
-		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-screen h-screen flex flex-col items-center justify-center p-6 overflow-hidden">
-			<motion.h1
-				initial={{ opacity: 0, y: -20 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.5 }}
-				className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8 text-center"
-			>
-				Observaciones SEO
-			</motion.h1>
+		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-screen h-screen flex flex-col items-center justify-center p-6 overflow-hidden relative">
+			<LogoCorner />
+			<div className="text-center mb-8 h-24 flex flex-col justify-center">
+				<motion.h1
+					initial={{ opacity: 0, y: -20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.5 }}
+					className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2"
+					style={{ color: '#41e2b8' }}
+				>
+					Observaciones SEO
+				</motion.h1>
+				<div className="w-32 h-1 bg-gradient-to-r from-[#3b82f6] via-[#bc81f8] to-[#ce609c] mx-auto rounded-full"></div>
+			</div>
 
 			<div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
 				<motion.div

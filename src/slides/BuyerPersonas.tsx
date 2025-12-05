@@ -3,6 +3,7 @@
 import { useEffect, useCallback, useState, useRef } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { User, MapPin, Building2, Calendar, UserRound } from 'lucide-react'
+import { LogoCorner } from '@src/components/LogoCorner'
 
 type PersonaId = 'carlos' | 'valeria' | 'rafael'
 
@@ -143,15 +144,16 @@ export function BuyerPersonas({ onRequestNext }: Props) {
 			data-slide="buyer-personas"
 			aria-label="Buyer Personas"
 			onClick={handleClick}
-			className="w-screen h-screen overflow-hidden bg-gradient-to-br from-[#111827] to-[#1e293b] text-white cursor-pointer"
+			className="w-screen h-screen overflow-hidden bg-gradient-to-br from-[#111827] to-[#1e293b] text-white cursor-pointer relative"
 		>
+			<LogoCorner />
 			<div
 				className={`mx-auto max-w-7xl h-full flex flex-col p-8 transition-opacity duration-300 ${focus ? 'pointer-events-none opacity-0' : 'opacity-100'}`}
 				aria-hidden={focus ? 'true' : 'false'}
 			>
-				<header className="text-center">
-					<h1 className="text-5xl md:text-6xl font-bold">Buyer Personas</h1>
-					<div className="mx-auto mt-3 h-1 w-32 rounded-full bg-gradient-to-r from-[#3b82f6] via-[#bc81f8] to-[#ce609c]" />
+				<header className="text-center mb-8 h-24 flex flex-col justify-center">
+					<h1 className="text-4xl font-bold mb-2" style={{ color: '#41e2b8' }}>Buyer Personas</h1>
+					<div className="w-32 h-1 bg-gradient-to-r from-[#3b82f6] via-[#bc81f8] to-[#ce609c] mx-auto rounded-full"></div>
 				</header>
 
 				<div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 place-content-center">
@@ -160,7 +162,7 @@ export function BuyerPersonas({ onRequestNext }: Props) {
 					))}
 				</div>
 
-				<p className="mt-6 text-center text-[#dbeafe]">
+				<p className="mt-6 text-center text-[#dbeafe] font-bold">
 					Presiona <span className="font-semibold">→</span> o <span className="font-semibold">Espacio</span> para explorar cada perfil
 				</p>
 			</div>
@@ -184,22 +186,22 @@ function TarjetaPersonaCompacta({ persona }: { persona: Persona }) {
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 				<div className="flex items-center gap-2 text-white/90 text-sm" aria-label={`Sexo: ${persona.sexo}`}>
 					<UserRound className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-					<span>{persona.sexo}</span>
+					<span className="font-bold">{persona.sexo}</span>
 				</div>
 
 				<div className="flex items-center gap-2 text-white/90 text-sm" aria-label={`Edad: ${persona.edad}`}>
 					<Calendar className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-					<span>{persona.edad}</span>
+					<span className="font-bold">{persona.edad}</span>
 				</div>
 
 				<div className="flex items-center gap-2 text-white/90 text-sm" aria-label={`Ubicación: ${persona.ubicacion}`}>
 					<MapPin className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-					<span>{persona.ubicacion}</span>
+					<span className="font-bold">{persona.ubicacion}</span>
 				</div>
 
 				<div className="flex items-start gap-2 text-white/90 text-sm md:col-span-2" aria-label={`Tipo de negocio: ${persona.tipoNegocio}`}>
 					<Building2 className="w-4 h-4 flex-shrink-0 mt-0.5" aria-hidden="true" />
-					<span className="line-clamp-2">{persona.tipoNegocio}</span>
+					<span className="line-clamp-2 font-bold">{persona.tipoNegocio}</span>
 				</div>
 			</div>
 
@@ -208,7 +210,7 @@ function TarjetaPersonaCompacta({ persona }: { persona: Persona }) {
 					<span
 						key={insight}
 						role="listitem"
-						className="inline-flex rounded-full border border-white/10 bg-white/10 px-2.5 py-1 text-xs text-white/80 transition duration-300 ease-in-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#3b82f6]"
+						className="inline-flex rounded-full border border-white/10 bg-white/10 px-2.5 py-1 text-xs text-white/80 transition duration-300 ease-in-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#3b82f6] font-bold"
 					>
 						{insight}
 					</span>
@@ -244,29 +246,29 @@ function ModalPersona({ persona }: { persona: Persona }) {
 						<div>
 							<h3 className="text-3xl font-semibold">{persona.nombre}</h3>
 							<div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-white/70 text-sm">
-								<span className="flex items-center gap-2" aria-label={`Sexo: ${persona.sexo}`}>
+								<span className="flex items-center gap-2 font-bold" aria-label={`Sexo: ${persona.sexo}`}>
 									<UserRound className="w-4 h-4" aria-hidden="true" />
 									{persona.sexo}
 								</span>
-								<span className="flex items-center gap-2" aria-label={`Edad: ${persona.edad}`}>
+								<span className="flex items-center gap-2 font-bold" aria-label={`Edad: ${persona.edad}`}>
 									<Calendar className="w-4 h-4" aria-hidden="true" />
 									{persona.edad}
 								</span>
-								<span className="flex items-center gap-2" aria-label={`Ubicación: ${persona.ubicacion}`}>
+								<span className="flex items-center gap-2 font-bold" aria-label={`Ubicación: ${persona.ubicacion}`}>
 									<MapPin className="w-4 h-4" aria-hidden="true" />
 									{persona.ubicacion}
 								</span>
 							</div>
 							<div className="mt-2 flex items-start gap-2 text-white/70 text-sm">
 								<Building2 className="w-4 h-4 flex-shrink-0 mt-0.5" aria-hidden="true" />
-								<span>{persona.tipoNegocio}</span>
+								<span className="font-bold">{persona.tipoNegocio}</span>
 							</div>
 						</div>
 					</div>
 
 					<div className="mt-6">
 						<h4 className="text-lg font-semibold text-[#dbeafe]">Problema</h4>
-						<p className="mt-2 text-white/90 leading-relaxed text-lg">{persona.problema}</p>
+						<p className="mt-2 text-white/90 leading-relaxed text-lg font-bold">{persona.problema}</p>
 					</div>
 
 					<div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -275,7 +277,7 @@ function ModalPersona({ persona }: { persona: Persona }) {
 						<ChipGroup titulo="Comportamiento" chips={persona.comportamiento} />
 					</div>
 
-					<p className="mt-8 text-center text-[#dbeafe]/70 text-sm">
+					<p className="mt-8 text-center text-[#dbeafe]/70 text-sm font-bold">
 						Presiona <span className="font-semibold">→</span> para continuar o <span className="font-semibold">←</span> para retroceder
 					</p>
 				</div>

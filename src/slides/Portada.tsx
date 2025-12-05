@@ -1,10 +1,12 @@
 import Particles from '@src/components/ui/Particles'
 import { CodeXml, ArrowUp } from 'lucide-react'
 import { Qr } from '@src/components/Qr'
+import { LogoCorner } from '@src/components/LogoCorner'
 
 export function Portada() {
 	return (
-		<div className="bg-gradient-to-br from-indigo-900/90 to-purple-900/90 w-screen h-screen flex items-center justify-center">
+		<div className="bg-gradient-to-br from-indigo-900/90 to-purple-900/90 w-screen h-screen flex items-center justify-center relative">
+			<LogoCorner />
 			<Particles />
 			<div className="flex flex-col items-center">
 				<div className="mb-8">

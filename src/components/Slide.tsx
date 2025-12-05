@@ -23,12 +23,20 @@ export function Slide({ children, className, variante = 'denso', fondo }: SlideP
 	return (
 		<div
 			className={cn(
-				'h-screen w-screen flex flex-col box-border overflow-hidden',
+				'h-screen w-screen flex flex-col box-border overflow-hidden relative',
 				variantes[variante],
 				fondo && `bg-gradient-to-br ${fondo}`,
 				className,
 			)}
 		>
+			{/* Logo en esquina superior derecha */}
+			<div className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50">
+				<img 
+					src="/SOLWARE_-_26.png" 
+					alt="Logo Solware" 
+					className="object-contain max-w-[120px] sm:max-w-[150px] md:max-w-[180px]"
+				/>
+			</div>
 			<div className="flex-1 w-full overflow-hidden flex flex-col"> {children}</div>
 		</div>
 	)

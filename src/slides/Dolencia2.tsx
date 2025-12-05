@@ -5,7 +5,7 @@ import { AnimatedText, AnimatedCard, AnimatedIcon } from '@src/components/Animat
 export function Dolencia2() {
 	return (
 		<div className="bg-gradient-to-br from-indigo-900 to-indigo-950 w-screen h-screen flex flex-col p-6">
-			<SlideTitle title="Riesgos latentes" gradientColor="from-green-400 to-blue-400" />
+			<SlideTitle title="Riesgos latentes" />
 
 			{/* Contenido principal - 2x2 grid con cuadros del mismo tamaño */}
 			<div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
@@ -62,7 +62,7 @@ export function Dolencia2() {
 						</AnimatedText>
 					</div>
 					<AnimatedText delay={2.2}>
-						<p className="text-white text-xl text-center leading-relaxed">
+						<p className="text-white text-xl text-center leading-relaxed font-bold">
 							Los laboratorios que no se digitalizan
 							<span className="text-red-400 font-bold"> pierden dinero</span>,
 							<span className="text-red-400 font-bold"> arriesgan vidas</span>,
@@ -72,8 +72,8 @@ export function Dolencia2() {
 					</AnimatedText>
 					<AnimatedText delay={2.4}>
 						<div className="mt-4 flex items-center justify-center space-x-4">
-							<span className="text-orange-300 text-xl">❌ No hay copia</span>
-							<span className="text-orange-300 text-xl">❌ No hay respaldo</span>
+							<span className="text-orange-300 text-xl font-bold">❌ No hay copia</span>
+							<span className="text-orange-300 text-xl font-bold">❌ No hay respaldo</span>
 						</div>
 					</AnimatedText>
 				</AnimatedCard>

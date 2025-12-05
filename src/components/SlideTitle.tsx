@@ -1,19 +1,14 @@
 interface SlideTitleProps {
 	title: string
 	subtitle?: string
-	gradientColor?: string
-	darkBackground?: boolean
 }
 
-export function SlideTitle({ title, subtitle, gradientColor = 'from-blue-400 to-purple-400', darkBackground = true }: SlideTitleProps) {
-	const titleColor = darkBackground ? 'text-white' : 'text-gray-900'
-	const subtitleColor = darkBackground ? 'text-blue-300' : 'text-gray-700'
-
+export function SlideTitle({ title, subtitle }: SlideTitleProps) {
 	return (
-		<div className="text-center mb-8 h-24 flex flex-col justify-center">
-			<h1 className={`text-4xl font-bold ${titleColor} mb-2`}>{title}</h1>
-			{subtitle && <h2 className={`text-xl font-semibold ${subtitleColor} mb-2`}>{subtitle}</h2>}
-			<div className={`w-32 h-1 bg-gradient-to-r ${gradientColor} mx-auto rounded-full`}></div>
+		<div className="text-center mb-4 sm:mb-6 md:mb-8 h-auto sm:h-20 md:h-24 flex flex-col justify-center px-4">
+			<h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2" style={{ color: '#41e2b8' }}>{title}</h1>
+			{subtitle && <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mb-2" style={{ color: '#41e2b8' }}>{subtitle}</h2>}
+			<div className="w-24 sm:w-28 md:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-[#3b82f6] via-[#bc81f8] to-[#ce609c] mx-auto rounded-full"></div>
 		</div>
 	)
 }

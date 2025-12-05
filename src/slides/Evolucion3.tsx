@@ -5,7 +5,7 @@ import { AnimatedText, AnimatedCard, AnimatedIcon } from '@src/components/Animat
 export function Evolucion3() {
 	return (
 		<div className="bg-gradient-to-br from-indigo-900 to-indigo-950 w-screen h-screen flex flex-col p-6">
-			<SlideTitle title="La evolución continúa" gradientColor="from-green-400 to-blue-400" />
+			<SlideTitle title="La evolución continúa" />
 
 			{/* Contenido principal - 2x2 grid con cuadros del mismo tamaño */}
 			<div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
@@ -77,7 +77,7 @@ export function Evolucion3() {
 						</AnimatedText>
 					</div>
 					<AnimatedText delay={2.2}>
-						<p className="text-white text-xl text-center leading-relaxed">
+						<p className="text-white text-xl text-center leading-relaxed font-bold">
 							Para lograrlo necesitamos <span className="text-blue-400 font-bold">aliados e inversión</span>.
 							<span className="text-green-400 font-bold"> Tu apoyo</span> nos permitirá acelerar esta hoja de ruta y
 							<span className="text-orange-400 font-bold"> transformar el sector salud</span>.

@@ -6,7 +6,7 @@ export function Evolucion2() {
 	return (
 		<>
 			<div className="bg-gradient-to-br from-indigo-900 to-indigo-950 w-screen h-screen flex flex-col p-6">
-				<SlideTitle title="La evolución continúa" gradientColor="from-green-400 to-blue-400" />
+				<SlideTitle title="La evolución continúa" />
 
 				{/* Contenido principal - 2x3 grid con cuadros del mismo tamaño */}
 				<div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8">
@@ -22,7 +22,7 @@ export function Evolucion2() {
 							<h3 className="text-3xl font-bold text-white">Business Intelligence</h3>
 						</AnimatedText>
 						<AnimatedText delay={0.8}>
-							<p className="text-blue-300 text-xl mt-2">Análisis predictivo de ingresos</p>
+							<p className="text-blue-300 text-xl mt-2 font-bold">Análisis predictivo de ingresos</p>
 						</AnimatedText>
 					</AnimatedCard>
 
@@ -38,7 +38,7 @@ export function Evolucion2() {
 							<h3 className="text-3xl font-bold text-white">Análisis Predictivo</h3>
 						</AnimatedText>
 						<AnimatedText delay={1.0}>
-							<p className="text-green-300 text-xl mt-2">Tipos de exámenes y desempeño</p>
+							<p className="text-green-300 text-xl mt-2 font-bold">Tipos de exámenes y desempeño</p>
 						</AnimatedText>
 					</AnimatedCard>
 
@@ -54,7 +54,7 @@ export function Evolucion2() {
 							<h3 className="text-3xl font-bold text-white">Decisiones Inteligentes</h3>
 						</AnimatedText>
 						<AnimatedText delay={1.2}>
-							<p className="text-purple-300 text-xl mt-2">Basadas en datos reales</p>
+							<p className="text-purple-300 text-xl mt-2 font-bold">Basadas en datos reales</p>
 						</AnimatedText>
 					</AnimatedCard>
 
@@ -70,7 +70,7 @@ export function Evolucion2() {
 							<h3 className="text-3xl font-bold text-white">Facturación</h3>
 						</AnimatedText>
 						<AnimatedText delay={2.4}>
-							<p className="text-orange-300 text-xl mt-2">Control de ingresos y egresos</p>
+							<p className="text-orange-300 text-xl mt-2 font-bold">Control de ingresos y egresos</p>
 						</AnimatedText>
 					</AnimatedCard>
 
@@ -86,7 +86,7 @@ export function Evolucion2() {
 							<h3 className="text-3xl font-bold text-white">Finanzas</h3>
 						</AnimatedText>
 						<AnimatedText delay={2.6}>
-							<p className="text-yellow-300 text-xl mt-2">Reportes financieros en tiempo real</p>
+							<p className="text-yellow-300 text-xl mt-2 font-bold">Reportes financieros en tiempo real</p>
 						</AnimatedText>
 					</AnimatedCard>
 
@@ -102,7 +102,7 @@ export function Evolucion2() {
 							<h3 className="text-3xl font-bold text-white">Reportes</h3>
 						</AnimatedText>
 						<AnimatedText delay={2.8}>
-							<p className="text-red-300 text-xl mt-2">Análisis por sede o médico</p>
+							<p className="text-red-300 text-xl mt-2 font-bold">Análisis por sede o médico</p>
 						</AnimatedText>
 					</AnimatedCard>
 				</div>

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { LogoCorner } from '@src/components/LogoCorner'
 import { type PlataformaKey, CONTENIDO } from './data'
 
 interface DetallePlataformaProps {
@@ -29,6 +30,7 @@ export function DetallePlataforma({ plataforma, onNext, onPrev }: DetallePlatafo
 			onKeyDown={handleKeyDown}
 			tabIndex={0}
 		>
+			<LogoCorner />
 			<div className="max-w-7xl mx-auto w-full">
 				<motion.div
 					initial={{ opacity: 0, y: -20 }}
