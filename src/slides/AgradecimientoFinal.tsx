@@ -214,7 +214,7 @@ export function AgradecimientoFinal({ onFinish, onPrevious }: AgradecimientoFina
 					initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
 					animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}
-					className="text-xl md:text-2xl text-[#dbeafe]"
+					className="text-xl md:text-2xl text-white"
 				>
 					Sigamos impulsando la innovación.
 				</motion.p>
@@ -223,7 +223,7 @@ export function AgradecimientoFinal({ onFinish, onPrevious }: AgradecimientoFina
 					initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
 					animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.8, ease: [0.4, 0, 0.2, 1] }}
-					className="text-lg md:text-xl text-white/90 italic"
+					className="text-lg md:text-xl text-white italic"
 				>
 					{fraseAleatoria}
 				</motion.p>
