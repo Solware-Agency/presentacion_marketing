@@ -28,7 +28,7 @@ export function QuienEsSolware() {
 
 					<AnimatedCard delay={0.6} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
 						<h3 className="text-[#16a34a] text-3xl font-bold mb-4">Solhub</h3>
-						<p className="text-white/85 text-lg leading-relaxed">
+						<p className="text-white text-lg leading-relaxed">
 							Un producto especializado en el sector salud. Una aplicación web para laboratorios y clínicas que permite gestionar historiales clínicos,
 							órdenes de exámenes, datos del paciente y reportes automatizados.
 						</p>
