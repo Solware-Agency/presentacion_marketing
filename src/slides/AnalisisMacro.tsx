@@ -7,7 +7,7 @@ import { Laptop, Lightbulb, Code, AlertTriangle } from 'lucide-react'
 
 export function AnalisisMacro() {
 	return (
-		<div className="bg-white w-screen h-screen flex flex-col items-center justify-center p-8 overflow-hidden relative">
+		<div className="bg-gradient-to-br from-[#e0e7ff] via-[#ddd6fe] to-[#fce7f3] w-screen h-screen flex flex-col items-center justify-center p-8 overflow-hidden relative">
 			<LogoCorner />
 			<SlideTitle title="Análisis Competitivo" subtitle="Macroentorno" />
 
@@ -20,7 +20,7 @@ export function AnalisisMacro() {
 					</div>
 					<h3 className="text-gray-900 text-xl font-bold mb-3 text-center">Rezago tecnológico generalizado</h3>
 					<p className="text-gray-700 text-base leading-relaxed text-center">
-						en pequeñas y medianas empresas.
+					En pequeñas y medianas empresas, resultando en una pérdida significativa de competitividad y productividad. Este atraso se debe a la limitada inversión en infraestructura digital.
 					</p>
 				</AnimatedCard>
 
@@ -32,7 +32,7 @@ export function AnalisisMacro() {
 					</div>
 					<h3 className="text-gray-900 text-xl font-bold mb-3 text-center">Alta informalidad operativa</h3>
 					<p className="text-gray-700 text-base leading-relaxed text-center">
-						y escasa cultura digital en sectores críticos.
+						Y escasa cultura digital en sectores críticos.
 					</p>
 				</AnimatedCard>
 
@@ -44,7 +44,7 @@ export function AnalisisMacro() {
 					</div>
 					<h3 className="text-gray-900 text-xl font-bold mb-3 text-center">Creciente apertura hacia soluciones tecnológicas</h3>
 					<p className="text-gray-700 text-base leading-relaxed text-center">
-						con foco en eficiencia, producto de la necesidad urgente de reducir costos, errores y tiempos de operación.
+						Con foco en eficiencia, producto de la necesidad urgente de reducir costos, errores y tiempos de operación.
 					</p>
 				</AnimatedCard>
 
@@ -56,7 +56,7 @@ export function AnalisisMacro() {
 					</div>
 					<h3 className="text-gray-900 text-xl font-bold mb-3 text-center">Limitaciones estructurales</h3>
 					<p className="text-gray-700 text-base leading-relaxed text-center">
-						(conectividad, acceso a plataformas de pago, capacidad de inversión), pero también un ecosistema emergente de emprendedores y decisores
+						(Conectividad, acceso a plataformas de pago, capacidad de inversión), pero también un ecosistema emergente de emprendedores y decisores
 						dispuestos a experimentar con nuevas herramientas.
 					</p>
 				</AnimatedCard>
