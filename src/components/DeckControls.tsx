@@ -7,7 +7,6 @@ import { ChevronLeft, ChevronRight, Home, Maximize, Minimize, Menu } from 'lucid
 import { useSlidesRegistry } from '@src/context/SlidesContext'
 import { getSlideTitle } from '@src/lib/slideUtils'
 import { PanelSecciones } from './PanelSecciones'
-import Image from 'next/image'
 
 export function DeckControls() {
 	const { currentIndex, total, next, prev, goToFirst, goToLast, getCurrentSlide } = useSlidesRegistry()
