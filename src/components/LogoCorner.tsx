@@ -8,7 +8,7 @@ interface LogoCornerProps {
 
 export function LogoCorner({ className = '' }: LogoCornerProps) {
 	return (
-		<div className={`fixed top-2 right-2 sm:top-4 sm:right-4 z-10 ${className}`}>
+		<div className={`fixed -top-2 right-0 sm:top-0 sm:right-2 z-10 ${className}`}>
 			<div className="rounded-lg">
 				<Image 
 					src="/SOLWARE_-_26.png" 
