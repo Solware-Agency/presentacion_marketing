@@ -6,7 +6,7 @@ import { ThemeProvider } from 'next-themes';
 const inter = Inter({ subsets: ['latin', 'latin-ext'] });
 
 export const metadata: Metadata = {
-  title: 'Solpat/Solhub - Presentación Interactiva',
+  title: 'Solware - Marketing',
   description: 'Inteligencia Artificial Personalizada para Laboratorios Patológicos',
   icons: {
     icon: [
