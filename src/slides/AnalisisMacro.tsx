@@ -17,7 +17,7 @@ export function AnalisisMacro() {
 						</div>
 					</div>
 					<h3 className="text-gray-900 text-base sm:text-lg md:text-xl font-bold mb-3 text-center px-2">Rezago tecnológico generalizado</h3>
-					<p className="text-gray-700 text-base leading-relaxed text-center">
+					<p className="text-gray-700 text-base text-justify leading-relaxed">
 					En pequeñas y medianas empresas, resultando en una pérdida significativa de competitividad y productividad. Este atraso se debe a la limitada inversión en infraestructura digital.
 					</p>
 				</AnimatedCard>
@@ -29,7 +29,7 @@ export function AnalisisMacro() {
 						</div>
 					</div>
 					<h3 className="text-gray-900 text-base sm:text-lg md:text-xl font-bold mb-3 text-center px-2">Alta informalidad operativa</h3>
-					<p className="text-gray-700 text-base leading-relaxed text-center">
+					<p className="text-gray-700 text-base text-justify leading-relaxed">
 						Y escasa cultura digital en sectores críticos.
 					</p>
 				</AnimatedCard>
@@ -41,7 +41,7 @@ export function AnalisisMacro() {
 						</div>
 					</div>
 					<h3 className="text-gray-900 text-base sm:text-lg md:text-xl font-bold mb-3 text-center px-2">Creciente apertura hacia soluciones tecnológicas</h3>
-					<p className="text-gray-700 text-base leading-relaxed text-center">
+					<p className="text-gray-700 text-base text-justify leading-relaxed">
 						Con foco en eficiencia, producto de la necesidad urgente de reducir costos, errores y tiempos de operación.
 					</p>
 				</AnimatedCard>
@@ -53,7 +53,7 @@ export function AnalisisMacro() {
 						</div>
 					</div>
 					<h3 className="text-gray-900 text-base sm:text-lg md:text-xl font-bold mb-3 text-center px-2">Limitaciones estructurales</h3>
-					<p className="text-gray-700 text-base leading-relaxed text-center">
+					<p className="text-gray-700 text-base text-justify leading-relaxed">
 						(Conectividad, acceso a plataformas de pago, capacidad de inversión), pero también un ecosistema emergente de emprendedores y decisores
 						dispuestos a experimentar con nuevas herramientas.
 					</p>

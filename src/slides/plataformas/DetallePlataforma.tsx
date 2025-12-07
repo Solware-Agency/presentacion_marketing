@@ -67,7 +67,7 @@ export function DetallePlataforma({ plataforma, onNext, onPrev }: DetallePlatafo
 							className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-4"
 						>
 							<h3 className="text-base font-bold text-[#3b82f6] mb-2">Resumen</h3>
-							<p className="text-sm text-white/90 leading-snug">
+							<p className="text-sm text-white/90 text-justify leading-snug">
 								{data.resumen}
 							</p>
 						</motion.div>
@@ -103,7 +103,7 @@ export function DetallePlataforma({ plataforma, onNext, onPrev }: DetallePlatafo
 								className="rounded-xl border border-[#3b82f6]/30 bg-[#3b82f6]/10 backdrop-blur-sm p-3"
 							>
 								<h3 className="text-sm font-bold text-[#3b82f6] mb-1.5">Ejemplo</h3>
-								<p className="text-xs text-white/90 italic leading-snug">
+								<p className="text-xs text-white/90 text-justify italic leading-snug">
 									{data.ejemplo}
 								</p>
 							</motion.div>

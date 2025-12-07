@@ -106,7 +106,7 @@ function PilarCard({
 			</div>
 			<h3 className="text-white text-base sm:text-lg md:text-xl font-bold text-center mb-2 px-2">{titulo}</h3>
 			<p className={`${subtituloColor} text-sm font-semibold text-center mb-3`}>{subtitulo}</p>
-			<p className="text-white/80 text-sm leading-relaxed text-center mb-4">{descripcion}</p>
+			<p className="text-white/80 text-sm text-justify leading-relaxed mb-4">{descripcion}</p>
 
 			<motion.div
 				className="flex flex-wrap items-center justify-center gap-2 mt-auto pt-4 border-t border-white/10"

@@ -15,19 +15,19 @@ export function VentajasOportunidadesDos() {
 						<ul className="space-y-4">
 							<li className="flex items-start">
 								<span className="text-[#3b82f6] font-bold mr-3 text-xl">•</span>
-								<p className="text-gray-700 text-lg leading-relaxed">
+								<p className="text-gray-700 text-lg text-justify leading-relaxed">
 									Muchos laboratorios están listos para migrar, pero temen el cambio, necesitan claridad, confianza y soporte.
 								</p>
 							</li>
 							<li className="flex items-start">
 								<span className="text-[#3b82f6] font-bold mr-3 text-xl">•</span>
-								<p className="text-gray-700 text-lg leading-relaxed">
+								<p className="text-gray-700 text-lg text-justify leading-relaxed">
 									Pocos actores comunican bien cómo sus sistemas generan un retorno operativo tangible.
 								</p>
 							</li>
 							<li className="flex items-start">
 								<span className="text-[#3b82f6] font-bold mr-3 text-xl">•</span>
-								<p className="text-gray-700 text-lg leading-relaxed">Pocos competidores en un mercado gigantesco.</p>
+								<p className="text-gray-700 text-lg text-justify leading-relaxed">Pocos competidores en un mercado gigantesco.</p>
 							</li>
 						</ul>
 					</div>
@@ -39,13 +39,13 @@ export function VentajasOportunidadesDos() {
 						<ul className="space-y-4">
 							<li className="flex items-start">
 								<span className="text-[#16a34a] font-bold mr-3 text-xl">•</span>
-								<p className="text-gray-700 text-lg leading-relaxed">
+								<p className="text-gray-700 text-lg text-justify leading-relaxed">
 									Tecnología actualizada, escalable y adaptable al contexto venezolano.
 								</p>
 							</li>
 							<li className="flex items-start">
 								<span className="text-[#16a34a] font-bold mr-3 text-xl">•</span>
-								<p className="text-gray-700 text-lg leading-relaxed">
+								<p className="text-gray-700 text-lg text-justify leading-relaxed">
 									Modelo de acompañamiento cercano y estratégico, no solo entrega técnica.
 								</p>
 							</li>

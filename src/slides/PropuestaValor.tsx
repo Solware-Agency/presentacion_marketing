@@ -17,7 +17,7 @@ export function PropuestaValor() {
 						</div>
 					</div>
 					<h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-center">Rapidez y eficiencia comprobada</h3>
-					<p className="text-[#dbeafe] text-sm sm:text-base md:text-lg leading-relaxed text-center font-bold">
+					<p className="text-[#dbeafe] text-sm sm:text-base md:text-lg text-justify leading-relaxed font-bold">
 						Optimiza procesos y flujos de trabajo, lo que se traduce en mayor agilidad operativa y mejor rendimiento del equipo.
 					</p>
 				</AnimatedCard>
@@ -29,7 +29,7 @@ export function PropuestaValor() {
 						</div>
 					</div>
 					<h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-center">Soluciones auténticas y personalizadas</h3>
-					<p className="text-[#dbeafe] text-sm sm:text-base md:text-lg leading-relaxed text-center font-bold">
+					<p className="text-[#dbeafe] text-sm sm:text-base md:text-lg text-justify leading-relaxed font-bold">
 						Desarrolla sitios web y herramientas digitales diseñadas a la medida de cada negocio, con identidad propia y enfocadas en los objetivos
 						reales de la empresa.
 					</p>
@@ -42,7 +42,7 @@ export function PropuestaValor() {
 						</div>
 					</div>
 					<h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-center">Acompañamiento integral</h3>
-					<p className="text-[#dbeafe] text-sm sm:text-base md:text-lg leading-relaxed text-center font-bold">
+					<p className="text-[#dbeafe] text-sm sm:text-base md:text-lg text-justify leading-relaxed font-bold">
 						No solo implementa tecnología, sino que asesora y educa al cliente en todo el proceso, para que entienda, aproveche y escale sus
 						soluciones digitales con seguridad y criterio.
 					</p>

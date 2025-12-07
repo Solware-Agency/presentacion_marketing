@@ -80,7 +80,7 @@ export function AnimatedList({ items, delay = 0, stagger = 0.1, className }: Ani
 					>
 						{index + 1}
 					</motion.span>
-					<span className="leading-relaxed">{item}</span>
+					<span className="leading-relaxed text-justify">{item}</span>
 				</motion.li>
 			))}
 		</motion.ul>

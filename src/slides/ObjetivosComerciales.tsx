@@ -17,7 +17,7 @@ export function ObjetivosComerciales() {
 						</div>
 						<h3 className="text-[#3b82f6] text-xl sm:text-2xl md:text-3xl font-bold px-2">Solware</h3>
 					</div>
-					<p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed font-bold px-2">
+					<p className="text-white/90 text-base sm:text-lg md:text-xl text-justify leading-relaxed font-bold px-2">
 						Posicionarse como una marca referente en Venezuela en servicios digitales y tecnológicos para el{' '}
 						<span className="font-bold text-white">31/12/2026</span>, aumentando en un{' '}
 						<span className="font-bold text-[#3b82f6]">200%</span> su visibilidad en Google.
@@ -31,7 +31,7 @@ export function ObjetivosComerciales() {
 						</div>
 						<h3 className="text-[#16a34a] text-xl sm:text-2xl md:text-3xl font-bold px-2">Solhub</h3>
 					</div>
-					<p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed font-bold px-2">
+					<p className="text-white/90 text-base sm:text-lg md:text-xl text-justify leading-relaxed font-bold px-2">
 						Aumentar la cartera de clientes de <span className="font-bold text-white">4 a 10</span> laboratorios/clínicas activas en Venezuela para
 						el <span className="font-bold text-white">31/12/2026</span>, mediante una estrategia digital y comercial enfocada en generación de leads
 						calificados.

@@ -18,7 +18,7 @@ export function MicroentornoInboundInfoLab() {
 					className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-4 sm:p-5 md:p-6 transition duration-300 ease-in-out hover:scale-105 hover:border-[#3b82f6]/50 focus-within:ring-2 focus-within:ring-[#3b82f6]"
 				>
 					<h3 className="text-xl sm:text-2xl font-semibold text-white mb-3 sm:mb-4">Inbound Group</h3>
-					<p className="text-white/90 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6 font-bold">
+					<p className="text-white/90 text-base sm:text-lg text-justify leading-relaxed mb-4 sm:mb-6 font-bold">
 						Agencia integral de marketing de contenidos y SEO (modelo Inbound). Enfoque en atracción orgánica a largo plazo y embudo
 						digital automatizado; se presentan como socio estratégico para nutrir leads calificados sin depender únicamente de pauta
 						tradicional.
@@ -68,7 +68,7 @@ export function MicroentornoInboundInfoLab() {
 					className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-4 sm:p-5 md:p-6 transition duration-300 ease-in-out hover:scale-105 hover:border-[#3b82f6]/50 focus-within:ring-2 focus-within:ring-[#3b82f6]"
 				>
 					<h3 className="text-xl sm:text-2xl font-semibold text-white mb-3 sm:mb-4">InfoLab</h3>
-					<p className="text-white/90 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6 font-bold">
+					<p className="text-white/90 text-base sm:text-lg text-justify leading-relaxed mb-4 sm:mb-6 font-bold">
 						Sistema de gestión integral de laboratorios con mayor trayectoria en Venezuela. Enfoque en funcionalidad completa y seguridad
 						operativa, desde recepción hasta emisión de resultados; comunicación de solución histórica y estable para instituciones que
 						priorizan robustez sobre innovación.

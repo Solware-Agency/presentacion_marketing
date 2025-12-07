@@ -18,7 +18,7 @@ export function MicroentornoMonartechAvila() {
 					className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-4 sm:p-5 md:p-6 transition duration-300 ease-in-out hover:scale-105 hover:border-[#3b82f6]/50 focus-within:ring-2 focus-within:ring-[#3b82f6]"
 				>
 					<h3 className="text-xl sm:text-2xl font-semibold text-white mb-3 sm:mb-4">Monartech</h3>
-					<p className="text-white/90 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6 font-bold">
+					<p className="text-white/90 text-base sm:text-lg text-justify leading-relaxed mb-4 sm:mb-6 font-bold">
 						Soluciones impulsadas por IA para negocios; comunicación directa y enfoque en adopción práctica.
 					</p>
 					<div className="flex items-center gap-2 sm:gap-3">
@@ -66,7 +66,7 @@ export function MicroentornoMonartechAvila() {
 					className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-4 sm:p-5 md:p-6 transition duration-300 ease-in-out hover:scale-105 hover:border-[#3b82f6]/50 focus-within:ring-2 focus-within:ring-[#3b82f6]"
 				>
 					<h3 className="text-xl sm:text-2xl font-semibold text-white mb-3 sm:mb-4">AvilaTek</h3>
-					<p className="text-white/90 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6 font-bold">
+					<p className="text-white/90 text-base sm:text-lg text-justify leading-relaxed mb-4 sm:mb-6 font-bold">
 						Socio de desarrollo tecnológico; narrativa de calidad, cercanía y entendimiento del negocio.
 					</p>
 					<div className="flex items-center gap-3">

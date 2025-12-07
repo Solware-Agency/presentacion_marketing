@@ -15,25 +15,25 @@ export function VentajasOportunidades() {
 						<ul className="space-y-4">
 							<li className="flex items-start">
 								<span className="text-[#3b82f6] font-bold mr-3 text-xl">•</span>
-								<p className="text-gray-700 text-lg leading-relaxed">
+								<p className="text-gray-700 text-lg text-justify leading-relaxed">
 									Crear una oferta media entre "soluciones robóticas sin alma" (Morna Tech) y entregas digitales poco personalizadas (Avila Tek).
 								</p>
 							</li>
 							<li className="flex items-start">
 								<span className="text-[#3b82f6] font-bold mr-3 text-xl">•</span>
-								<p className="text-gray-700 text-lg leading-relaxed">
+								<p className="text-gray-700 text-lg text-justify leading-relaxed">
 									Capitalizar la necesidad de empresas medianas que quieren digitalizarse, <span className="font-bold">pero no entienden el proceso.</span>
 								</p>
 							</li>
 							<li className="flex items-start">
 								<span className="text-[#3b82f6] font-bold mr-3 text-xl">•</span>
-								<p className="text-gray-700 text-lg leading-relaxed">
+								<p className="text-gray-700 text-lg text-justify leading-relaxed">
 									<span className="font-bold">Resaltar los rápidos tiempos de entrega</span> y la eficiencia en los trabajos realizados por la marca.
 								</p>
 							</li>
 							<li className="flex items-start">
 								<span className="text-[#3b82f6] font-bold mr-3 text-xl">•</span>
-								<p className="text-gray-700 text-lg leading-relaxed">
+								<p className="text-gray-700 text-lg text-justify leading-relaxed">
 									Apoyarse en <span className="font-bold">storytelling y casos de éxito reales</span> como motor de posicionamiento.
 								</p>
 							</li>
@@ -44,25 +44,25 @@ export function VentajasOportunidades() {
 				<AnimatedText delay={0.4}>
 					<div className="bg-white rounded-2xl p-8 shadow-lg border border-[#16a34a]/20">
 						<h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6 px-2">Ventajas competitivas</h3>
-						<p className="text-gray-700 text-lg mb-4">
+						<p className="text-gray-700 text-lg text-justify mb-4">
 							Solware se ubica en la zona de <span className="font-bold text-[#16a34a]">"ventaja competitiva"</span> cuando:
 						</p>
 						<ul className="space-y-4">
 							<li className="flex items-start">
 								<span className="text-[#16a34a] font-bold mr-3 text-xl">•</span>
-								<p className="text-gray-700 text-lg leading-relaxed">
+								<p className="text-gray-700 text-lg text-justify leading-relaxed">
 									Atiende cuentas que <span className="font-bold">valoran rapidez, acompañamiento y sencillez</span> sobre profundidad técnica.
 								</p>
 							</li>
 							<li className="flex items-start">
 								<span className="text-[#16a34a] font-bold mr-3 text-xl">•</span>
-								<p className="text-gray-700 text-lg leading-relaxed">
+								<p className="text-gray-700 text-lg text-justify leading-relaxed">
 									<span className="font-bold">Traduce necesidades de negocio a lenguaje simple</span>, sin excesos técnicos ni promesas de IA sin justificación.
 								</p>
 							</li>
 							<li className="flex items-start">
 								<span className="text-[#16a34a] font-bold mr-3 text-xl">•</span>
-								<p className="text-gray-700 text-lg leading-relaxed">
+								<p className="text-gray-700 text-lg text-justify leading-relaxed">
 									Se posiciona como <span className="font-bold">solución humana, cercana y efectiva</span> para empresas sin digitalización previa.
 								</p>
 							</li>

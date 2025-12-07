@@ -31,7 +31,7 @@ function CardPublicidad({ icon, titulo, objetivo, bullets, kpis, delay, ariaLabe
 				<h3 className="text-xl md:text-2xl font-bold text-white pt-1">{titulo}</h3>
 			</div>
 
-			<p className="text-lg md:text-xl font-bold text-[#5d9ff0] mb-4 leading-snug">
+			<p className="text-lg md:text-xl font-bold text-[#5d9ff0] text-justify mb-4 leading-snug">
 				{objetivo}
 			</p>
 

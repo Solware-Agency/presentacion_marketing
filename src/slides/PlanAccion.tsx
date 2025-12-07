@@ -18,7 +18,7 @@ export function PlanAccion() {
 						<h3 className="text-[#ecb424] text-lg sm:text-xl md:text-2xl font-bold px-2">FASE 1</h3>
 					</div>
 					<h4 className="text-white text-base sm:text-lg md:text-xl font-bold mb-3 px-2">Hackeando el sistema</h4>
-					<p className="text-white text-base leading-relaxed mb-4 font-bold">
+					<p className="text-white text-base text-justify leading-relaxed mb-4 font-bold">
 						Solware se enfoca en dejar lista la base digital: web optimizada como hub de conversión, SEO básico con palabras clave priorizadas, lead
 						magnets conectados a formularios y estructura mínima de email marketing.
 					</p>
@@ -50,7 +50,7 @@ export function PlanAccion() {
 						<h3 className="text-[#5d9ff0] text-lg sm:text-xl md:text-2xl font-bold px-2">FASE 2</h3>
 					</div>
 					<h4 className="text-white text-base sm:text-lg md:text-xl font-bold mb-3 px-2">Activando motores</h4>
-					<p className="text-white text-base leading-relaxed mb-4 font-bold">
+					<p className="text-white text-base text-justify leading-relaxed mb-4 font-bold">
 						Se pone en marcha el sistema de contenidos y campañas para empezar a generar leads de forma constante. Publicación activa en redes,
 						workflows de email y lanzamiento de campañas publicitarias.
 					</p>
@@ -82,7 +82,7 @@ export function PlanAccion() {
 						<h3 className="text-[#3aa465] text-lg sm:text-xl md:text-2xl font-bold px-2">FASE 3</h3>
 					</div>
 					<h4 className="text-white text-base sm:text-lg md:text-xl font-bold mb-3 px-2">Optimización en tiempo real</h4>
-					<p className="text-white text-base leading-relaxed mb-4 font-bold">
+					<p className="text-white text-base text-justify leading-relaxed mb-4 font-bold">
 						La prioridad es afinar y escalar lo que funciona. Análisis mensual de resultados, redistribución de presupuesto hacia campañas con mejor
 						retorno y refinamiento continuo de estrategias.
 					</p>

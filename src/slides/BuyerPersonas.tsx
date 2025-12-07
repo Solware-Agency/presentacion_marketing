@@ -300,7 +300,7 @@ function ModalPersona({ persona }: { persona: Persona }) {
 
 					<div className="mt-6">
 						<h4 className="text-lg font-semibold text-[#dbeafe]">Problema</h4>
-						<p className="mt-2 text-white/90 leading-relaxed text-lg font-bold">{persona.problema}</p>
+						<p className="mt-2 text-white/90 text-justify leading-relaxed text-lg font-bold">{persona.problema}</p>
 					</div>
 
 					<div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
