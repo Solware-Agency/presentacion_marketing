@@ -25,7 +25,7 @@ export function DetallePlataforma({ plataforma, onNext, onPrev }: DetallePlatafo
 
 	return (
 		<div
-			className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-full min-h-screen  relative flex items-center justify-center px-4 sm:px-6 lg:px-8"
+			className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-full h-screen relative flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden"
 			onKeyDown={handleKeyDown}
 			tabIndex={0}
 		>
@@ -117,7 +117,7 @@ export function DetallePlataforma({ plataforma, onNext, onPrev }: DetallePlatafo
 							transition={{ duration: 0.45, delay: 0.3, ease: 'easeOut' }}
 							className="flex justify-center items-center"
 						>
-							<div className="mx-auto w-full max-w-[364px] sm:max-w-[416px] max-h-[72vh]">
+							<div className="mx-auto w-full max-w-[280px] sm:max-w-[320px] max-h-[60vh]">
 								<Image
 									src={data.imagenSrc}
 									alt={data.imagenAlt || `Captura de pantalla de ${data.nombre}`}

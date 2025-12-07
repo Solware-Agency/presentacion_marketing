@@ -56,7 +56,7 @@ export const CONTENIDO: Record<PlataformaKey, {
     ],
     ejemplo:
       "Reel 'Así lanzamos la web de X empresa en 7 días' con cierre: '¿Quieres algo así? Escríbenos por DM o en la bio'.",
-    imagenSrc: "/mnt/data/ppt_solware_insta.png",
+    imagenSrc: "/FOTO1.jpg",
     imagenAlt: "Interfaz móvil mostrando grid de publicaciones de Instagram de Solware"
   },
   facebook: {
@@ -101,7 +101,7 @@ export const CONTENIDO: Record<PlataformaKey, {
     ],
     ejemplo:
       "CTA desde redes: 'Escríbenos al WhatsApp para una asesoría gratuita'. Respuesta automática: 'Hola, gracias por contactarnos 👋 Cuéntanos brevemente sobre tu empresa y qué te gustaría mejorar'.",
-    imagenSrc: "/mnt/data/ppt_solware_wa.png",
+    imagenSrc: "/FOTO2.jpg",
     imagenAlt: "Interfaz de WhatsApp Business mostrando conversación con potencial cliente"
   },
   youtube: {

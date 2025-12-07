@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Particles from '@src/components/ui/Particles'
 
 interface AgradecimientoFinalProps {
@@ -76,11 +77,11 @@ export function AgradecimientoFinal({ onFinish, onPrevious }: AgradecimientoFina
 					initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 40 }}
 					animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
 					transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-					className="mx-auto w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-56 lg:h-56 relative"
+					className="mx-auto w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 relative"
 					aria-label="Animación de cohete despegando"
 				>
 					{prefersReducedMotion ? (
-						<div className="text-9xl flex items-center justify-center h-full" role="img" aria-label="Cohete">
+						<div className="text-6xl sm:text-7xl md:text-8xl flex items-center justify-center h-full" role="img" aria-label="Cohete">
 							🚀
 						</div>
 					) : (
@@ -230,6 +231,21 @@ export function AgradecimientoFinal({ onFinish, onPrevious }: AgradecimientoFina
 				>
 					{fraseAleatoria}
 				</motion.p>
+
+				<motion.div
+					initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.9 }}
+					animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, scale: 1 }}
+					transition={{ duration: 0.6, delay: 1, ease: [0.4, 0, 0.2, 1] }}
+					className="flex justify-center mt-6 sm:mt-8"
+				>
+					<Image
+						src="/2-QR.jpg"
+						alt="Código QR"
+						width={200}
+						height={200}
+						className="w-44 h-44 sm:w-48 sm:h-48 md:w-52 md:h-52 object-contain rounded-lg"
+					/>
+				</motion.div>
 			</div>
 
 			<button
