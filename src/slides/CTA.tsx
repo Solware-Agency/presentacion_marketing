@@ -11,11 +11,11 @@ export function CTA() {
 			<Particles />
 			<div className="text-center text-white space-y-8">
 				<AnimatedText delay={0.2}>
-					<h1 className="text-white font-sans text-6xl font-bold">¡Únete a Solware! 🚀</h1>
+					<h1 className="text-white font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold px-2 leading-tight">¡Únete a Solware! 🚀</h1>
 				</AnimatedText>
 
 				<AnimatedText delay={0.4}>
-					<p className="text-3xl text-white/90 max-w-5xl mx-auto">
+					<p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white/90 max-w-5xl mx-auto px-2">
 						Transformemos la gestión administrativa de laboratorios en Venezuela
 					</p>
 				</AnimatedText>
@@ -27,7 +27,7 @@ export function CTA() {
 						className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 max-w-md mx-auto"
 					>
 						<AnimatedText delay={1.0}>
-							<h3 className="text-4xl font-bold text-white mb-4 text-center">Solware Agency</h3>
+							<h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 text-center px-2">Solware Agency</h3>
 						</AnimatedText>
 						<div className="space-y-3">
 							<AnimatedText delay={1.2}>

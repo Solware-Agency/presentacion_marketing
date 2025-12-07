@@ -14,7 +14,7 @@ export function PlataformasDigitales() {
 			<div className="max-w-6xl w-full space-y-8 mt-6">
 				<AnimatedText delay={0.2}>
 					<div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-[#3b82f6]/30">
-						<h3 className="text-[#3b82f6] text-2xl font-bold mb-4">Plataformas Primarias</h3>
+						<h3 className="text-[#3b82f6] text-lg sm:text-xl md:text-2xl font-bold mb-4 px-2">Plataformas Primarias</h3>
 						<div className="grid grid-cols-2 md:grid-cols-5 gap-4">
 							<div className="flex flex-col items-center text-center">
 								<div className="bg-[#3b82f6]/20 p-3 rounded-full mb-2">
@@ -57,7 +57,7 @@ export function PlataformasDigitales() {
 
 				<AnimatedText delay={0.4}>
 					<div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-[#bc81f8]/30">
-						<h3 className="text-[#bc81f8] text-2xl font-bold mb-4">Plataformas Secundarias</h3>
+						<h3 className="text-[#bc81f8] text-lg sm:text-xl md:text-2xl font-bold mb-4 px-2">Plataformas Secundarias</h3>
 						<div className="grid grid-cols-2 gap-4">
 							<div className="flex items-center gap-4">
 								<div className="bg-[#ff0000]/20 p-3 rounded-full">

@@ -18,7 +18,7 @@ export function AnalisisMacro() {
 							<Laptop className="w-10 h-10 text-[#5d9ff0]" />
 						</div>
 					</div>
-					<h3 className="text-gray-900 text-xl font-bold mb-3 text-center">Rezago tecnológico generalizado</h3>
+					<h3 className="text-gray-900 text-base sm:text-lg md:text-xl font-bold mb-3 text-center px-2">Rezago tecnológico generalizado</h3>
 					<p className="text-gray-700 text-base leading-relaxed text-center">
 					En pequeñas y medianas empresas, resultando en una pérdida significativa de competitividad y productividad. Este atraso se debe a la limitada inversión en infraestructura digital.
 					</p>
@@ -30,7 +30,7 @@ export function AnalisisMacro() {
 							<Lightbulb className="w-10 h-10 text-[#ecb424]" />
 						</div>
 					</div>
-					<h3 className="text-gray-900 text-xl font-bold mb-3 text-center">Alta informalidad operativa</h3>
+					<h3 className="text-gray-900 text-base sm:text-lg md:text-xl font-bold mb-3 text-center px-2">Alta informalidad operativa</h3>
 					<p className="text-gray-700 text-base leading-relaxed text-center">
 						Y escasa cultura digital en sectores críticos.
 					</p>
@@ -42,7 +42,7 @@ export function AnalisisMacro() {
 							<Code className="w-10 h-10 text-[#3b82f6]" />
 						</div>
 					</div>
-					<h3 className="text-gray-900 text-xl font-bold mb-3 text-center">Creciente apertura hacia soluciones tecnológicas</h3>
+					<h3 className="text-gray-900 text-base sm:text-lg md:text-xl font-bold mb-3 text-center px-2">Creciente apertura hacia soluciones tecnológicas</h3>
 					<p className="text-gray-700 text-base leading-relaxed text-center">
 						Con foco en eficiencia, producto de la necesidad urgente de reducir costos, errores y tiempos de operación.
 					</p>
@@ -54,7 +54,7 @@ export function AnalisisMacro() {
 							<AlertTriangle className="w-10 h-10 text-red-500" />
 						</div>
 					</div>
-					<h3 className="text-gray-900 text-xl font-bold mb-3 text-center">Limitaciones estructurales</h3>
+					<h3 className="text-gray-900 text-base sm:text-lg md:text-xl font-bold mb-3 text-center px-2">Limitaciones estructurales</h3>
 					<p className="text-gray-700 text-base leading-relaxed text-center">
 						(Conectividad, acceso a plataformas de pago, capacidad de inversión), pero también un ecosistema emergente de emprendedores y decisores
 						dispuestos a experimentar con nuevas herramientas.

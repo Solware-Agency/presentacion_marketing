@@ -17,7 +17,7 @@ export function Dolencia2() {
 						<Heart className="w-16 h-16 text-red-400 mb-4" />
 					</AnimatedIcon>
 					<AnimatedText delay={0.6}>
-						<h3 className="text-2xl font-bold text-white">Riesgo de Vida</h3>
+						<h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white px-2">Riesgo de Vida</h3>
 					</AnimatedText>
 				</AnimatedCard>
 
@@ -27,7 +27,7 @@ export function Dolencia2() {
 						<FileX className="w-16 h-16 text-orange-400 mb-4" />
 					</AnimatedIcon>
 					<AnimatedText delay={0.8}>
-						<h3 className="text-2xl font-bold text-white">Pérdida de Datos</h3>
+						<h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white px-2">Pérdida de Datos</h3>
 					</AnimatedText>
 				</AnimatedCard>
 
@@ -37,7 +37,7 @@ export function Dolencia2() {
 						<Shield className="w-16 h-16 text-yellow-400 mb-4" />
 					</AnimatedIcon>
 					<AnimatedText delay={1.0}>
-						<h3 className="text-2xl font-bold text-white">Riesgo Legal</h3>
+						<h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white px-2">Riesgo Legal</h3>
 					</AnimatedText>
 				</AnimatedCard>
 
@@ -47,7 +47,7 @@ export function Dolencia2() {
 						<Users className="w-16 h-16 text-purple-400 mb-4" />
 					</AnimatedIcon>
 					<AnimatedText delay={1.2}>
-						<h3 className="text-2xl font-bold text-white">Impacto en el Personal</h3>
+						<h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white px-2">Impacto en el Personal</h3>
 					</AnimatedText>
 				</AnimatedCard>
 			</div>
@@ -60,11 +60,11 @@ export function Dolencia2() {
 							<AlertCircle className="w-8 h-8 text-white mr-2" />
 						</AnimatedIcon>
 						<AnimatedText delay={2.0}>
-							<h3 className="text-xl font-bold text-white text-center">En Resumen</h3>
+							<h3 className="text-base sm:text-lg md:text-xl font-bold text-white text-center px-2">En Resumen</h3>
 						</AnimatedText>
 					</div>
 					<AnimatedText delay={2.2}>
-						<p className="text-white text-xl text-center leading-relaxed font-bold">
+						<p className="text-white text-sm sm:text-base md:text-lg lg:text-xl text-center leading-relaxed font-bold px-2">
 							Los laboratorios que no se digitalizan
 							<span className="text-red-400 font-bold"> pierden dinero</span>,
 							<span className="text-red-400 font-bold"> arriesgan vidas</span>,

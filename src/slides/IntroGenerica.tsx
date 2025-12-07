@@ -94,10 +94,10 @@ export default function IntroGenerica({
 							transition={{ ...transitionProps, delay: 0.2 }}
 							className="space-y-3"
 						>
-							<h1 className="text-5xl md:text-6xl font-bold text-white">
+							<h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white px-2 leading-tight">
 								Presentación interactiva
 							</h1>
-							<p className="text-lg md:text-xl text-white/80 max-w-lg mx-auto">
+							<p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 max-w-lg mx-auto px-2">
 								Inicia la presentación y navega con las flechas o la barra espaciadora.
 							</p>
 						</motion.div>

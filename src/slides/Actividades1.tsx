@@ -16,10 +16,10 @@ export function Actividades1() {
 					className="bg-gradient-to-r from-orange-500/20 to-red-500/20 backdrop-blur-sm rounded-2xl p-8 border-2 border-orange-400/30 shadow-xl max-w-4xl mx-auto"
 				>
 					<AnimatedText delay={0.6}>
-						<h3 className="text-4xl font-bold text-white mb-4">¿De dónde vienen las pérdidas?</h3>
+						<h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 px-2 leading-tight">¿De dónde vienen las pérdidas?</h3>
 					</AnimatedText>
 					<AnimatedText delay={0.8}>
-						<p className="text-2xl text-orange-200 font-bold">
+						<p className="text-base sm:text-lg md:text-xl lg:text-2xl text-orange-200 font-bold px-2">
 							De las actividades que realizan <span className="text-orange-400 font-semibold">todos los días</span>
 						</p>
 					</AnimatedText>
@@ -37,7 +37,7 @@ export function Actividades1() {
 						<FileText className="text-blue-400 mb-4 w-20 h-20" />
 					</AnimatedIcon>
 					<AnimatedText delay={1.4}>
-						<h3 className="text-2xl font-bold text-white">Procesos Manuales</h3>
+						<h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white px-2">Procesos Manuales</h3>
 					</AnimatedText>
 				</AnimatedCard>
 
@@ -50,7 +50,7 @@ export function Actividades1() {
 						<Search className="text-red-400 mb-4 w-20 h-20" />
 					</AnimatedIcon>
 					<AnimatedText delay={1.6}>
-						<h3 className="text-2xl font-bold text-white">Búsqueda Ineficiente</h3>
+						<h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white px-2">Búsqueda Ineficiente</h3>
 					</AnimatedText>
 				</AnimatedCard>
 
@@ -63,7 +63,7 @@ export function Actividades1() {
 						<Clock className="text-yellow-400 mb-4 w-20 h-20" />
 					</AnimatedIcon>
 					<AnimatedText delay={1.8}>
-						<h3 className="text-2xl font-bold text-white">Tiempo Perdido</h3>
+						<h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white px-2">Tiempo Perdido</h3>
 					</AnimatedText>
 				</AnimatedCard>
 
@@ -76,7 +76,7 @@ export function Actividades1() {
 						<Users className="text-purple-400 mb-4 w-20 h-20" />
 					</AnimatedIcon>
 					<AnimatedText delay={2.0}>
-						<h3 className="text-2xl font-bold text-white">Impacto en el Equipo</h3>
+						<h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white px-2">Impacto en el Equipo</h3>
 					</AnimatedText>
 				</AnimatedCard>
 			</div>

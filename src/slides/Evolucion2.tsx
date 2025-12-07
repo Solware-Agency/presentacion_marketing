@@ -20,10 +20,10 @@ export function Evolucion2() {
 							<BarChart3 className="w-16 h-16 text-blue-400 mb-3" />
 						</AnimatedIcon>
 						<AnimatedText delay={0.6}>
-							<h3 className="text-3xl font-bold text-white">Business Intelligence</h3>
+							<h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white px-2">Business Intelligence</h3>
 						</AnimatedText>
 						<AnimatedText delay={0.8}>
-							<p className="text-blue-300 text-xl mt-2 font-bold">Análisis predictivo de ingresos</p>
+							<p className="text-blue-300 text-sm sm:text-base md:text-lg lg:text-xl mt-2 font-bold px-2">Análisis predictivo de ingresos</p>
 						</AnimatedText>
 					</AnimatedCard>
 
@@ -36,10 +36,10 @@ export function Evolucion2() {
 							<TrendingUp className="w-16 h-16 text-green-400 mb-3" />
 						</AnimatedIcon>
 						<AnimatedText delay={0.8}>
-							<h3 className="text-3xl font-bold text-white">Análisis Predictivo</h3>
+							<h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white px-2">Análisis Predictivo</h3>
 						</AnimatedText>
 						<AnimatedText delay={1.0}>
-							<p className="text-green-300 text-xl mt-2 font-bold">Tipos de exámenes y desempeño</p>
+							<p className="text-green-300 text-sm sm:text-base md:text-lg lg:text-xl mt-2 font-bold px-2">Tipos de exámenes y desempeño</p>
 						</AnimatedText>
 					</AnimatedCard>
 
@@ -52,10 +52,10 @@ export function Evolucion2() {
 							<PieChart className="w-16 h-16 text-purple-400 mb-3" />
 						</AnimatedIcon>
 						<AnimatedText delay={1.0}>
-							<h3 className="text-3xl font-bold text-white">Decisiones Inteligentes</h3>
+							<h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white px-2">Decisiones Inteligentes</h3>
 						</AnimatedText>
 						<AnimatedText delay={1.2}>
-							<p className="text-purple-300 text-xl mt-2 font-bold">Basadas en datos reales</p>
+							<p className="text-purple-300 text-sm sm:text-base md:text-lg lg:text-xl mt-2 font-bold px-2">Basadas en datos reales</p>
 						</AnimatedText>
 					</AnimatedCard>
 
@@ -68,10 +68,10 @@ export function Evolucion2() {
 							<DollarSign className="w-16 h-16 text-orange-400 mb-3" />
 						</AnimatedIcon>
 						<AnimatedText delay={2.2}>
-							<h3 className="text-3xl font-bold text-white">Facturación</h3>
+							<h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white px-2">Facturación</h3>
 						</AnimatedText>
 						<AnimatedText delay={2.4}>
-							<p className="text-orange-300 text-xl mt-2 font-bold">Control de ingresos y egresos</p>
+							<p className="text-orange-300 text-sm sm:text-base md:text-lg lg:text-xl mt-2 font-bold px-2">Control de ingresos y egresos</p>
 						</AnimatedText>
 					</AnimatedCard>
 
@@ -84,10 +84,10 @@ export function Evolucion2() {
 							<Calculator className="w-16 h-16 text-yellow-400 mb-3" />
 						</AnimatedIcon>
 						<AnimatedText delay={2.4}>
-							<h3 className="text-3xl font-bold text-white">Finanzas</h3>
+							<h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white px-2">Finanzas</h3>
 						</AnimatedText>
 						<AnimatedText delay={2.6}>
-							<p className="text-yellow-300 text-xl mt-2 font-bold">Reportes financieros en tiempo real</p>
+							<p className="text-yellow-300 text-sm sm:text-base md:text-lg lg:text-xl mt-2 font-bold px-2">Reportes financieros en tiempo real</p>
 						</AnimatedText>
 					</AnimatedCard>
 
@@ -100,10 +100,10 @@ export function Evolucion2() {
 							<FileText className="w-16 h-16 text-red-400 mb-3" />
 						</AnimatedIcon>
 						<AnimatedText delay={2.6}>
-							<h3 className="text-3xl font-bold text-white">Reportes</h3>
+							<h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white px-2">Reportes</h3>
 						</AnimatedText>
 						<AnimatedText delay={2.8}>
-							<p className="text-red-300 text-xl mt-2 font-bold">Análisis por sede o médico</p>
+							<p className="text-red-300 text-sm sm:text-base md:text-lg lg:text-xl mt-2 font-bold px-2">Análisis por sede o médico</p>
 						</AnimatedText>
 					</AnimatedCard>
 				</div>

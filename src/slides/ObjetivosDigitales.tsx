@@ -24,12 +24,12 @@ export function ObjetivosDigitales() {
 
 			<div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">
 				<div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-[#3b82f6]/30">
-					<h3 className="text-[#3b82f6] text-3xl font-bold mb-6">Solware</h3>
+					<h3 className="text-[#3b82f6] text-xl sm:text-2xl md:text-3xl font-bold mb-6 px-2">Solware</h3>
 					<AnimatedList items={objetivosSolware} delay={0.2} className="text-white/90 text-base leading-relaxed space-y-3" />
 				</div>
 
 				<div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-[#16a34a]/30">
-					<h3 className="text-[#16a34a] text-3xl font-bold mb-6">Solhub</h3>
+					<h3 className="text-[#16a34a] text-xl sm:text-2xl md:text-3xl font-bold mb-6 px-2">Solhub</h3>
 					<AnimatedList items={objetivosSolhub} delay={0.4} className="text-white/90 text-base leading-relaxed space-y-3" />
 				</div>
 			</div>

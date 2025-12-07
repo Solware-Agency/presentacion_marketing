@@ -20,7 +20,7 @@ export function Evolucion3() {
 						<Handshake className="w-20 h-20 text-blue-400 mb-4" />
 					</AnimatedIcon>
 					<AnimatedText delay={0.6}>
-						<h3 className="text-2xl font-bold text-white">Necesitamos Aliados</h3>
+						<h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white px-2">Necesitamos Aliados</h3>
 					</AnimatedText>
 				</AnimatedCard>
 
@@ -33,7 +33,7 @@ export function Evolucion3() {
 						<DollarSign className="w-20 h-20 text-green-400 mb-4" />
 					</AnimatedIcon>
 					<AnimatedText delay={0.8}>
-						<h3 className="text-2xl font-bold text-white">Inversión</h3>
+						<h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white px-2">Inversión</h3>
 					</AnimatedText>
 				</AnimatedCard>
 
@@ -46,7 +46,7 @@ export function Evolucion3() {
 						<Rocket className="w-20 h-20 text-purple-400 mb-4" />
 					</AnimatedIcon>
 					<AnimatedText delay={1.0}>
-						<h3 className="text-2xl font-bold text-white">Acelerar Roadmap</h3>
+						<h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white px-2">Acelerar Roadmap</h3>
 					</AnimatedText>
 				</AnimatedCard>
 
@@ -59,7 +59,7 @@ export function Evolucion3() {
 						<Users className="w-20 h-20 text-orange-400 mb-4" />
 					</AnimatedIcon>
 					<AnimatedText delay={1.2}>
-						<h3 className="text-2xl font-bold text-white">Transformar el Sector</h3>
+						<h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white px-2">Transformar el Sector</h3>
 					</AnimatedText>
 				</AnimatedCard>
 			</div>
@@ -75,11 +75,11 @@ export function Evolucion3() {
 							<Handshake className="w-8 h-8 text-white mr-2" />
 						</AnimatedIcon>
 						<AnimatedText delay={2.0}>
-							<h3 className="text-xl font-bold text-white text-center">Tu Apoyo es Clave</h3>
+							<h3 className="text-base sm:text-lg md:text-xl font-bold text-white text-center px-2">Tu Apoyo es Clave</h3>
 						</AnimatedText>
 					</div>
 					<AnimatedText delay={2.2}>
-						<p className="text-white text-xl text-center leading-relaxed font-bold">
+						<p className="text-white text-sm sm:text-base md:text-lg lg:text-xl text-center leading-relaxed font-bold px-2">
 							Para lograrlo necesitamos <span className="text-blue-400 font-bold">aliados e inversión</span>.
 							<span className="text-green-400 font-bold"> Tu apoyo</span> nos permitirá acelerar esta hoja de ruta y
 							<span className="text-orange-400 font-bold"> transformar el sector salud</span>.

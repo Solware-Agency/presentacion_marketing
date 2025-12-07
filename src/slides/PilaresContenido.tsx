@@ -105,7 +105,7 @@ function PilarCard({
 					<Icon className={`w-10 h-10 ${iconColor}`} />
 				</div>
 			</div>
-			<h3 className="text-white text-xl font-bold text-center mb-2">{titulo}</h3>
+			<h3 className="text-white text-base sm:text-lg md:text-xl font-bold text-center mb-2 px-2">{titulo}</h3>
 			<p className={`${subtituloColor} text-sm font-semibold text-center mb-3`}>{subtitulo}</p>
 			<p className="text-white/80 text-sm leading-relaxed text-center mb-4">{descripcion}</p>
 

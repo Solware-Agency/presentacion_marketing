@@ -66,19 +66,19 @@ export function AgradecimientoFinal({ onFinish, onPrevious }: AgradecimientoFina
 			transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
 			role="region"
 			aria-label="Lámina final de agradecimiento"
-			className="relative w-full min-h-screen  bg-gradient-to-br from-[#271944] via-[#34182f] to-[#1f2937] text-white grid place-items-center p-8"
+			className="relative w-full min-h-screen bg-gradient-to-br from-[#271944] via-[#34182f] to-[#1f2937] text-white grid place-items-center p-4 sm:p-6 md:p-8"
 		>
 			<LogoCorner />
 			<div className="absolute inset-0 opacity-30" aria-hidden="true">
 				<Particles />
 			</div>
 
-			<div className="relative z-10 max-w-4xl w-full text-center space-y-8">
+			<div className="relative z-10 max-w-4xl w-full text-center space-y-4 sm:space-y-6 md:space-y-8 px-2">
 				<motion.div
 					initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 40 }}
 					animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
 					transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-					className="mx-auto w-40 h-40 md:w-56 md:h-56 relative"
+					className="mx-auto w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-56 lg:h-56 relative"
 					aria-label="Animación de cohete despegando"
 				>
 					{prefersReducedMotion ? (
@@ -207,7 +207,7 @@ export function AgradecimientoFinal({ onFinish, onPrevious }: AgradecimientoFina
 					initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
 					animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
-					className="text-6xl md:text-7xl font-bold !text-white"
+					className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold !text-white leading-tight px-2"
 					style={{ color: '#ffffff' }}
 				>
 					¡Gracias por acompañarnos!
@@ -217,7 +217,7 @@ export function AgradecimientoFinal({ onFinish, onPrevious }: AgradecimientoFina
 					initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
 					animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}
-					className="text-xl md:text-2xl !text-white"
+					className="text-base sm:text-lg md:text-xl lg:text-2xl !text-white px-2"
 					style={{ color: '#ffffff' }}
 				>
 					Sigamos impulsando la innovación.
@@ -227,7 +227,7 @@ export function AgradecimientoFinal({ onFinish, onPrevious }: AgradecimientoFina
 					initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
 					animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.8, ease: [0.4, 0, 0.2, 1] }}
-					className="text-lg md:text-xl !text-white italic"
+					className="text-sm sm:text-base md:text-lg lg:text-xl !text-white italic px-2"
 					style={{ color: '#ffffff' }}
 				>
 					{fraseAleatoria}

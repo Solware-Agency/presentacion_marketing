@@ -25,8 +25,8 @@ export function EstrategiaPortada() {
 						priority
 					/>
 				</div>
-				<h2 className="text-white/100 text-center text-6xl font-bold mb-10">ESTRATEGIA DIGITAL</h2>
-				<div className="mt-4 text-[#dbeafe] text-3xl text-center leading-relaxed">
+				<h2 className="text-white/100 text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 md:mb-10 px-2">ESTRATEGIA DIGITAL</h2>
+				<div className="mt-4 text-[#dbeafe] text-lg sm:text-xl md:text-2xl lg:text-3xl text-center leading-relaxed px-2">
 					<p>Ana Fraute</p>
 					<p>María Jesús Vallejo</p>
 					<p>Claudia Castro</p>

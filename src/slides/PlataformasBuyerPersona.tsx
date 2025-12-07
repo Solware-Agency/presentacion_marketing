@@ -137,7 +137,7 @@ export function PlataformasBuyerPersona({ onRequestNext }: Props) {
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
-					className="text-4xl sm:text-5xl md:text-5xl font-bold mb-2"
+					className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 px-2 leading-tight"
 					style={{ color: '#41e2b8' }}
 				>
 					Plataforma digital relevante para cada buyer persona

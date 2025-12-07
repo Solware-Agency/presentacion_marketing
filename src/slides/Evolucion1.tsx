@@ -20,11 +20,11 @@ export function Evolucion1() {
 						<Eye className="w-20 h-20 text-purple-400 mb-4" />
 					</AnimatedIcon>
 					<AnimatedText delay={0.6}>
-						<h3 className="text-3xl font-bold text-white">Nuestra Visión</h3>
+						<h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white px-2">Nuestra Visión</h3>
 					</AnimatedText>
 					<AnimatedText delay={0.8}>
 						<div className="mt-4">
-							<p className="text-purple-300 text-xl font-bold">Seguir innovando</p>
+							<p className="text-purple-300 text-base sm:text-lg md:text-xl font-bold px-2">Seguir innovando</p>
 						</div>
 					</AnimatedText>
 				</AnimatedCard>
@@ -38,11 +38,11 @@ export function Evolucion1() {
 						<Brain className="w-20 h-20 text-blue-400 mb-4" />
 					</AnimatedIcon>
 					<AnimatedText delay={0.8}>
-						<h3 className="text-3xl font-bold text-white">Inteligencia Artificial</h3>
+						<h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white px-2">Inteligencia Artificial</h3>
 					</AnimatedText>
 					<AnimatedText delay={1.0}>
 						<div className="mt-4">
-							<p className="text-blue-300 text-xl">Ubicar y analizar casos</p>
+							<p className="text-blue-300 text-base sm:text-lg md:text-xl px-2">Ubicar y analizar casos</p>
 						</div>
 					</AnimatedText>
 				</AnimatedCard>
@@ -56,11 +56,11 @@ export function Evolucion1() {
 						<Lightbulb className="w-20 h-20 text-green-400 mb-4" />
 					</AnimatedIcon>
 					<AnimatedText delay={1.0}>
-						<h3 className="text-3xl font-bold text-white">Aprendizaje Continuo</h3>
+						<h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white px-2">Aprendizaje Continuo</h3>
 					</AnimatedText>
 					<AnimatedText delay={1.2}>
 						<div className="mt-4">
-							<p className="text-green-300 text-xl">Aprender de cada paciente</p>
+							<p className="text-green-300 text-base sm:text-lg md:text-xl px-2">Aprender de cada paciente</p>
 						</div>
 					</AnimatedText>
 				</AnimatedCard>
@@ -74,11 +74,11 @@ export function Evolucion1() {
 						<Target className="w-20 h-20 text-orange-400 mb-4" />
 					</AnimatedIcon>
 					<AnimatedText delay={1.2}>
-						<h3 className="text-3xl font-bold text-white">Evolución Continúa</h3>
+						<h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white px-2">Evolución Continúa</h3>
 					</AnimatedText>
 					<AnimatedText delay={1.4}>
 						<div className="mt-4">
-							<p className="text-orange-300 text-xl">Inteligencia en el horizonte</p>
+							<p className="text-orange-300 text-base sm:text-lg md:text-xl px-2">Inteligencia en el horizonte</p>
 						</div>
 					</AnimatedText>
 				</AnimatedCard>

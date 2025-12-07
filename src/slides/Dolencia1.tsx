@@ -17,11 +17,11 @@ export function Dolencia1() {
 							<AlertTriangle className="w-16 h-16 text-red-400 mr-4" />
 						</AnimatedIcon>
 						<AnimatedText delay={0.8}>
-							<h2 className="text-4xl font-bold text-white">La Realidad Cruda</h2>
+							<h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white px-2 leading-tight">La Realidad Cruda</h2>
 						</AnimatedText>
 					</div>
 					<AnimatedText delay={1.0}>
-						<p className="text-2xl text-white leading-relaxed font-bold">
+						<p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed font-bold px-2">
 							<span className="text-6xl font-black text-red-400">8 de cada 10</span>
 							<br />
 							<span className="text-xl font-bold">laboratorios en Venezuela</span>
@@ -40,7 +40,7 @@ export function Dolencia1() {
 							<FileText className="w-16 h-16 text-yellow-400 mb-4" />
 						</AnimatedIcon>
 						<AnimatedText delay={1.6}>
-							<h3 className="text-2xl font-bold text-white mb-4">Procesos Manuales</h3>
+							<h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 px-2">Procesos Manuales</h3>
 						</AnimatedText>
 						<AnimatedText delay={1.8}>
 							<p className="text-white/90 text-lg font-bold">
@@ -59,7 +59,7 @@ export function Dolencia1() {
 							<Clock className="w-16 h-16 text-orange-400 mb-4" />
 						</AnimatedIcon>
 						<AnimatedText delay={1.8}>
-							<h3 className="text-2xl font-bold text-white mb-4">Pérdida de Tiempo</h3>
+							<h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 px-2">Pérdida de Tiempo</h3>
 						</AnimatedText>
 						<AnimatedText delay={2.0}>
 							<p className="text-white/90 text-lg font-bold">
@@ -78,7 +78,7 @@ export function Dolencia1() {
 							<DollarSign className="w-16 h-16 text-red-400 mb-4" />
 						</AnimatedIcon>
 						<AnimatedText delay={2.0}>
-							<h3 className="text-2xl font-bold text-white mb-4">Pérdida Económica</h3>
+							<h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 px-2">Pérdida Económica</h3>
 						</AnimatedText>
 						<AnimatedText delay={2.2}>
 							<p className="text-white/90 text-lg font-bold">

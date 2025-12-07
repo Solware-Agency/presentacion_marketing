@@ -13,7 +13,7 @@ export function VentajasOportunidades() {
 			<div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
 				<AnimatedText delay={0.2}>
 					<div className="bg-white rounded-2xl p-8 shadow-lg border border-[#3b82f6]/20">
-						<h3 className="text-3xl font-bold text-gray-900 mb-6">Oportunidades competitivas</h3>
+						<h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6 px-2">Oportunidades competitivas</h3>
 						<ul className="space-y-4">
 							<li className="flex items-start">
 								<span className="text-[#3b82f6] font-bold mr-3 text-xl">•</span>
@@ -45,7 +45,7 @@ export function VentajasOportunidades() {
 
 				<AnimatedText delay={0.4}>
 					<div className="bg-white rounded-2xl p-8 shadow-lg border border-[#16a34a]/20">
-						<h3 className="text-3xl font-bold text-gray-900 mb-6">Ventajas competitivas</h3>
+						<h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6 px-2">Ventajas competitivas</h3>
 						<p className="text-gray-700 text-lg mb-4">
 							Solware se ubica en la zona de <span className="font-bold text-[#16a34a]">"ventaja competitiva"</span> cuando:
 						</p>
