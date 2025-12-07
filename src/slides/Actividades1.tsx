@@ -1,10 +1,12 @@
+'use client'
+
 import { FileText, Search, Clock, Users } from 'lucide-react'
 import { SlideTitle } from '@src/components/SlideTitle'
 import { AnimatedText, AnimatedCard, AnimatedIcon } from '@src/components/AnimatedElements'
 
 export function Actividades1() {
 	return (
-		<div className="bg-gradient-to-br from-indigo-900 to-indigo-950 w-screen h-screen flex flex-col p-6">
+		<div className="bg-gradient-to-br from-indigo-900 to-indigo-950 w-full min-h-screen flex flex-col p-4 sm:p-6">
 			<SlideTitle title="La trampa de lo manual" />
 
 			{/* Pregunta introductoria */}
@@ -14,7 +16,7 @@ export function Actividades1() {
 					className="bg-gradient-to-r from-orange-500/20 to-red-500/20 backdrop-blur-sm rounded-2xl p-8 border-2 border-orange-400/30 shadow-xl max-w-4xl mx-auto"
 				>
 					<AnimatedText delay={0.6}>
-						<h3 className="text-4xl font-bold text-white mb-4-strong">¿De dónde vienen las pérdidas?</h3>
+						<h3 className="text-4xl font-bold text-white mb-4">¿De dónde vienen las pérdidas?</h3>
 					</AnimatedText>
 					<AnimatedText delay={0.8}>
 						<p className="text-2xl text-orange-200 font-bold">

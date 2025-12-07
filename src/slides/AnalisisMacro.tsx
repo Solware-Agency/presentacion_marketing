@@ -7,7 +7,7 @@ import { Laptop, Lightbulb, Code, AlertTriangle } from 'lucide-react'
 
 export function AnalisisMacro() {
 	return (
-		<div className="bg-gradient-to-br from-[#e0e7ff] via-[#ddd6fe] to-[#fce7f3] w-screen h-screen flex flex-col items-center justify-center p-8 overflow-hidden relative">
+		<div className="bg-gradient-to-br from-[#e0e7ff] via-[#ddd6fe] to-[#fce7f3] w-full min-h-screen flex flex-col items-center justify-center p-8  relative">
 			<LogoCorner />
 			<SlideTitle title="Análisis Competitivo" subtitle="Macroentorno" />
 

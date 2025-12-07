@@ -1,10 +1,12 @@
+'use client'
+
 import { Handshake, DollarSign, Rocket, Users } from 'lucide-react'
 import { SlideTitle } from '@src/components/SlideTitle'
 import { AnimatedText, AnimatedCard, AnimatedIcon } from '@src/components/AnimatedElements'
 
 export function Evolucion3() {
 	return (
-		<div className="bg-gradient-to-br from-indigo-900 to-indigo-950 w-screen h-screen flex flex-col p-6">
+		<div className="bg-gradient-to-br from-indigo-900 to-indigo-950 w-full min-h-screen flex flex-col p-6">
 			<SlideTitle title="La evolución continúa" />
 
 			{/* Contenido principal - 2x2 grid con cuadros del mismo tamaño */}

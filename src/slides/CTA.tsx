@@ -1,3 +1,5 @@
+'use client'
+
 // import { Card, CardHeader, CardTitle, CardContent } from '@src/components/ui/card'
 import {Globe, Phone, Instagram, Linkedin} from 'lucide-react'
 import Particles from '@src/components/ui/Particles'
@@ -5,7 +7,7 @@ import { AnimatedText, AnimatedCard, AnimatedIcon } from '@src/components/Animat
 
 export function CTA() {
 	return (
-		<div className="bg-gradient-to-br from-indigo-900/90 to-purple-900/90 w-screen h-screen flex flex-col items-center justify-center">
+		<div className="bg-gradient-to-br from-indigo-900/90 to-purple-900/90 w-full min-h-screen flex flex-col items-center justify-center py-8 px-4">
 			<Particles />
 			<div className="text-center text-white space-y-8">
 				<AnimatedText delay={0.2}>

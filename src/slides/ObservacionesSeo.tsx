@@ -38,19 +38,19 @@ function ChipSEO({ texto, delay }: ChipSEOProps) {
 
 export function ObservacionesSeo() {
 	return (
-		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-screen h-screen flex flex-col items-center justify-center p-6 overflow-hidden relative">
+		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-full min-h-screen flex flex-col items-center justify-center p-6  relative">
 			<LogoCorner />
 			<div className="text-center mb-8 h-24 flex flex-col justify-center">
 				<motion.h1
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5 }}
-					className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2"
+					className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2"
 					style={{ color: '#41e2b8' }}
 				>
 					Observaciones SEO
 				</motion.h1>
-				<div className="w-32 h-1 bg-gradient-to-r from-[#3b82f6] via-[#bc81f8] to-[#ce609c] mx-auto rounded-full"></div>
+				<div className="w-40 sm:w-56 md:w-72 h-2 sm:h-2 md:h-2.5 mx-auto rounded-full bg-gradient-to-r from-[#3b82f6] via-[#bc81f8] to-[#ce609c] shadow-[0_0_10px_rgba(59,130,246,0.5),0_0_20px_rgba(188,129,248,0.3),0_0_30px_rgba(206,96,156,0.2)]"></div>
 			</div>
 
 			<div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">

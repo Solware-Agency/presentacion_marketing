@@ -26,7 +26,7 @@ export function InstagramFacebook({ onNext, onPrev }: InstagramFacebookProps) {
 
 	return (
 		<div
-			className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-screen h-screen overflow-hidden relative flex items-center justify-center px-4 sm:px-6 lg:px-8"
+			className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-full min-h-screen  relative flex items-center justify-center px-4 sm:px-6 lg:px-8"
 			onKeyDown={handleKeyDown}
 			tabIndex={0}
 		>

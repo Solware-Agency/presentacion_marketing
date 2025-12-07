@@ -1,10 +1,12 @@
+'use client'
+
 import { AlertTriangle, Clock, DollarSign, FileText } from 'lucide-react'
 import { SlideTitle } from '@src/components/SlideTitle'
 import { AnimatedText, AnimatedCard, AnimatedIcon } from '@src/components/AnimatedElements'
 
 export function Dolencia1() {
 	return (
-		<div className="bg-gradient-to-br from-indigo-900 to-indigo-950 w-screen h-screen flex flex-col p-6">
+		<div className="bg-gradient-to-br from-indigo-900 to-indigo-950 w-full min-h-screen flex flex-col p-4 sm:p-6">
 			<SlideTitle title="Costos ocultos" />
 
 			{/* Estadística principal - centrada y prominente */}
@@ -15,7 +17,7 @@ export function Dolencia1() {
 							<AlertTriangle className="w-16 h-16 text-red-400 mr-4" />
 						</AnimatedIcon>
 						<AnimatedText delay={0.8}>
-							<h2 className="text-4xl font-bold text-white-strong">La Realidad Cruda</h2>
+							<h2 className="text-4xl font-bold text-white">La Realidad Cruda</h2>
 						</AnimatedText>
 					</div>
 					<AnimatedText delay={1.0}>

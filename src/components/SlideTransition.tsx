@@ -208,12 +208,12 @@ export function FadeTransition({ children, slideIndex, direction, className }: S
 				animate="center"
 				exit="exit"
 				transition={fadeTransition}
-				className={`absolute inset-0 slide-transition-container gpu-accelerated no-flash ${className || ''}`}
+				className={`relative w-full min-h-screen slide-transition-container gpu-accelerated no-flash ${className || ''}`}
 				style={{
 					willChange: 'transform, opacity',
 				}}
 			>
-				<div className="slide-transition-content w-full h-full">{children}</div>
+				<div className="slide-transition-content w-full min-h-screen">{children}</div>
 			</motion.div>
 		</AnimatePresence>
 	)

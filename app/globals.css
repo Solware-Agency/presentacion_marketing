@@ -326,4 +326,30 @@
     }
   }
 
+  /* Scroll suave y responsive para móviles */
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  /* Mejoras para orientación vertical en móviles */
+  @media (orientation: portrait) {
+    .min-h-screen {
+      min-height: 100vh;
+      min-height: 100dvh; /* Dynamic viewport height para móviles */
+    }
+  }
+
+  /* Ajustes de padding responsive para móviles */
+  @media (max-width: 640px) {
+    .slide-container {
+      padding: 1rem;
+    }
+  }
+
 }

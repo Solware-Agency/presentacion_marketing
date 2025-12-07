@@ -66,7 +66,7 @@ export function AgradecimientoFinal({ onFinish, onPrevious }: AgradecimientoFina
 			transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
 			role="region"
 			aria-label="Lámina final de agradecimiento"
-			className="relative w-screen h-screen overflow-hidden bg-gradient-to-br from-[#271944] via-[#34182f] to-[#1f2937] text-white grid place-items-center p-8"
+			className="relative w-full min-h-screen  bg-gradient-to-br from-[#271944] via-[#34182f] to-[#1f2937] text-white grid place-items-center p-8"
 		>
 			<LogoCorner />
 			<div className="absolute inset-0 opacity-30" aria-hidden="true">

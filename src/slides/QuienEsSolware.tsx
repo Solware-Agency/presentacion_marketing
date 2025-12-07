@@ -6,7 +6,7 @@ import { LogoCorner } from '@src/components/LogoCorner'
 
 export function QuienEsSolware() {
 	return (
-		<div className="bg-gradient-to-br from-[#1e0c2f] via-[#2a1350] to-[#4b1c7a] w-screen h-screen flex flex-col items-center justify-center p-10 sm:p-8 md:p-8 overflow-hidden relative">
+		<div className="bg-gradient-to-br from-[#1e0c2f] via-[#2a1350] to-[#4b1c7a] w-full min-h-screen flex flex-col items-center justify-center p-4 sm:p-8 md:p-10 relative">
 			<LogoCorner />
 			<SlideTitle title="¿Quién es Solware Agency?" />
 

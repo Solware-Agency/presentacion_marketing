@@ -129,7 +129,7 @@ export function PlataformasBuyerPersona({ onRequestNext }: Props) {
 			data-slide="plataformas-buyer-persona"
 			aria-label="Plataforma digital relevante para cada buyer persona"
 			onClick={manejarClick}
-			className="w-screen h-screen overflow-hidden bg-gray-900 text-white p-8 cursor-pointer flex flex-col relative"
+			className="w-full min-h-screen  bg-gray-900 text-white p-8 cursor-pointer flex flex-col relative"
 		>
 			<LogoCorner />
 			<header className="text-center mb-8 h-24 flex flex-col justify-center">
@@ -137,12 +137,12 @@ export function PlataformasBuyerPersona({ onRequestNext }: Props) {
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
-					className="text-4xl font-bold mb-2"
+					className="text-4xl sm:text-5xl md:text-5xl font-bold mb-2"
 					style={{ color: '#41e2b8' }}
 				>
 					Plataforma digital relevante para cada buyer persona
 				</motion.h1>
-				<div className="w-32 h-1 bg-gradient-to-r from-[#3b82f6] via-[#bc81f8] to-[#ce609c] mx-auto rounded-full"></div>
+				<div className="w-40 sm:w-56 md:w-72 h-2 sm:h-2 md:h-2.5 mx-auto rounded-full bg-gradient-to-r from-[#3b82f6] via-[#bc81f8] to-[#ce609c] shadow-[0_0_10px_rgba(59,130,246,0.5),0_0_20px_rgba(188,129,248,0.3),0_0_30px_rgba(206,96,156,0.2)]"></div>
 			</header>
 
 			<div className="flex-1 flex flex-col items-center justify-center max-w-6xl mx-auto w-full">

@@ -144,7 +144,7 @@ export function BuyerPersonas({ onRequestNext }: Props) {
 			data-slide="buyer-personas"
 			aria-label="Buyer Personas"
 			onClick={handleClick}
-			className="w-screen h-screen overflow-hidden bg-gradient-to-br from-[#111827] to-[#1e293b] text-white cursor-pointer relative"
+			className="w-full min-h-screen  bg-gradient-to-br from-[#111827] to-[#1e293b] text-white cursor-pointer relative"
 		>
 			<LogoCorner />
 			<div
@@ -152,8 +152,8 @@ export function BuyerPersonas({ onRequestNext }: Props) {
 				aria-hidden={focus ? 'true' : 'false'}
 			>
 				<header className="text-center mb-8 h-24 flex flex-col justify-center">
-					<h1 className="text-4xl font-bold mb-2" style={{ color: '#41e2b8' }}>Buyer Personas</h1>
-					<div className="w-32 h-1 bg-gradient-to-r from-[#3b82f6] via-[#bc81f8] to-[#ce609c] mx-auto rounded-full"></div>
+					<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2" style={{ color: '#41e2b8' }}>Buyer Personas</h1>
+					<div className="w-40 sm:w-56 md:w-72 h-2 sm:h-2 md:h-2.5 mx-auto rounded-full bg-gradient-to-r from-[#3b82f6] via-[#bc81f8] to-[#ce609c] shadow-[0_0_10px_rgba(59,130,246,0.5),0_0_20px_rgba(188,129,248,0.3),0_0_30px_rgba(206,96,156,0.2)]"></div>
 				</header>
 
 				<div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 place-content-center">

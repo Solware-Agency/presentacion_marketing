@@ -1,12 +1,13 @@
+'use client'
+
 import { BarChart3, TrendingUp, DollarSign, FileText, Calculator, PieChart } from 'lucide-react'
 import { SlideTitle } from '@src/components/SlideTitle'
 import { AnimatedText, AnimatedCard, AnimatedIcon } from '@src/components/AnimatedElements'
 
 export function Evolucion2() {
 	return (
-		<>
-			<div className="bg-gradient-to-br from-indigo-900 to-indigo-950 w-screen h-screen flex flex-col p-6">
-				<SlideTitle title="La evolución continúa" />
+		<div className="bg-gradient-to-br from-indigo-900 to-indigo-950 w-full min-h-screen flex flex-col p-6">
+			<SlideTitle title="La evolución continúa" />
 
 				{/* Contenido principal - 2x3 grid con cuadros del mismo tamaño */}
 				<div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8">
@@ -111,7 +112,6 @@ export function Evolucion2() {
 				<div className="absolute top-20 right-20 w-16 h-16 bg-purple-400/20 rounded-full animate-ping"></div>
 				<div className="absolute bottom-20 left-20 w-20 h-20 bg-pink-400/20 rounded-full animate-pulse"></div>
 				<div className="absolute top-1/3 right-10 w-12 h-12 bg-white/10 rounded-full animate-bounce"></div>
-			</div>
-		</>
+		</div>
 	)
 }

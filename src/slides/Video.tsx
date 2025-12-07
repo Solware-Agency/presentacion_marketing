@@ -1,3 +1,5 @@
+'use client'
+
 // import { SlideTitle } from '@src/components/SlideTitle'
 import { useRef, useEffect } from 'react'
 
@@ -12,7 +14,11 @@ export function VideoPanel({ videoPrecargado = false }: VideoPanelProps) {
 		const video = videoRef.current
 		if (video && videoPrecargado) {
 			// Iniciar el video cuando el componente se monta (slide visible) y está precargado
-			video.play().catch(console.error)
+			video.play().catch((error) => {
+				if (process.env.NODE_ENV === 'development') {
+					console.error('Error al reproducir video:', error)
+				}
+			})
 		}
 
 		// Cleanup: pausar el video cuando el componente se desmonta
@@ -25,7 +31,7 @@ export function VideoPanel({ videoPrecargado = false }: VideoPanelProps) {
 	}, [videoPrecargado])
 
 	return (
-		<div className="bg-gradient-to-br from-indigo-900 to-indigo-950 w-screen h-screen flex flex-col justify-center p-6 relative">
+		<div className="bg-gradient-to-br from-indigo-900 to-indigo-950 w-full min-h-screen flex flex-col justify-center p-4 sm:p-6 relative">
 			{/* <SlideTitle title="La fórmula SolHub" gradientColor="from-green-400 to-blue-400" /> */}
 
 			{/* Video de demostración */}

@@ -67,7 +67,7 @@ export function SeccionPlataformas({ onRequestNext }: SeccionPlataformasProps) {
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
 				transition={{ duration: 0.3, ease: 'easeOut' }}
-				className="w-screen h-screen"
+				className="w-full min-h-screen"
 			>
 				{vistaActual === 'intro' ? (
 					<PortadaPlataformas onNext={avanzar} onPrev={retroceder} esSegundaVez={indiceInterno === 6} />

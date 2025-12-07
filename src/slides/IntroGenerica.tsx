@@ -71,7 +71,7 @@ export default function IntroGenerica({
 	const transitionProps = { duration: 0.45, ease: [0.4, 0, 0.2, 1] as const }
 
 	return (
-		<div className="relative w-screen h-screen overflow-hidden bg-gradient-to-br from-[#271944] via-[#34182f] to-[#1f2937]">
+		<div className="relative w-full min-h-screen  bg-gradient-to-br from-[#271944] via-[#34182f] to-[#1f2937]">
 			<div className="absolute inset-0 flex items-center justify-center p-4">
 				<motion.div
 					{...animationProps}

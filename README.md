@@ -2,6 +2,8 @@
 
 Presentación interactiva para el pitch de Solpat/Solhub, una startup de IA para laboratorios patológicos.
 
+> **📦 Gestor de paquetes:** Este proyecto utiliza **npm**. Todos los comandos deben ejecutarse con `npm` (no pnpm ni yarn).
+
 ## 🚀 Características
 
 - **Presentación interactiva** con navegación avanzada
@@ -94,6 +96,8 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
 ## 🚀 Instalación y Desarrollo
 
+> **Nota:** Este proyecto utiliza **npm** como gestor de paquetes.
+
 ```bash
 # Instalar dependencias
 npm install
@@ -107,8 +111,8 @@ npm run generate:slides
 # Build para producción
 npm run build
 
-# Iniciar en producción
-npm start
+# Iniciar en producción (servir build estático)
+npm run start
 ```
 
 ## 📊 Contenido de la Presentación

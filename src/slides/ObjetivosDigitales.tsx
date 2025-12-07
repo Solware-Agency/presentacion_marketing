@@ -18,7 +18,7 @@ export function ObjetivosDigitales() {
 	]
 
 	return (
-		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-screen h-screen flex flex-col items-center justify-center p-8 overflow-hidden relative">
+		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-full min-h-screen flex flex-col items-center justify-center p-8  relative">
 			<LogoCorner />
 			<SlideTitle title="Objetivos Digitales" />
 

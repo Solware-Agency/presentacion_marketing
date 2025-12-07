@@ -47,11 +47,11 @@ function SlidesContent() {
 	)
 
 	return (
-		<div className="h-screen w-screen overflow-hidden">
+		<div className="min-h-screen w-screen overflow-y-auto overflow-x-hidden">
 			<DeckControls />
 
-			<div className="h-full w-full overflow-hidden relative">
-				<FadeTransition slideIndex={currentIndex} direction={direction} className="w-full h-full">
+			<div className="min-h-screen w-full relative">
+				<FadeTransition slideIndex={currentIndex} direction={direction} className="w-full min-h-screen">
 					{(() => {
 						const SlideComponent = slides[currentIndex].component
 						const currentSlideId = slides[currentIndex].id
