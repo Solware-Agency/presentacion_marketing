@@ -2,7 +2,6 @@
 
 import { SlideTitle } from '@src/components/SlideTitle'
 import { AnimatedList } from '@src/components/AnimatedElements'
-import { LogoCorner } from '@src/components/LogoCorner'
 
 export function ObjetivosDigitales() {
 	const objetivosSolware = [
@@ -19,7 +18,6 @@ export function ObjetivosDigitales() {
 
 	return (
 		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-full min-h-screen flex flex-col items-center justify-center p-8  relative">
-			<LogoCorner />
 			<SlideTitle title="Objetivos Digitales" />
 
 			<div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">

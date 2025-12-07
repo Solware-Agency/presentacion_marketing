@@ -2,13 +2,11 @@
 
 import { SlideTitle } from '@src/components/SlideTitle'
 import { AnimatedText } from '@src/components/AnimatedElements'
-import { LogoCorner } from '@src/components/LogoCorner'
 import { Globe, Linkedin, Instagram, Facebook, Mail, Youtube } from 'lucide-react'
 
 export function PlataformasDigitales() {
 	return (
 		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-full min-h-screen flex flex-col items-center justify-center p-4 sm:p-8 relative">
-			<LogoCorner />
 			<SlideTitle title="Plataformas Digitales" />
 
 			<div className="max-w-6xl w-full space-y-8 mt-6">

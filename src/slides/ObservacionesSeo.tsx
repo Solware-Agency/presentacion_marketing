@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { AlertCircle } from 'lucide-react'
 import Image from 'next/image'
-import { LogoCorner } from '@src/components/LogoCorner'
 
 const OBSERVACIONES_SEO = [
 	'Conflicto de marca en Google: "Solware" → sugiere "software".',
@@ -39,7 +38,6 @@ function ChipSEO({ texto, delay }: ChipSEOProps) {
 export function ObservacionesSeo() {
 	return (
 		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-full min-h-screen flex flex-col items-center justify-center p-3 sm:p-4 md:p-6 relative">
-			<LogoCorner />
 			<div className="text-center mb-4 sm:mb-6 md:mb-8 flex flex-col justify-center">
 				<motion.h1
 					initial={{ opacity: 0, y: -20 }}

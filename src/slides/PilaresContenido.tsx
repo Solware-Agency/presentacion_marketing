@@ -2,7 +2,6 @@
 
 import { SlideTitle } from '@src/components/SlideTitle'
 import { AnimatedCard } from '@src/components/AnimatedElements'
-import { LogoCorner } from '@src/components/LogoCorner'
 import { Package, BookOpen, MessageSquare, Heart, Globe, Instagram, Linkedin, Facebook, Mail, Youtube, Video } from 'lucide-react'
 import { motion } from 'framer-motion'
 
@@ -126,7 +125,6 @@ function PilarCard({
 export function PilaresContenido() {
 	return (
 		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-full min-h-screen flex flex-col items-center justify-center p-8  relative">
-			<LogoCorner />
 			<SlideTitle title="Pilares de Contenido" />
 
 			<div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">

@@ -2,8 +2,8 @@
 
 import { useEffect, useCallback, useState, useRef } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { User, MapPin, Building2, Calendar, UserRound } from 'lucide-react'
-import { LogoCorner } from '@src/components/LogoCorner'
+import { MapPin, Building2, Calendar, UserRound } from 'lucide-react'
+import Image from 'next/image'
 
 type PersonaId = 'carlos' | 'valeria' | 'rafael'
 
@@ -146,7 +146,6 @@ export function BuyerPersonas({ onRequestNext }: Props) {
 			onClick={handleClick}
 			className="w-full min-h-screen  bg-gradient-to-br from-[#111827] to-[#1e293b] text-white cursor-pointer relative"
 		>
-			<LogoCorner />
 			<div
 				className={`mx-auto max-w-7xl h-full flex flex-col p-8 transition-opacity duration-300 ${focus ? 'pointer-events-none opacity-0' : 'opacity-100'}`}
 				aria-hidden={focus ? 'true' : 'false'}
@@ -173,13 +172,28 @@ export function BuyerPersonas({ onRequestNext }: Props) {
 }
 
 function TarjetaPersonaCompacta({ persona }: { persona: Persona }) {
+	const getImageSrc = () => {
+		if (persona.id === 'carlos') return '/carlos.png'
+		if (persona.id === 'valeria') return '/valeria.png'
+		if (persona.id === 'rafael') return '/doctor.png'
+		return ''
+	}
+
 	return (
 		<motion.div
 			layoutId={`card-${persona.id}`}
 			className="text-left bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-6 transition duration-300 ease-in-out hover:scale-105 hover:border-[#3b82f6]/50"
 		>
 			<div className="flex items-center gap-3 mb-6">
-				<User className="w-6 h-6 text-white/90" aria-hidden="true" />
+				<div className="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-white/20">
+					<Image
+						src={getImageSrc()}
+						alt={persona.nombre}
+						width={64}
+						height={64}
+						className="object-cover w-full h-full"
+					/>
+				</div>
 				<h3 className="text-2xl font-semibold">{persona.nombre}</h3>
 			</div>
 
@@ -221,6 +235,13 @@ function TarjetaPersonaCompacta({ persona }: { persona: Persona }) {
 }
 
 function ModalPersona({ persona }: { persona: Persona }) {
+	const getImageSrc = () => {
+		if (persona.id === 'carlos') return '/carlos.png'
+		if (persona.id === 'valeria') return '/valeria.png'
+		if (persona.id === 'rafael') return '/doctor.png'
+		return ''
+	}
+
 	return (
 		<>
 			<motion.div
@@ -243,8 +264,18 @@ function ModalPersona({ persona }: { persona: Persona }) {
 			>
 				<div className="w-[90vw] md:w-[56vw] max-w-3xl rounded-2xl border border-white/10 bg-gradient-to-br from-[#1f2937] via-[#271944] to-[#34182f] p-8 shadow-2xl text-white pointer-events-auto">
 					<div className="flex items-start justify-between gap-4">
-						<div>
-							<h3 className="text-3xl font-semibold">{persona.nombre}</h3>
+						<div className="flex items-start gap-4">
+							<div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0 border-2 border-white/20">
+								<Image
+									src={getImageSrc()}
+									alt={persona.nombre}
+									width={96}
+									height={96}
+									className="object-cover w-full h-full"
+								/>
+							</div>
+							<div>
+								<h3 className="text-3xl font-semibold">{persona.nombre}</h3>
 							<div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-white/70 text-sm">
 								<span className="flex items-center gap-2 font-bold" aria-label={`Sexo: ${persona.sexo}`}>
 									<UserRound className="w-4 h-4" aria-hidden="true" />
@@ -262,6 +293,7 @@ function ModalPersona({ persona }: { persona: Persona }) {
 							<div className="mt-2 flex items-start gap-2 text-white/70 text-sm">
 								<Building2 className="w-4 h-4 flex-shrink-0 mt-0.5" aria-hidden="true" />
 								<span className="font-bold">{persona.tipoNegocio}</span>
+							</div>
 							</div>
 						</div>
 					</div>

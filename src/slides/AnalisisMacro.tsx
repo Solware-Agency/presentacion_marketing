@@ -2,13 +2,11 @@
 
 import { SlideTitle } from '@src/components/SlideTitle'
 import { AnimatedCard } from '@src/components/AnimatedElements'
-import { LogoCorner } from '@src/components/LogoCorner'
 import { Laptop, Lightbulb, Code, AlertTriangle } from 'lucide-react'
 
 export function AnalisisMacro() {
 	return (
 		<div className="bg-gradient-to-br from-[#e0e7ff] via-[#ddd6fe] to-[#fce7f3] w-full min-h-screen flex flex-col items-center justify-center p-8  relative">
-			<LogoCorner />
 			<SlideTitle title="Análisis Competitivo" subtitle="Macroentorno" />
 
 			<div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">

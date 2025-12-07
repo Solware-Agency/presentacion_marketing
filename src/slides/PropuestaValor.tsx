@@ -2,13 +2,11 @@
 
 import { SlideTitle } from '@src/components/SlideTitle'
 import { AnimatedCard } from '@src/components/AnimatedElements'
-import { LogoCorner } from '@src/components/LogoCorner'
 import { Zap, Sparkles, Users } from 'lucide-react'
 
 export function PropuestaValor() {
 	return (
 		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-full min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8  relative">
-			<LogoCorner />
 			<SlideTitle title="Propuesta de Valor" />
 
 			<div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mt-4 sm:mt-6 md:mt-8 px-4">

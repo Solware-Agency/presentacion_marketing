@@ -4,6 +4,7 @@ import { useMemo, useEffect, useState, useRef } from 'react'
 import { DeckControls } from '@src/components/DeckControls'
 import { TimerWrapper } from '@src/components/TimerWrapper'
 import { Logo } from '@src/components/Logo'
+import { LogoCorner } from '@src/components/LogoCorner'
 import { FadeTransition } from '@src/components/SlideTransition'
 import { useSlideAnimations } from '@src/hooks/useSlideAnimations'
 import { SlidesProvider, useSlidesRegistry } from '@src/context/SlidesContext'
@@ -47,45 +48,48 @@ function SlidesContent() {
 	)
 
 	return (
-		<div className="min-h-screen w-screen overflow-y-auto overflow-x-hidden">
-			<DeckControls />
+		<>
+			<LogoCorner />
+			<div className="min-h-screen w-screen overflow-y-auto overflow-x-hidden">
+				<DeckControls />
 
-			<div className="min-h-screen w-full relative">
-				<FadeTransition slideIndex={currentIndex} direction={direction} className="w-full min-h-screen">
-					{(() => {
-						const SlideComponent = slides[currentIndex].component
-						const currentSlideId = slides[currentIndex].id
+				<div className="min-h-screen w-full relative">
+					<FadeTransition slideIndex={currentIndex} direction={direction} className="w-full min-h-screen">
+						{(() => {
+							const SlideComponent = slides[currentIndex].component
+							const currentSlideId = slides[currentIndex].id
 
-						if (currentSlideId === 'buyer-personas') {
-							const plataformasIndex = slides.findIndex((s) => s.id === 'plataformas-buyer-persona')
-							return <SlideComponent onRequestNext={() => cambiarSlide(plataformasIndex)} />
-						}
+							if (currentSlideId === 'buyer-personas') {
+								const plataformasIndex = slides.findIndex((s) => s.id === 'plataformas-buyer-persona')
+								return <SlideComponent onRequestNext={() => cambiarSlide(plataformasIndex)} />
+							}
 
-						if (currentSlideId === 'plataformas-buyer-persona') {
-							const observacionesSeoIndex = slides.findIndex((s) => s.id === 'observaciones-seo')
-							return <SlideComponent onRequestNext={() => cambiarSlide(observacionesSeoIndex)} />
-						}
+							if (currentSlideId === 'plataformas-buyer-persona') {
+								const observacionesSeoIndex = slides.findIndex((s) => s.id === 'observaciones-seo')
+								return <SlideComponent onRequestNext={() => cambiarSlide(observacionesSeoIndex)} />
+							}
 
-						if (currentSlideId === 'plataformas-digitales') {
-							const publicidadDigitalIndex = slides.findIndex((s) => s.id === 'publicidad-digital')
-							return <SlideComponent onRequestNext={() => cambiarSlide(publicidadDigitalIndex)} />
-						}
+							if (currentSlideId === 'plataformas-digitales') {
+								const publicidadDigitalIndex = slides.findIndex((s) => s.id === 'publicidad-digital')
+								return <SlideComponent onRequestNext={() => cambiarSlide(publicidadDigitalIndex)} />
+							}
 
-						if (currentSlideId === 'agradecimiento') {
-							return (
-								<SlideComponent onFinish={() => cambiarSlide(0)} onPrevious={() => cambiarSlide(currentIndex - 1)} />
-							)
-						}
+							if (currentSlideId === 'agradecimiento') {
+								return (
+									<SlideComponent onFinish={() => cambiarSlide(0)} onPrevious={() => cambiarSlide(currentIndex - 1)} />
+								)
+							}
 
-						return <SlideComponent />
-					})()}
-				</FadeTransition>
+							return <SlideComponent />
+						})()}
+					</FadeTransition>
+				</div>
+
+				<Logo />
+
+				{timerComponent}
 			</div>
-
-			<Logo />
-
-			{timerComponent}
-		</div>
+		</>
 	)
 }
 

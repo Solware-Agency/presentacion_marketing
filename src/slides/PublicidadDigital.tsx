@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { Megaphone, Linkedin, Search } from 'lucide-react'
 import type { ReactNode } from 'react'
-import { LogoCorner } from '@src/components/LogoCorner'
 
 interface CardPublicidadProps {
 	icon: ReactNode
@@ -112,7 +111,6 @@ export function PublicidadDigital() {
 
 	return (
 		<div className="w-full min-h-screen  bg-gray-900 text-white p-6 md:p-8 flex flex-col items-center justify-center relative">
-			<LogoCorner />
 			<motion.header
 				initial={{ opacity: 0, y: -20 }}
 				animate={{ opacity: 1, y: 0 }}

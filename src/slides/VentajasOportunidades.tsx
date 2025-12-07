@@ -2,12 +2,10 @@
 
 import { SlideTitle } from '@src/components/SlideTitle'
 import { AnimatedText } from '@src/components/AnimatedElements'
-import { LogoCorner } from '@src/components/LogoCorner'
 
 export function VentajasOportunidades() {
 	return (
 		<div className="bg-gradient-to-br from-[#e0e7ff] via-[#ddd6fe] to-[#fce7f3] w-full min-h-screen flex flex-col items-center justify-center p-8  relative">
-			<LogoCorner />
 			<SlideTitle title="Ventajas y Oportunidades Competitivas" />
 
 			<div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">

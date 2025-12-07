@@ -1,7 +1,6 @@
 'use client'
 
 import Particles from '@src/components/ui/Particles'
-import { LogoCorner } from '@src/components/LogoCorner'
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -10,7 +9,6 @@ export function EstrategiaPortada() {
 
 	return (
 		<div className="bg-gradient-to-br from-[#1e0c2f] via-[#2a1350] to-[#4b1c7a] w-full min-h-screen flex items-center justify-center py-8 px-4 relative">
-			<LogoCorner />
 			<Particles />
 			<div className="flex flex-col items-center z-10">
 				<div className="mb-3">

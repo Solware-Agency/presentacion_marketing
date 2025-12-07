@@ -3,7 +3,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import Particles from '@src/components/ui/Particles'
-import { LogoCorner } from '@src/components/LogoCorner'
 
 interface AgradecimientoFinalProps {
 	onFinish?: () => void
@@ -68,7 +67,6 @@ export function AgradecimientoFinal({ onFinish, onPrevious }: AgradecimientoFina
 			aria-label="Lámina final de agradecimiento"
 			className="relative w-full min-h-screen bg-gradient-to-br from-[#271944] via-[#34182f] to-[#1f2937] text-white grid place-items-center p-4 sm:p-6 md:p-8"
 		>
-			<LogoCorner />
 			<div className="absolute inset-0 opacity-30" aria-hidden="true">
 				<Particles />
 			</div>
