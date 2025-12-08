@@ -125,7 +125,7 @@ function PilarCard({
 export function PilaresContenido() {
 	return (
 		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-full min-h-screen flex flex-col items-center justify-center p-8  relative">
-			<SlideTitle title="Pilares de Contenido" />
+			<SlideTitle title="Pilares de Contenido" color="#4d84fa" />
 
 			<div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
 				<PilarCard

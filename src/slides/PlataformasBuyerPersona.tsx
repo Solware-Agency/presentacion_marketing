@@ -136,7 +136,7 @@ export function PlataformasBuyerPersona({ onRequestNext }: Props) {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 					className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 px-2 leading-tight"
-					style={{ color: '#41e2b8' }}
+					style={{ color: '#4d84fa' }}
 				>
 					Plataforma digital para cada buyer persona
 				</motion.h1>
@@ -210,10 +210,6 @@ export function PlataformasBuyerPersona({ onRequestNext }: Props) {
 				</motion.div>
 
 				<AnimatePresence mode="wait">{obtenerTextoCaption()}</AnimatePresence>
-
-				<p className="mt-6 text-center text-[#dbeafe]/70 text-sm font-bold">
-					Presiona <span className="font-semibold">→</span> o <span className="font-semibold">Espacio</span> para avanzar, <span className="font-semibold">←</span> para retroceder
-				</p>
 			</div>
 		</section>
 	)

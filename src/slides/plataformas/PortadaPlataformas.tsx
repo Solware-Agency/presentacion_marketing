@@ -28,7 +28,7 @@ export function PortadaPlataformas({ onNext, onPrev, esSegundaVez = false }: Por
 			onKeyDown={handleKeyDown}
 			tabIndex={0}
 		>
-			<SlideTitle title="Plataformas Digitales" />
+			<SlideTitle title="Plataformas Digitales" color="#4d84fa" />
 
 			<div className="max-w-6xl w-full space-y-8 mt-6">
 				<AnimatedText delay={0.2}>
@@ -102,19 +102,6 @@ export function PortadaPlataformas({ onNext, onPrev, esSegundaVez = false }: Por
 					</div>
 				</AnimatedText>
 			</div>
-
-			<motion.div
-				initial={{ opacity: 0, y: 20 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.45, delay: 0.6 }}
-				className="absolute bottom-8 left-1/2 -translate-x-1/2"
-			>
-				<p className="text-[#dbeafe] text-sm text-center">
-					{esSegundaVez
-						? 'Presiona Espacio/→ para ver YouTube'
-						: 'Presiona Espacio/→ para ver Website'}
-				</p>
-			</motion.div>
 
 			<button
 				onClick={onPrev}

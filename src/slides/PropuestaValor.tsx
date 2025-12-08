@@ -7,7 +7,7 @@ import { Zap, Sparkles, Users } from 'lucide-react'
 export function PropuestaValor() {
 	return (
 		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-full min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8  relative">
-			<SlideTitle title="Propuesta de Valor" />
+			<SlideTitle title="Propuesta de Valor" color="#4d84fa" />
 
 			<div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mt-4 sm:mt-6 md:mt-8 px-4">
 				<AnimatedCard delay={0.2} className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-5 md:p-6 border border-[#3b82f6]/30 hover:border-[#3b82f6]/50 transition">

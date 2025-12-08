@@ -7,7 +7,7 @@ import { Laptop, Lightbulb, Code, AlertTriangle } from 'lucide-react'
 export function AnalisisMacro() {
 	return (
 		<div className="bg-gradient-to-br from-[#e0e7ff] via-[#ddd6fe] to-[#fce7f3] w-full min-h-screen flex flex-col items-center justify-center p-8  relative">
-			<SlideTitle title="Análisis Competitivo" subtitle="Macroentorno" />
+			<SlideTitle title="Análisis Competitivo" subtitle="Macroentorno" color="#4d84fa" />
 
 			<div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
 				<AnimatedCard delay={0.2} className="bg-[#e0e7ff] rounded-2xl p-6 border border-[#3b82f6]/20">

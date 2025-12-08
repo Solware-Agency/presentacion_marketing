@@ -44,7 +44,7 @@ export function ObservacionesSeo() {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5 }}
 					className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 px-2"
-					style={{ color: '#41e2b8' }}
+					style={{ color: '#4d84fa' }}
 				>
 					Observaciones SEO
 				</motion.h1>

@@ -6,7 +6,7 @@ import { AnimatedText, AnimatedCard } from '@src/components/AnimatedElements'
 export function QuienEsSolware() {
 	return (
 		<div className="bg-gradient-to-br from-[#1e0c2f] via-[#2a1350] to-[#4b1c7a] w-full min-h-screen flex flex-col items-center justify-center p-4 sm:p-8 md:p-10 relative">
-			<SlideTitle title="¿Quién es Solware Agency?" />
+			<SlideTitle title="¿Quién es Solware Agency?" color="#4d84fa" />
 
 			<div className="max-w-6xl w-full space-y-4 sm:space-y-6 md:space-y-8 px-4">
 				<AnimatedText delay={0.2}>

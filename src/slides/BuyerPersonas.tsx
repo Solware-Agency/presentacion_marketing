@@ -151,7 +151,7 @@ export function BuyerPersonas({ onRequestNext }: Props) {
 				aria-hidden={focus ? 'true' : 'false'}
 			>
 				<header className="text-center mb-8 h-24 flex flex-col justify-center">
-					<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2" style={{ color: '#41e2b8' }}>Buyer Personas</h1>
+					<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2" style={{ color: '#4d84fa' }}>Buyer Personas</h1>
 					<div className="w-40 sm:w-56 md:w-72 h-2 sm:h-2 md:h-2.5 mx-auto rounded-full bg-gradient-to-r from-[#3b82f6] via-[#bc81f8] to-[#ce609c] shadow-[0_0_10px_rgba(59,130,246,0.5),0_0_20px_rgba(188,129,248,0.3),0_0_30px_rgba(206,96,156,0.2)]"></div>
 				</header>
 
@@ -160,10 +160,6 @@ export function BuyerPersonas({ onRequestNext }: Props) {
 						<TarjetaPersonaCompacta key={p.id} persona={p} />
 					))}
 				</div>
-
-				<p className="mt-6 text-center text-[#dbeafe] font-bold">
-					Presiona <span className="font-semibold">→</span> o <span className="font-semibold">Espacio</span> para explorar cada perfil
-				</p>
 			</div>
 
 			<AnimatePresence>{focus && <ModalPersona persona={PERSONAS.find((x) => x.id === focus)!} />}</AnimatePresence>
@@ -308,10 +304,6 @@ function ModalPersona({ persona }: { persona: Persona }) {
 						<ChipGroup titulo="Inhibidores" chips={persona.inhibidores} />
 						<ChipGroup titulo="Comportamiento" chips={persona.comportamiento} />
 					</div>
-
-					<p className="mt-8 text-center text-[#dbeafe]/70 text-sm font-bold">
-						Presiona <span className="font-semibold">→</span> para continuar o <span className="font-semibold">←</span> para retroceder
-					</p>
 				</div>
 			</motion.div>
 		</>

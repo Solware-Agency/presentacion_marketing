@@ -117,7 +117,7 @@ export function PublicidadDigital() {
 				transition={{ duration: 0.5 }}
 				className="text-center mb-8 h-24 flex flex-col justify-center"
 			>
-				<h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2" style={{ color: '#41e2b8' }}>
+				<h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2" style={{ color: '#4d84fa' }}>
 					Publicidad digital
 				</h1>
 				<div className="w-40 sm:w-56 md:w-72 h-2 sm:h-2 md:h-2.5 mx-auto rounded-full bg-gradient-to-r from-[#3b82f6] via-[#bc81f8] to-[#ce609c] shadow-[0_0_10px_rgba(59,130,246,0.5),0_0_20px_rgba(188,129,248,0.3),0_0_30px_rgba(206,96,156,0.2)]"></div>

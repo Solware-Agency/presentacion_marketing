@@ -7,7 +7,7 @@ import { Wrench, Rocket, TrendingUp } from 'lucide-react'
 export function PlanAccion() {
 	return (
 		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-full min-h-screen flex flex-col items-center justify-center p-8  relative">
-			<SlideTitle title="Plan de Acción" />
+			<SlideTitle title="Plan de Acción" color="#4d84fa" />
 
 			<div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
 				<AnimatedCard delay={0.2} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-[#ecb424]/30">

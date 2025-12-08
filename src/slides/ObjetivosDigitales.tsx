@@ -18,7 +18,7 @@ export function ObjetivosDigitales() {
 
 	return (
 		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-full min-h-screen flex flex-col items-center justify-center p-8  relative">
-			<SlideTitle title="Objetivos Digitales" />
+			<SlideTitle title="Objetivos Digitales" color="#4d84fa" />
 
 			<div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">
 				<div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-[#3b82f6]/30">

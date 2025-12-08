@@ -7,7 +7,7 @@ import { Target, TrendingUp } from 'lucide-react'
 export function ObjetivosComerciales() {
 	return (
 		<div className="bg-gradient-to-br from-[#111827] to-[#1e293b] w-full min-h-screen flex flex-col items-center justify-center p-4 sm:p-8 relative">
-			<SlideTitle title="Objetivos Comerciales" />
+			<SlideTitle title="Objetivos Comerciales" color="#4d84fa" />
 
 			<div className="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
 				<AnimatedCard delay={0.2} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-[#3b82f6]/30">
