@@ -70,7 +70,7 @@ export function SeccionPlataformas({ onRequestNext }: SeccionPlataformasProps) {
 				className="w-full min-h-screen"
 			>
 				{vistaActual === 'intro' ? (
-					<PortadaPlataformas onNext={avanzar} onPrev={retroceder} esSegundaVez={indiceInterno === 6} />
+					<PortadaPlataformas onNext={avanzar} onPrev={retroceder} />
 				) : vistaActual === 'instagram-facebook' ? (
 					<InstagramFacebook onNext={avanzar} onPrev={retroceder} />
 				) : (

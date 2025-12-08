@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { SlideTitle } from '@src/components/SlideTitle'
 import { AnimatedText } from '@src/components/AnimatedElements'
 import { Globe, Linkedin, Instagram, Facebook, Mail, Youtube } from 'lucide-react'
@@ -8,10 +7,9 @@ import { Globe, Linkedin, Instagram, Facebook, Mail, Youtube } from 'lucide-reac
 interface PortadaPlataformasProps {
 	onNext: () => void
 	onPrev: () => void
-	esSegundaVez?: boolean
 }
 
-export function PortadaPlataformas({ onNext, onPrev, esSegundaVez = false }: PortadaPlataformasProps) {
+export function PortadaPlataformas({ onNext, onPrev }: PortadaPlataformasProps) {
 	const handleKeyDown = (e: React.KeyboardEvent) => {
 		if (e.key === 'ArrowRight' || e.key === ' ') {
 			e.preventDefault()
